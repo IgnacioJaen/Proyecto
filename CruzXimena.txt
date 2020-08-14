@@ -1,4 +1,4 @@
-Mis pasos en esta calle
+﻿Mis pasos en esta calle
 
 Resuenan
 
@@ -14,3 +14,4 @@ Donde
 
 Sólo es real la niebla.
 
+Aqui estuvo Rodri
