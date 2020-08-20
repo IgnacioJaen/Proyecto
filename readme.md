@@ -1,4 +1,4 @@
-# Proyecto Ingenieria del Software
+﻿# Proyecto Ingenieria del Software
 # Título del Proyecto
 
 
@@ -26,8 +26,10 @@ El porposito que perseguimos en el presente trabajo es lograr una aplicación en
 
 ## Objetivos Especificos 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
-
+►  a
+►  b
+🚀
+►  c
 
 
 ## Autores ✒️
