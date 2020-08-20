@@ -10,7 +10,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 
 
-### ## Antecedentes y Problemática 📋
+## Antecedentes y Problemática 📋
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
