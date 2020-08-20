@@ -36,9 +36,9 @@ El porposito que perseguimos en el presente trabajo es lograr una aplicación en
 ## Autores ✒️
 
 * **Cruz Ximena** - [@XimeCruz](https://github.com/XimeCruz)
-* **Jaen Ignacio** - [@marioly7](https://github.com/marioly7)
+* **Jaen Ignacio** - [fulanitodetal](#fulanito-de-tal)
 * **Saravia Rodrigo** - [fulanitodetal](#fulanito-de-tal)
-* **Vargas Marioly** - [fulanitodetal](#fulanito-de-tal)
+* **Vargas Marioly** - [@marioly7](https://github.com/marioly7)
 
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/IgnacioJaen/Proyecto/graphs/contributors) quíenes han participado en este proyecto. 
