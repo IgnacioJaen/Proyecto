@@ -28,10 +28,11 @@ Da un ejemplo
 
 ## Objetivos Especificos 📦
 
-*  a
-*  b
-*  c
-► Play  d
+►  a
+►  b
+🚀
+►  c
+
 
 ## Autores ✒️
 
