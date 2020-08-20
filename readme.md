@@ -28,10 +28,13 @@ Da un ejemplo
 
 ## Objetivos Especificos 📦
 
-►  a
-►  b
-🚀
+🚀 a
+
+🚀  b
+
 ►  c
+
+►  d
 
 
 ## Autores ✒️
