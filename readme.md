@@ -20,10 +20,8 @@ Da un ejemplo
 
 ## Objetivo General ⌨️
 
-
-
 ```
-Da un ejemplo
+El porposito que perseguimos en el presente trabajo es lograr una aplicación en la que se pueda conocer gente online, hacer amigos sin necesidad de que las personas conozcan como eres de rostro o de cuerpo y que se enamoren de tu alma.
 ```
 
 ## Objetivos Especificos 📦
