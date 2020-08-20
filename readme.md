@@ -31,7 +31,7 @@ Da un ejemplo
 *  a
 *  b
 *  c
-*  d
+► Play  d
 
 ## Autores ✒️
 
