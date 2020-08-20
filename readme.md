@@ -38,5 +38,7 @@ _Agrega notas adicionales sobre como hacer deploy_
 * **Jaen Ignacio** - [fulanitodetal](#fulanito-de-tal)
 * **Saravia Rodrigo** - [fulanitodetal](#fulanito-de-tal)
 * **Vargas Marioly** - [fulanitodetal](#fulanito-de-tal)
+
+
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/IgnacioJaen/Proyecto/graphs/contributors) quíenes han participado en este proyecto. 
 
