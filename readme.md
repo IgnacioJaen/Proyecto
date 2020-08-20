@@ -1,2 +1,42 @@
 # Proyecto Ingenieria del Software
-## Antecedentes y Problemática
+# Título del Proyecto
+
+_Acá va un párrafo que describa lo que es el proyecto_
+
+## Descripción del proyecto 🚀
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+
+
+
+
+### ## Antecedentes y Problemática 📋
+
+_Que cosas necesitas para instalar el software y como instalarlas_
+
+```
+Da un ejemplo
+```
+
+## Objetivos Generales ⌨️
+
+_Explica que verifican estas pruebas y por qué_
+
+```
+Da un ejemplo
+```
+
+## Objetivos Especificos 📦
+
+_Agrega notas adicionales sobre como hacer deploy_
+
+
+
+## Autores ✒️
+
+* **Cruz Ximena** - [@XimeCruz](https://github.com/XimeCruz)
+* **Jaen Ignacio** - [fulanitodetal](#fulanito-de-tal)
+* **Saravia Rodrigo** - [fulanitodetal](#fulanito-de-tal)
+* **Vargas Marioly** - [fulanitodetal](#fulanito-de-tal)
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/IgnacioJaen/Proyecto/graphs/contributors) quíenes han participado en este proyecto. 
+
