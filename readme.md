@@ -26,13 +26,13 @@ El porposito que perseguimos en el presente trabajo es lograr una aplicación en
 
 ## Objetivos Especificos 📦
 
-🚀 a
+►  Construcción de perfiles para los usuarios mediante Ratings. 
 
-🚀  b
+►  Manejo Correcto de la información.
 
-►  c
+►  Medidas de Seguridad y autentificacion de lso usuarios.
 
-►  d
+►  Eliminiacions de Cuentas con un Rating bajo. 
 
 
 ## Autores ✒️
