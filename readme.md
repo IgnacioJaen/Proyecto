@@ -21,7 +21,8 @@ Da un ejemplo
 ## Objetivo General ⌨️
 
 ```
-El porposito que perseguimos en el presente trabajo es lograr una aplicación en la que se pueda conocer gente online, hacer amigos sin necesidad de que las personas conozcan como eres de rostro o de cuerpo y que se enamoren de tu alma.
+El proposito que perseguimos en el presente trabajo es lograr una aplicación en la que se pueda conocer gente online,
+hacer amigos sin la necesidad de que las personas conozcan como una es en apariencia y que se enamoren de tu alma.
 ```
 
 ## Objetivos Especificos 📦
