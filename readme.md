@@ -35,7 +35,7 @@ hacer amigos sin la necesidad de que las personas conozcan como una es en aparie
 
 * **Cruz Ximena** - [@XimeCruz](https://github.com/XimeCruz)
 * **Jaen Ignacio** - [@IgnacioJaen](https://github.com/IgnacioJaen)
-* **Saravia Rodrigo** - [fulanitodetal](#fulanito-de-tal)
+* **Saravia Rodrigo** - [@Ro-Nel](https://github.com/Ro-Nel)
 * **Vargas Marioly** - [@marioly7](https://github.com/marioly7)
 
 
