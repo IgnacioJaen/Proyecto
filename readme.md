@@ -17,7 +17,7 @@ Es por eso que una gran problemática para aquellas aplicaciones que tienen el o
 
 ## Objetivo General ⌨️
 
-_El proposito que perseguimos en el presente trabajo es lograr una aplicación en la que se pueda conocer gente online,
+_Desarrollar una aplicación en la que se pueda conocer gente online,
 hacer amigos sin la necesidad de que las personas conozcan como una es en apariencia y que se enamoren de tu alma._
 
 ## Objetivos Especificos 📦
