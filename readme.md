@@ -44,10 +44,10 @@ También puedes mirar la lista de todos los [contribuyentes](https://github.com/
 # PREGUNTAS
 
 ## ¿QUIENES SON NUESTROS CLIENTES? ¿CÓMO ES EL MERCADO?
-Nuestros clientes son personas que quieren conocer nuevas personas sin importar como se vean. Nosotros le damos mucha más importancia a la personalidad a las personas. Sabemos que la apariencia no puede hacerte interesante por más que te esfuerces, al menos no por mucho tiempo o no en el buen sentido. Ser interesante es cómo captar la atención de las personas, haciendo que la personalidad sea importante prácticamente cuando estás en un entorno social.
+Nuestros clientes son personas que quieren entablar relaciones de amistad sin importar como se vean. Nosotros le damos mucha más importancia a la personalidad a las personas. Sabemos que la apariencia no puede hacerte interesante por más que te esfuerces, al menos no por mucho tiempo o no en el buen sentido. Ser interesante es cómo captar la atención de las personas, haciendo que la personalidad sea importante prácticamente cuando estás en un entorno social.
 
 
 ## ¿CÓMO VAMOS A CONSEGUIR CLIENTES?
 
-Como primera instancia para conseguir clientes o captar la atencion de las personas tendremos que realizar una campaña de Marketing, tanto en redes sociales populares como facebook, intagram, tiktok y entre otras, para que asi muestre una primera apariencia neutra a los usuarios eso nos permitira saber estadisticamente cuan popular a sido la app y tener informacion como el rango de edades, zonas habituales, etc. Segun esto tendremos una mejor aproximacion de nuestro mercado meta para tener una mejor campaña publicitaria dirigida. lo mas llamativo es que a medida que la aplicacion tenga popularidad podremos regular.
+Como primera instancia para conseguir clientes o captar la atencion de las personas tendremos que realizar una campaña de Marketing, tanto en redes sociales populares como facebook, intagram, tiktok y entre otras, para que asi muestre una primera apariencia neutra a los usuarios eso nos permitira saber estadisticamente cuan popular a sido la app y tener informacion como el rango de edades, zonas habituales, etc. Segun esto tendremos una mejor aproximacion de nuestro mercado meta para tener una mejor campaña publicitaria dirigida. lo mas llamativo es que a medida que la aplicacion tenga popularidad podremos regular y entablar mejores relaciones mas personalizadas.
 
