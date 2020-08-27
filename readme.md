@@ -46,10 +46,6 @@ También puedes mirar la lista de todos los [contribuyentes](https://github.com/
 ## ¿QUIENES SON NUESTROS CLIENTES? ¿CÓMO ES EL MERCADO?
 Nuestros clientes son personas que quieren conocer nuevas personas sin importar como se vean. Nosotros le damos mucha más importancia a la personalidad a las personas. Sabemos que la apariencia no puede hacerte interesante por más que te esfuerces, al menos no por mucho tiempo o no en el buen sentido. Ser interesante es cómo captar la atención de las personas, haciendo que la personalidad sea importante prácticamente cuando estás en un entorno social.
 
-## ¿QUÉ PROBLEMA RESOLVEMOS PARA NUESTROS CLIENTES Y POR QUÉ ES IMPORTANTE?
-La diferencia entre un producto “interesante” (por el que el cliente realmente no está dispuesto a pagar) y un gran producto (por el que sí está dispuesto a pagar) habitualmente es que el último resuelve una frustración real del cliente.
-
-Por eso es clave saber demostrar que hemos dado con un problema que vale la pena resolver, y que no es algo que nosotros imaginemos, sino que hemos salido al mundo real, hablado con x clientes y que han sido ellos los que han confirmado que el problema es real.
 
 ## ¿CÓMO VAMOS A CONSEGUIR CLIENTES?
 
