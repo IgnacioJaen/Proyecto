@@ -48,7 +48,9 @@ Nuestro proyecto pretende desarrollar una aplicacion que tiene como principal ob
 ## ¿QUÉ PROBLEMA RESOLVEMOS?
 
 Esta idea provino del análisis de dos problemas, el primero es de aplicaciones de citas y/o aplicaciones que se crean para “hacer amigos” pero no tienen ninguna diferencia con las aplicaciones de citas. El segundo análisis fue sobre la situación de la pandemia.
+
 **Aplicaciones de citas o para “hacer amigos”:** La problematiica en este ámbito es simple, no existe una diferencia enrre las aplicaciones para citas y las aplicaciones para hacer amigos ya que ambas proveen las mismas caraacteristias y funciones. Es mas, estas aplicaciones son casi exactamente iguales a cualquier red social.
+
 **Situación de la pandemia:** La problemática en este ámbito es de lo que se ha oído hablar mucho hoy en día, tiene que ver con el aislamiento social y por tanto la falta de contacto con el entorno.  
 
 
