@@ -17,18 +17,15 @@ Es por eso que una gran problemática para aquellas aplicaciones que tienen el o
 
 ## Objetivo General ⌨️
 
-_Desarrollar una aplicación en la que se pueda conocer gente online,
-hacer amigos sin la necesidad de que las personas conozcan como una es en apariencia y que se enamoren de tu alma._
+_Entablar amistades entre sus usuarios a partir de sus preferencias en distinitos ámbitos y sin tener funciones basadas en datos donde se observen las apariencias físicas de los usuarios._
 
 ## Objetivos Especificos 📦
 
-►  Construcción de perfiles para los usuarios mediante Ratings. 
+►  Interrelacionar a los usuarios a través de un "match" segun las preferencias de los usuarios en distintas áreas. 
 
-►  Manejo Correcto de la información.
+►  Apoyar la situación de la pandemia en el ámbito del aislamiento social.
 
-►  Medidas de Seguridad y autentificacion de lso usuarios.
-
-►  Eliminiacions de Cuentas con un Rating bajo. 
+►  Realizar una aplicación con medidas de seguridad y autentificación de los usuarios.
 
 
 ## Autores ✒️
@@ -39,9 +36,21 @@ hacer amigos sin la necesidad de que las personas conozcan como una es en aparie
 * **Vargas Marioly** - [@marioly7](https://github.com/marioly7)
 
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/IgnacioJaen/Proyecto/graphs/contributors) quíenes han participado en este proyecto. 
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/IgnacioJaen/Proyecto/graphs/contributors) quienes han participado en este proyecto. 
+
+# CONCEPTO
+
+Nuestro proyecto pretende desarrollar una aplicacion que tiene como principal objetivo entablar amistades entre sus usuarios a partir de sus preferencias en distinitos ámbitos y sin tener funciones basadas en datos donde se observen las apariencias físicas de los usuarios.
+
 
 # PREGUNTAS
+
+## ¿QUÉ PROBLEMA RESOLVEMOS?
+
+Esta idea provino del análisis de dos problemas, el primero es de aplicaciones de citas y/o aplicaciones que se crean para “hacer amigos” pero no tienen ninguna diferencia con las aplicaciones de citas. El segundo análisis fue sobre la situación de la pandemia.
+**Aplicaciones de citas o para “hacer amigos”:** La problematiica en este ámbito es simple, no existe una diferencia enrre las aplicaciones para citas y las aplicaciones para hacer amigos ya que ambas proveen las mismas caraacteristias y funciones. Es mas, estas aplicaciones son casi exactamente iguales a cualquier red social.
+**Situación de la pandemia:** La problemática en este ámbito es de lo que se ha oído hablar mucho hoy en día, tiene que ver con el aislamiento social y por tanto la falta de contacto con el entorno.  
+
 
 ## ¿QUIENES SON NUESTROS CLIENTES? ¿CÓMO ES EL MERCADO?
 Nuestros clientes son personas que quieren entablar relaciones de amistad sin importar como se vean. Nosotros le damos mucha más importancia a la personalidad a las personas. Sabemos que la apariencia no puede hacerte interesante por más que te esfuerces, al menos no por mucho tiempo o no en el buen sentido. Ser interesante es cómo captar la atención de las personas, haciendo que la personalidad sea importante prácticamente cuando estás en un entorno social.
@@ -50,4 +59,12 @@ Nuestros clientes son personas que quieren entablar relaciones de amistad sin im
 ## ¿CÓMO VAMOS A CONSEGUIR CLIENTES?
 
 Como primera instancia para conseguir clientes o captar la atencion de las personas tendremos que realizar una campaña de Marketing, tanto en redes sociales populares como facebook, intagram, tiktok y entre otras, para que asi muestre una primera apariencia neutra a los usuarios eso nos permitira saber estadisticamente cuan popular a sido la app y tener informacion como el rango de edades, zonas habituales, etc. Segun esto tendremos una mejor aproximacion de nuestro mercado meta para tener una mejor campaña publicitaria dirigida. lo mas llamativo es que a medida que la aplicacion tenga popularidad podremos regular y entablar mejores relaciones mas personalizadas.
+
+## ¿CUÁLES SON LAS PRINCIPALES CARACTERÍSITICAS QUE TENDRÁ LA APLICACIÓN?
+
+* Sera desarrollada para tener funciones que tienen el objetivo especifico de hacer saber al sistema que entre los usuarios existen personas que no buscan solo una amistad.
+* Apoyará a incrementar el contacto social.
+* Los únicos datos que requieren la apariencia de la persona, son netamente para la seguridad de la aplicación y no serán mostrados a otros usuarios.
+
+
 
