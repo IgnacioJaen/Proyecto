@@ -137,7 +137,7 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 
 * Resolucion minima: 1440x900.
 
-* Procesador: Core i5.
+* Procesador: Core i7.
 
 
 
