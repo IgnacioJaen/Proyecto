@@ -99,4 +99,70 @@ Al haber analizado el mercado de aplicaciones para conocer personas, pudimos dar
 * Egresos: Los egresos del proyecto se encuentran en la distribución de la aplicación a través de Google Play, por lo cual se deberan invertir 25 $. <br /> 
 Tambien se invertirá en publicidad en la red social Facebook, por lo que si deseamos que los anuncios de la página de la aplicación lleguen a personas con un rango de edad entre 18 y 40 años en Bolivia, se deberán invertir 300 bs como presupuesto total (Gastando 9,68 bs al dia por 31 dias) y teniendo un alcance de 6 mil a 17,4 mil numero estimado de personas que verán los anuncios promocionados de la página.
 
+## Factibilidad Tecnica
+
+#### Disponibilidad de tecnologia, conocimiento y habilidades para desarrollar el proyecto: <br />
+
+* Procesador: Core i5.
+
+* Front-end: Android.
+
+* Herramienta Software: Android Studio 4.0.1 64-bits.
+
+* Conocimientos: Java, Base de datos (MySQL, Firebase).
+
+* Distribucion: Google Play Store.
+
+##### Requerimientos minimos para lo programacion.  <br />
+
+* Sistema operativo: Windows 7.
+
+* Memoria RAM: 3GB + 1 GB (Para el emulador).
+
+* Almacenamiento: 2 GB de espacio en disco para Android Studio.
+
+* Version Java: Java Development Kit (JDK) 8.
+
+* Resolucion minima: 1280x800.
+
+* Procesador: Core i7.
+
+##### Requerimientos recomendado para lo programacion.  <br />
+ 
+* Sistema operativo: Windows 10.
+
+* Memoria RAM: 8GB + 1 GB (Para el emulador).
+
+* Almacenamiento: 4GB recomendados (500MB para la IDE y al menos 1.5 GB para Android SDK, imágenes de sistema de emulador y cachés).
+
+* Version Java: Java Development Kit (JDK) 8.
+
+* Resolucion minima: 1440x900.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
