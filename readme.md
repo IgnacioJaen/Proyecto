@@ -69,6 +69,10 @@ Como primera instancia para conseguir clientes o captar la atencion de las perso
 * Los únicos datos que requieren la apariencia de la persona, son netamente para la seguridad de la aplicación y no serán mostrados a otros usuarios.
 
 
+## Valor del Negocio (Beneficios que la organización puede esperara del proyecto
 
+* Beneficios tangibles: Los beneficios tangibles que puede esperar el proyecto son ingresos económicos a través de anuncios y microtransacciones (habilitar un mayor número de matches por dia, habilitar más categorías acerca de preferencias, etc). 
+
+* Beneficios intangibles: Los beneficios intangibles que puede esperar el proyecto son incrementar el contacto social, construcción de alianzas externas (a través de los anuncios).
 
 
