@@ -68,6 +68,11 @@ Como primera instancia para conseguir clientes o captar la atencion de las perso
 * Apoyará a incrementar el contacto social.
 * Los únicos datos que requieren la apariencia de la persona, son netamente para la seguridad de la aplicación y no serán mostrados a otros usuarios.
 
+# ELEMENTOS DE UN REQUERIMIENTO DEL SISTEMA
+
+## Necesidad del Negocio (Razón que impulsa al proyecto) 
+
+Al haber analizado el mercado de aplicaciones para conocer personas, pudimos darnos cuenta de que todas cuentan con las mismas características en cuanto a realizar un match a traves de información donde se muestra la apariencia física de los usuarios. De tal forma que surge la necesidad de una aplicación que interrelacione a personas a partir únicamente de sus preferencias en distintas áreas. 
 
 
 
