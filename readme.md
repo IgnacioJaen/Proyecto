@@ -1,5 +1,5 @@
 ﻿# Proyecto Ingenieria del Software
-# No appearance
+# No appearance (Sin apariencia)
 
 
 
@@ -67,6 +67,8 @@ Como primera instancia para conseguir clientes o captar la atencion de las perso
 * Sera desarrollada para tener funciones que tienen el objetivo especifico de hacer saber al sistema que entre los usuarios existen personas que no buscan solo una amistad.
 * Apoyará a incrementar el contacto social.
 * Los únicos datos que requieren la apariencia de la persona, son netamente para la seguridad de la aplicación y no serán mostrados a otros usuarios.
+
+
 
 
 
