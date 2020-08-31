@@ -74,7 +74,7 @@ Como primera instancia para conseguir clientes o captar la atencion de las perso
 
 Al haber analizado el mercado de aplicaciones para conocer personas, pudimos darnos cuenta de que todas cuentan con las mismas características en cuanto a realizar un match a traves de información donde se muestra la apariencia física de los usuarios. De tal forma que surge la necesidad de una aplicación que interrelacione a personas a partir únicamente de sus preferencias en distintas áreas. 
 
-## Requerimientos del Negocio (Capacidades comerciales que el sistema necesitará) (moly)
+## Requerimientos del Negocio (Capacidades comerciales que el sistema necesitará) 
 1. Aplicacion movil.
 2. Seguridad:
     - La descarga de esta aplicacion estara disponible para personas mayores de 17 años (Categoria M - Google Play Store).
@@ -89,5 +89,9 @@ Al haber analizado el mercado de aplicaciones para conocer personas, pudimos dar
 * Beneficios tangibles: Los beneficios tangibles que puede esperar el proyecto son ingresos económicos a través de anuncios y microtransacciones (habilitar un mayor número de matches por dia, habilitar más categorías acerca de preferencias, etc). 
 
 * Beneficios intangibles: Los beneficios intangibles que puede esperar el proyecto son incrementar el contacto social, construcción de alianzas externas (a través de los anuncios).
+
+# ANALISIS DE FACTIBILIDAD
+
+## Factibilidad Economica 
 
 
