@@ -107,7 +107,7 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 
 * Herramienta Software: Android Studio 4.0.1 64-bits.
 
-* Conocimientos: Java, Base de datos (MySQL, Firebase).
+* Conocimientos: Java, Base de datos (MySQL, Firebase), Android y UML.
 
 * Distribucion: Google Play Store.
 
