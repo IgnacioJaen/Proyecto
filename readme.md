@@ -103,8 +103,6 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 
 #### Disponibilidad de tecnologia, conocimiento y habilidades para desarrollar el proyecto: <br />
 
-* Procesador: Core i5.
-
 * Front-end: Android.
 
 * Herramienta Software: Android Studio 4.0.1 64-bits.
@@ -125,7 +123,7 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 
 * Resolucion minima: 1280x800.
 
-* Procesador: Core i7.
+* Procesador: Core i5.
 
 ##### Requerimientos recomendado para lo programacion.  <br />
  
@@ -138,6 +136,8 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 * Version Java: Java Development Kit (JDK) 8.
 
 * Resolucion minima: 1440x900.
+
+* Procesador: Core i5.
 
 
 
