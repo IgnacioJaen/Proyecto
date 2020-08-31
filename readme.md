@@ -47,9 +47,9 @@ Nuestro proyecto pretende desarrollar una aplicacion que tiene como principal ob
 
 ## ¿QUÉ PROBLEMA RESOLVEMOS?
 
-Esta idea provino del análisis de dos problemas, el primero es de aplicaciones de citas y/o aplicaciones que se crean para “hacer amigos” pero no tienen ninguna diferencia con las aplicaciones de citas. El segundo análisis fue sobre la situación de la pandemia.
+Esta idea provino del análisis de dos problemas, el primero es de aplicaciones de citas y/o aplicaciones que se crean para “hacer amigos” pero no tienen ninguna diferencia con las aplicaciones de citas. El segundo análisis fue sobre la situación de la pandemia. <br />
 
-**Aplicaciones de citas o para “hacer amigos”:** La problematiica en este ámbito es simple, no existe una diferencia enrre las aplicaciones para citas y las aplicaciones para hacer amigos ya que ambas proveen las mismas caraacteristias y funciones. Es mas, estas aplicaciones son casi exactamente iguales a cualquier red social.
+**Aplicaciones de citas o para “hacer amigos”:** La problematiica en este ámbito es simple, no existe una diferencia enrre las aplicaciones para citas y las aplicaciones para hacer amigos ya que ambas proveen las mismas caraacteristias y funciones. Es mas, estas aplicaciones son casi exactamente iguales a cualquier red social. <br />
 
 **Situación de la pandemia:** La problemática en este ámbito es de lo que se ha oído hablar mucho hoy en día, tiene que ver con el aislamiento social y por tanto la falta de contacto con el entorno.  
 
@@ -84,7 +84,7 @@ Al haber analizado el mercado de aplicaciones para conocer personas, pudimos dar
 4. Algoritmo basado en las edades del usuario y secundariamente basado en sus preferencias para generar un match.
 
 
-## Valor del Negocio (Beneficios que la organización puede esperara del proyecto
+## Valor del Negocio (Beneficios que la organización puede esperara del proyecto)
 
 * Beneficios tangibles: Los beneficios tangibles que puede esperar el proyecto son ingresos económicos a través de anuncios y microtransacciones (habilitar un mayor número de matches por dia, habilitar más categorías acerca de preferencias, etc). 
 
@@ -93,5 +93,9 @@ Al haber analizado el mercado de aplicaciones para conocer personas, pudimos dar
 # ANALISIS DE FACTIBILIDAD
 
 ## Factibilidad Economica 
+
+* Ingresos: Los ingresos del proyecto seran obtenidos a traves de distintas publicidades de organizaciones que quieran multiplicar la notoriedad de la marca a través de la aplicación. <br />
+
+* Egresos: Los egresos del proyecto se encuentran en la distribución de la aplicación a través de Google Play, por lo cual se deberan invertir 25 $. 
 
 
