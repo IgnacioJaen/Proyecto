@@ -70,6 +70,10 @@ Como primera instancia para conseguir clientes o captar la atencion de las perso
 
 # ELEMENTOS DE UN REQUERIMIENTO DEL SISTEMA
 
+## Project Sponsor
+
+Rodrigo Nelson Saravia Alquez 
+
 ## Necesidad del Negocio (Razón que impulsa al proyecto) 
 
 Al haber analizado el mercado de aplicaciones para conocer personas, pudimos darnos cuenta de que todas cuentan con las mismas características en cuanto a realizar un match a traves de información donde se muestra la apariencia física de los usuarios. De tal forma que surge la necesidad de una aplicación que interrelacione a personas a partir únicamente de sus preferencias en distintas áreas. 
