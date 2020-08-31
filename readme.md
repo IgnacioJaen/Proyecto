@@ -92,9 +92,9 @@ Al haber analizado el mercado de aplicaciones para conocer personas, pudimos dar
 
 # ANALISIS DE FACTIBILIDAD
 
-## Factibilidad Economica 
+## Factibilidad Económica 
 
-* Ingresos: Los ingresos del proyecto seran obtenidos a traves de distintas publicidades de organizaciones que quieran multiplicar la notoriedad de la marca a través de la aplicación. <br />
+* Ingresos: Los ingresos del proyecto serán obtenidos a través de distintas publicidades de organizaciones que quieran multiplicar la notoriedad de su marca a través de la aplicación. <br />
 
 * Egresos: Los egresos del proyecto se encuentran en la distribución de la aplicación a través de Google Play, por lo cual se deberan invertir 25 $. <br /> 
 Tambien se invertirá en publicidad en la red social Facebook, por lo que si deseamos que los anuncios de la página de la aplicación lleguen a personas con un rango de edad entre 18 y 40 años en Bolivia, se deberán invertir 300 bs como presupuesto total (Gastando 9,68 bs al dia por 31 dias) y teniendo un alcance de 6 mil a 17,4 mil numero estimado de personas que verán los anuncios promocionados de la página.
