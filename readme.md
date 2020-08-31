@@ -143,6 +143,30 @@ Tambien se invertirá en publicidad en la red social Facebook, por lo que si des
 
 * Procesador: Core i7.
 
+## Factibilidad organizacional
+
+##### Habilidades requeridas por los integrantes del proyecto  <br />
+
+1. Creatividad
+
+La creatividad es un factor imprescindible a la hora de trabajar en el desarrollo de aplicaciones. Si bien la parte del desarrollo es rígida y los procesos deben ejecutarse al milímetro, ser creativos es fundamental para innovar. 
+
+2. Perseverancia
+
+Es importante contar con una buena planificación, pero hay que tener claro que el proceso de desarrollo en sí puede ser especialmente pesado, en el sentido de que tienen que llevarse a cabo muchos ensayos e intentos fallidos. 
+
+3. Organización
+
+La planificación es imprescindible en los proyectos de desarrollo. De hecho, es importante que el profesional sepa pensar en fases, de modo que los problemas queden parcelados y puedan resolverse de forma detallada. Para conseguirlo, también será necesaria una buena dosis de lógica.
+
+4. Inteligencia
+
+Desarrollar software no es una tarea sencilla. Y aunque la mayoría de profesiones requieren de inteligencia para que los resultados sean óptimos, los desarrolladores tienen que ser especialmente sesudos y además, saber concentrarse en procesos complejos y pesados.
+
+5. Flexibilidad
+
+En realidad, la flexibilidad es una cualidad que debe acompañar a todos aquellos profesionales que trabajan en el campo de las tecnologías de la información. Sin embargo, los lenguajes de programación son cambiantes y a veces, para un mismo proyecto es necesario tener conocimientos sobre una gran variedad de campos. Además, los entornos son extremadamente cambiantes y los buenos desarrolladores deben exigirse aprender cosas nuevas constantemente y no solo sobre programación, sino también acerca de todos aquellos campos en los que han de aplicarse sus tecnologías.
+
 
 
 
