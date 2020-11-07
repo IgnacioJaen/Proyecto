@@ -2,14 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bo.ucb.edu.ingsoft.dao.ContactDao">
-    <select id="findByContactId" resultType="bo.ucb.edu.ingsoft.dto.Contact">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CategoryDao">
+    <select id="findByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Category">
         SELECT
-               contact_id as contactId,
-               first_name as firstName,
-               first_surname as firstSurname
-        FROM contact
+               category_id as categoryId,
+               name as name
+        FROM category
         WHERE
-            contact_id = 2
+            category_id = 1
     </select>
 </mapper>
