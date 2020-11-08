@@ -18,8 +18,8 @@ public class CategoryBl {
         this.transactionDao = transactionDao;
     }
 
-    public Category findCategoryById(Integer categoryId) {
-        return  categoryDao.findByCategoryId(categoryId);
+    public Category findCategoryById(Category category) {
+        return  categoryDao.findByCategoryId(category);
     }
 
     public Category insertCategory(Category category,Transaction transaction) {
@@ -30,11 +30,15 @@ public class CategoryBl {
         return category;
     }
 
-    public Category updateCategory(Category category) {
-        return categoryDao.categoryupdate(category);
+    public Category updateCategory(Category category, Transaction transaction) {
+        category.setTransaction(transaction);
+        categoryDao.categoryupdate(category);
+        //Integer categoryId = transactionDao.getLastInsertId();
+        //category.setCategoryId(categoryId);
+        return category;
     }
 
-    public Category deleteCategory(Integer categoryId) {
-        return categoryDao.categorydelete(categoryId);
+    public Category deleteCategory(Category category) {
+        return categoryDao.categorydelete(category);
     }
 }

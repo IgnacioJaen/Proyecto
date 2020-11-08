@@ -1,6 +1,10 @@
 GET http://localhost:8080/v1/category
 Accept: application/json
+Content-Type: application/json
 
+{
+  "categoryId": 8
+}
 ###
 
 
@@ -10,5 +14,24 @@ Content-Type: application/json
 
 {
   "name": "Deportes Extremos Outside"
+}
+###
+
+PUT http://localhost:8080/v1/category
+Accept: application/json
+Content-Type: application/json
+
+{
+  "categoryId": 8,
+  "name": "Ximena"
+}
+###
+
+DELETE http://localhost:8080/v1/category
+Accept: application/json
+Content-Type: application/json
+
+{
+  "categoryId": 8
 }
 ###

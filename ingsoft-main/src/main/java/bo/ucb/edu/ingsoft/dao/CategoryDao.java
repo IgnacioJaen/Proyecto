@@ -4,11 +4,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CategoryDao {
-    public Category findByCategoryId(Integer categoryId);
+    public Category findByCategoryId(Category category);
 
     public void categoryinsert(Category category);
 
-    public Category categoryupdate(Category category);
+    public void categoryupdate(Category category);
 
-    public Category categorydelete(Integer categoryId);
+    public Category categorydelete(Category category);
 }

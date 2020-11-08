@@ -9,7 +9,7 @@
                name as name
         FROM category
         WHERE
-            category_id = 1
+            category_id = #{categoryId}
     </select>
 
     <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
@@ -20,17 +20,17 @@
     </insert>
 
     <update id="categoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Category">
-        UPDATE contact
-        SET second_name = 'Adrian', `second_surname` = 'Tancara'
-        WHERE contact_id = 3;
+        UPDATE category
+        SET name = #{name}
+        WHERE category_id = #{categoryId}
 
     </update>
 
     <delete id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
         DELETE
-        FROM contact
+        FROM category
         WHERE
-              contact_id = 3
+              category_id = #{categoryId}
     </delete>
 
 

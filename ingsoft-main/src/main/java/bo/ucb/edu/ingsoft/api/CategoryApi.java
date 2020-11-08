@@ -26,8 +26,9 @@ public class CategoryApi {
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Category findById() {
-        return categoryBl.findCategoryById(0);
+    public Category findById(@RequestBody Category category, HttpServletRequest request) {
+
+        return categoryBl.findCategoryById(category);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -40,15 +41,17 @@ public class CategoryApi {
     }
 
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Category updatecategory() {
-
-        return categoryBl.updateCategory(new Category());
+    public Category updatecategory(@RequestBody Category category, HttpServletRequest request) {
+        TransactionUtil transactionUtil= new TransactionUtil();
+        Transaction transaction = transactionUtil.createTransaction(request);
+        categoryBl.updateCategory(category,transaction);
+        return  category;
     }
 
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Category deletecategory() {
+    public Category deletecategory(@RequestBody Category category, HttpServletRequest request) {
 
-        return categoryBl.deleteCategory(0);
+        return categoryBl.deleteCategory(category);
     }
 
 }
