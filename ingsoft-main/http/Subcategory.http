@@ -1,37 +1,38 @@
-GET http://localhost:8080/v1/category
+GET http://localhost:8080/v1/subcategory
 Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 8
+  "subcategoryId": 8
 }
 ###
 
 
-POST http://localhost:8080/v1/category
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Deportes Extremos Outside"
-}
-###
-
-PUT http://localhost:8080/v1/category
+POST http://localhost:8080/v1/subcategory
 Accept: application/json
 Content-Type: application/json
 
 {
   "categoryId": 8,
-  "name": "Ximena"
+  "name": "Deportes Extremos Outside"
 }
 ###
 
-DELETE http://localhost:8080/v1/category
+PUT http://localhost:8080/v1/subcategory
 Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 16
+  "subcategoryId": 8,
+  "name": "Ximena"
+}
+###
+
+DELETE http://localhost:8080/v1/subcategory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "subcategoryId": 16
 }
 ###
