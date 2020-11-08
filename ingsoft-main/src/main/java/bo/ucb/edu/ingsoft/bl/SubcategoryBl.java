@@ -5,7 +5,9 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SubcategoryBl {
     private SubcategoryDao subcategoryDao;
     private TransactionDao transactionDao;
