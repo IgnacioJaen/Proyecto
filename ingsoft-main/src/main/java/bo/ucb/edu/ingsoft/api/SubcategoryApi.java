@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping(value = "/v1/subcategory")
 public class SubcategoryApi {
-/*
+
     private SubcategoryBl subcategoryBl;
 
     @Autowired
@@ -52,5 +52,5 @@ public class SubcategoryApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory deletecategory(@RequestBody Subcategory subcategory, HttpServletRequest request) {
         return subcategoryBl.deleteSubcategory(subcategory);
-    }*/
+    }
 }

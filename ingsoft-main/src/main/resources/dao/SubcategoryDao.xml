@@ -14,14 +14,14 @@
     </select>
 
     <insert id="subcategoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
-        INSERT INTO category VALUES (
+        INSERT INTO subcategory VALUES (
             null,#{categoryId}, #{name}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
     </insert>
 
     <update id="subcategoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
-        UPDATE category
+        UPDATE subcategory
         SET name = #{name}
         WHERE subcategory_id = #{subcategoryId}
 
