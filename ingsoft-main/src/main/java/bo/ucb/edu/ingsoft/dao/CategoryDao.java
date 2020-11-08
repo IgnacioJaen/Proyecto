@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface CategoryDao {
     public Category findByCategoryId(Integer categoryId);
 
-    public Category categoryinsert(Category category);
+    public void categoryinsert(Category category);
 
     public Category categoryupdate(Category category);
 

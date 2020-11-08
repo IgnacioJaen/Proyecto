@@ -2,11 +2,16 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.CategoryBl;
 import bo.ucb.edu.ingsoft.model.Category;
+import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
@@ -26,8 +31,11 @@ public class CategoryApi {
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Category insertcategory() {
-        return categoryBl.insertCategory(new Category());
+    public Category insertcategory(@RequestBody Category category, HttpServletRequest request) {
+        TransactionUtil transactionUtil= new TransactionUtil();
+        Transaction transaction = transactionUtil.createTransaction(request);
+        categoryBl.insertCategory(category,transaction);
+        return  category;
 
     }
 

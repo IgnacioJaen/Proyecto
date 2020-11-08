@@ -14,7 +14,8 @@
 
     <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
         INSERT INTO category VALUES (
-            null, #{Name}, 1, #{txId}, #{txHost}, #{txUserId}, #{txDate}
+            null, #{name}, 1, #{transaction.txId}, #{transaction.txHost},
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
     </insert>
 

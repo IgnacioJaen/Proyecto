@@ -7,18 +7,10 @@ public class Transaction {
     private String txHost;
     private Integer txUserId;
     private Date txDate;
+    private Date txUpdate;
+
 
     public Transaction() {
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "txId=" + txId +
-                ", txHost='" + txHost + '\'' +
-                ", txUserId=" + txUserId +
-                ", txDate=" + txDate +
-                '}';
     }
 
     public Integer getTxId() {
@@ -53,4 +45,22 @@ public class Transaction {
         this.txDate = txDate;
     }
 
+    public Date getTxUpdate() {
+        return txUpdate;
+    }
+
+    public void setTxUpdate(Date txUpdate) {
+        this.txUpdate = txUpdate;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "txId=" + txId +
+                ", txHost='" + txHost + '\'' +
+                ", txUserId=" + txUserId +
+                ", txDate=" + txDate +
+                ", txUpdate=" + txUpdate +
+                '}';
+    }
 }
