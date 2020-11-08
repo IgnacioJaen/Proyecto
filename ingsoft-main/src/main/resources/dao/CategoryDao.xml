@@ -11,4 +11,26 @@
         WHERE
             category_id = 1
     </select>
+
+    <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
+        INSERT INTO category VALUES (
+            null, #{Name}, 1, #{txId}, #{txHost}, #{txUserId}, #{txDate}
+        )
+    </insert>
+
+    <update id="categoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Category">
+        UPDATE contact
+        SET second_name = 'Adrian', `second_surname` = 'Tancara'
+        WHERE contact_id = 3;
+
+    </update>
+
+    <delete id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
+        DELETE
+        FROM contact
+        WHERE
+              contact_id = 3
+    </delete>
+
+
 </mapper>

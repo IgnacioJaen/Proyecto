@@ -25,4 +25,22 @@ public class CategoryApi {
         return categoryBl.findCategoryById(0);
     }
 
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Category insertcategory() {
+        return categoryBl.insertCategory(new Category());
+
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Category updatecategory() {
+
+        return categoryBl.updateCategory(new Category());
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Category deletecategory() {
+
+        return categoryBl.deleteCategory(0);
+    }
+
 }

@@ -17,4 +17,16 @@ public class CategoryBl {
     public Category findCategoryById(Integer categoryId) {
         return  categoryDao.findByCategoryId(categoryId);
     }
+
+    public Category insertCategory(Category category) {
+        return categoryDao.categoryinsert(category);
+    }
+
+    public Category updateCategory(Category category) {
+        return categoryDao.categoryupdate(category);
+    }
+
+    public Category deleteCategory(Integer categoryId) {
+        return categoryDao.categorydelete(categoryId);
+    }
 }
