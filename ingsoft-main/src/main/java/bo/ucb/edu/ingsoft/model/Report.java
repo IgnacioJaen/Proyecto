@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.model;
 
 public class Report {
     private Integer reportId;
+    private Integer reportOpId;
     private Integer chatId;
     private Integer status;
     private Transaction transaction;
@@ -41,10 +42,19 @@ public class Report {
         this.transaction = transaction;
     }
 
+    public Integer getReportOpId() {
+        return reportOpId;
+    }
+
+    public void setReportOpId(Integer reportOpId) {
+        this.reportOpId = reportOpId;
+    }
+
     @Override
     public String toString() {
         return "Report{" +
                 "reportId=" + reportId +
+                ", reportOpId=" + reportOpId +
                 ", chatId=" + chatId +
                 ", status=" + status +
                 ", transaction=" + transaction +

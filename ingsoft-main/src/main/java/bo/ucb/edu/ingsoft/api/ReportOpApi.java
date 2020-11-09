@@ -27,7 +27,7 @@ public class ReportOpApi {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions findById(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
-        return reportOpBl.findReportById(reportOptions);
+        return reportOpBl.findReportOpById(reportOptions);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

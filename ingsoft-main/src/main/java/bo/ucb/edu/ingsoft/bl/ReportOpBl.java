@@ -20,7 +20,7 @@ public class ReportOpBl {
         this.transactionDao = transactionDao;
     }
 
-    public ReportOptions findReportById(ReportOptions reportOptions) {
+    public ReportOptions findReportOpById(ReportOptions reportOptions) {
 
         return  reportOptionsDao.findReportOpById(reportOptions);
     }
@@ -28,8 +28,8 @@ public class ReportOpBl {
     public ReportOptions insertReportOp(ReportOptions reportOptions, Transaction transaction) {
         reportOptions.setTransaction(transaction);
         reportOptionsDao.reportOpInsert(reportOptions);
-        Integer categoryId = transactionDao.getLastInsertId();
-        reportOptions.setReportId(categoryId);
+        Integer reportOpId = transactionDao.getLastInsertId();
+        reportOptions.setReportOpId(reportOpId);
         return reportOptions;
     }
 

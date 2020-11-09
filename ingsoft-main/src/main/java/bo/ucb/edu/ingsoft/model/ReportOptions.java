@@ -2,21 +2,11 @@ package bo.ucb.edu.ingsoft.model;
 
 public class ReportOptions {
     private Integer reportOpId;
-    private Integer reportId;
-    private Integer messageId;
     private String description;
     private Integer status;
     private Transaction transaction;
 
     public ReportOptions() {
-    }
-
-    public Integer getReportId() {
-        return reportId;
-    }
-
-    public void setReportId(Integer reportId) {
-        this.reportId = reportId;
     }
 
     public Integer getReportOpId() {
@@ -27,13 +17,6 @@ public class ReportOptions {
         this.reportOpId = reportOpId;
     }
 
-    public Integer getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(Integer messageId) {
-        this.messageId = messageId;
-    }
 
     public String getDescription() {
         return description;
@@ -62,9 +45,7 @@ public class ReportOptions {
     @Override
     public String toString() {
         return "ReportOptions{" +
-                "reportId=" + reportId +
                 ", reportOpId=" + reportOpId +
-                ", messageId=" + messageId +
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 ", transaction=" + transaction +

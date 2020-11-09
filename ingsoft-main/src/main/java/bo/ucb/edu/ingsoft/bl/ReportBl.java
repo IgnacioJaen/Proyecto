@@ -25,8 +25,8 @@ public class ReportBl {
     public Report insertReport(Report report, Transaction transaction) {
         report.setTransaction(transaction);
         reportDao.reportInsert(report);
-        Integer categoryId = transactionDao.getLastInsertId();
-        report.setReportId(categoryId);
+        Integer reportId = transactionDao.getLastInsertId();
+        report.setReportId(reportId);
         return report;
     }
 

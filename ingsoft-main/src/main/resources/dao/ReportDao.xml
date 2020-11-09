@@ -13,7 +13,7 @@
 
     <insert id="reportInsert" parameterType="bo.ucb.edu.ingsoft.model.Report">
         INSERT INTO report VALUES (
-            null, #{chatId}, 1, #{transaction.txId}, #{transaction.txHost},
+            null, #{reportOpId}, #{chatId}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
     </insert>
