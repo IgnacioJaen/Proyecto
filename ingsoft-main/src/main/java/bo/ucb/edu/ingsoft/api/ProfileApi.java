@@ -24,4 +24,5 @@ public class ProfileApi {
     public ProfileRequest findById(@RequestBody String nameUser, String surnameUser,HttpServletRequest request) {
         return profileBl.profileget(nameUser,surnameUser);
     }
+
 }
