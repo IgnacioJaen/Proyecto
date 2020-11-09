@@ -13,8 +13,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 6,
-  "name": "Deportes Sub"
+  "categoryId": 8,
+  "name": "Deportes Extremos Outside"
 }
 ###
 
@@ -23,7 +23,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "subcategoryId": 6,
+  "subcategoryId": 8,
   "name": "Ximena"
 }
 ###
@@ -33,6 +33,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "subcategoryId": 12
+  "subcategoryId": 14
 }
 ###
