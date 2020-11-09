@@ -7,7 +7,13 @@
         SELECT
                subcategory_id as subcategoryId,
                category_id as categoryId,
-               name as name
+               name as name,
+               status as status,
+               tx_id as txId,
+               tx_host as txHost,
+               tx_user as txUserId,
+               tx_date as txDate,
+               tx_update as txUpdate
         FROM subcategory
         WHERE
             subcategory_id = #{subcategoryId}
