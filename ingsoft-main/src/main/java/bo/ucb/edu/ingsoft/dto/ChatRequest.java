@@ -5,10 +5,7 @@ import bo.ucb.edu.ingsoft.model.Transaction;
 
 public class ChatRequest {
     private Integer chatId;
-    private Integer profile1Id;
-    private Integer profile2Id;
-    private Profile profile1;
-    private Profile profile2;
+    private String profile2UserName;
 
     public ChatRequest(){
     }
@@ -21,28 +18,19 @@ public class ChatRequest {
         this.chatId = chatId;
     }
 
-    public Integer getProfile1Id() {
-        return profile1Id;
+    public String getProfile2UserName() {
+        return profile2UserName;
     }
 
-    public void setProfile1Id(Integer profile1Id) {
-        this.profile1Id = profile1Id;
-    }
-
-    public Integer getProfile2Id() {
-        return profile2Id;
-    }
-
-    public void setProfile2Id(Integer profile2Id) {
-        this.profile2Id = profile2Id;
+    public void setProfile2UserName(String profile2UserName) {
+        this.profile2UserName = profile2UserName;
     }
 
     @Override
     public String toString() {
-        return "Chat{" +
+        return "ChatRequest{" +
                 "chatId=" + chatId +
-                ", profile1Id=" + profile1Id +
-                ", profile2Id=" + profile2Id +
+                ", profile2UserName='" + profile2UserName + '\'' +
                 '}';
     }
 }

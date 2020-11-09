@@ -10,7 +10,9 @@ public interface MessagesDao {
     public Messages findMessagesById(Messages messages);
 
     public MessagesRequest findMessagesReqById(MessagesRequest messagesRequest);
-
+    /*
+    public MessagesRequest findMessagesReqById(String date, String content);
+     */
     public void messagesInsert(Messages messages);
 
     public void messagesUpdate(Messages messages);

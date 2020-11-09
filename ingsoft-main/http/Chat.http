@@ -7,6 +7,15 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:8080/v1/chat/request
+Accept: application/json
+Content-Type: application/json
+
+{
+  "chatId": 2
+}
+###
+
 
 POST http://localhost:8080/v1/chat
 Accept: application/json
