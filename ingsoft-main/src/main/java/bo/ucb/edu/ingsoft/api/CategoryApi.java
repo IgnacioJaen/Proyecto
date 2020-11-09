@@ -47,7 +47,8 @@ public class CategoryApi {
         return  category;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+    @RequestMapping(path="/delete",method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public Category deletecategory(@RequestBody Category category, HttpServletRequest request) {
 
         return categoryBl.deleteCategory(category);

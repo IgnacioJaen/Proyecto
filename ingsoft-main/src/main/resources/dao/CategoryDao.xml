@@ -26,11 +26,11 @@
 
     </update>
 
-    <delete id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
+    <update id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
         UPDATE category
         SET status = 0
         WHERE category_id = #{categoryId}
-    </delete>
+    </update>
 
 
 </mapper>

@@ -1,8 +1,8 @@
 package bo.ucb.edu.ingsoft.model;
 
 public class ReportOptions {
-    private Integer reportId;
     private Integer reportOpId;
+    private Integer reportId;
     private Integer messageId;
     private String description;
     private Integer status;

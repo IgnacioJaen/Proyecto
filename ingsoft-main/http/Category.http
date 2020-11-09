@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:8080/v1/category
+PUT http://localhost:8080/v1/category/delete
 Accept: application/json
 Content-Type: application/json
 

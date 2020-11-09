@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ReportDao">
+    <select id="findReportOpById" resultType="bo.ucb.edu.ingsoft.model.Report">
+        SELECT
+               report_options as reportOpId
+        FROM report_options
+        WHERE
+            report_op_id = #{reportOpId}
+    </select>
+
+    <insert id="reportOpInsert" parameterType="bo.ucb.edu.ingsoft.model.Report">
+        INSERT INTO report_options VALUES (
+            null, #{reportId},#{messageId},#{description},1, #{transaction.txId}, #{transaction.txHost},
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
+        )
+    </insert>
+
+
+    <delete id="reportOpDelete" parameterType="bo.ucb.edu.ingsoft.model.Report">
+        UPDATE report_options
+        SET status = 0
+        WHERE report_op_id = #{reportOpId}
+    </delete>
+
+
+</mapper>
