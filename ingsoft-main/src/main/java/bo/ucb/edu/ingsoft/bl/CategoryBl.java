@@ -39,6 +39,7 @@ public class CategoryBl {
     }
 
     public Category deleteCategory(Category category) {
-        return categoryDao.categorydelete(category);
+        categoryDao.categorydelete(category);
+        return category;
     }
 }

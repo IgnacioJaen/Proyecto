@@ -10,5 +10,5 @@ public interface CategoryDao {
 
     public void categoryupdate(Category category);
 
-    public Category categorydelete(Category category);
+    public void categorydelete(Category category);
 }

@@ -11,5 +11,5 @@ public interface SubcategoryDao {
 
     public void subcategoryupdate(Subcategory subcategory);
 
-    public Subcategory subcategorydelete(Subcategory subcategory);
+    public void subcategorydelete(Subcategory subcategory);
 }

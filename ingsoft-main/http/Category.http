@@ -32,6 +32,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 16
+  "categoryId": 15
 }
 ###

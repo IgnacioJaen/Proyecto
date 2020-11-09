@@ -38,7 +38,8 @@ public class SubcategoryBl {
     }
 
     public Subcategory deleteSubcategory(Subcategory subcategory) {
-        return subcategoryDao.subcategorydelete(subcategory);
+        subcategoryDao.subcategorydelete(subcategory);
+        return subcategory;
     }
 
 

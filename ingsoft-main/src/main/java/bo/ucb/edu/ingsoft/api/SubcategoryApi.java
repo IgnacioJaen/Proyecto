@@ -1,8 +1,5 @@
 package bo.ucb.edu.ingsoft.api;
-
-import bo.ucb.edu.ingsoft.bl.CategoryBl;
 import bo.ucb.edu.ingsoft.bl.SubcategoryBl;
-import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;

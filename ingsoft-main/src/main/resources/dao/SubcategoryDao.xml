@@ -10,7 +10,7 @@
                name as name
         FROM subcategory
         WHERE
-            subcategory_id = #{categoryId}
+            subcategory_id = #{subcategoryId}
     </select>
 
     <insert id="subcategoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
