@@ -13,7 +13,6 @@ public class User {
     private String userPhoto;
     private Integer status;
     private Transaction transaction;
-
     public User(){
 
     }

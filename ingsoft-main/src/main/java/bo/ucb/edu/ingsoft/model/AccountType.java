@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.model;
 
 public class AccountType {
+
     private Integer accountTypeId;
     private String type;
     private Float price;
@@ -14,7 +15,6 @@ public class AccountType {
     public AccountType(){
 
     }
-
     public Integer getAccountTypeId() {
         return accountTypeId;
     }
