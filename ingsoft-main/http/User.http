@@ -1,0 +1,51 @@
+GET http://localhost:8080/v1/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 12
+}
+###
+
+
+POST http://localhost:8080/v1/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "accountTypeId": 1,
+  "userTypeId": 1,
+  "name": "Ignacio",
+  "surname": "Jaen",
+  "birthdate": "2020-10-10",
+  "gender": 1,
+  "email": "igna.jaen@gmail.com",
+  "password": "12345",
+  "userPhoto": "https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg"
+}
+###
+
+PUT http://localhost:8080/v1/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "name": "Edgar",
+  "surname": "Robles",
+  "birthdate": "1992-10-10",
+  "gender": 0,
+  "email": "ed.Robles@gmail.com",
+  "password": "654321",
+  "userPhoto": "https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg"
+}
+###
+
+DELETE http://localhost:8080/v1/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 16
+}
+###
