@@ -71,34 +71,4 @@ public class AccountType {
         this.txUser = txUser;
     }
 
-    public String getTxDate() {
-        return txDate;
-    }
-
-    public void setTxDate(String txDate) {
-        this.txDate = txDate;
-    }
-
-    public String getTxUpdate() {
-        return txUpdate;
-    }
-
-    public void setTxUpdate(String txUpdate) {
-        this.txUpdate = txUpdate;
-    }
-
-    @Override
-    public String toString() {
-        return "AccountType{" +
-                "accountTypeId=" + accountTypeId +
-                ", type='" + type + '\'' +
-                ", price=" + price +
-                ", status=" + status +
-                ", txId=" + txId +
-                ", txHost='" + txHost + '\'' +
-                ", txUser=" + txUser +
-                ", txDate='" + txDate + '\'' +
-                ", txUpdate='" + txUpdate + '\'' +
-                '}';
-    }
 }

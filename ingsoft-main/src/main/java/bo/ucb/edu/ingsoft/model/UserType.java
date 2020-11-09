@@ -41,7 +41,7 @@ public class UserType {
     public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
     }
-    /*TO STRING*/
+
     @Override
     public String toString() {
         return "UserType{" +
