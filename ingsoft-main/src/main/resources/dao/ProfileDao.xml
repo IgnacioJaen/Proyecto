@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.ProfileDao">
-    <select id="findByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Profile">
+    <select id="profilegetp" resultType="bo.ucb.edu.ingsoft.dto.ProfileRequest">
         SELECT
                a.name as name,
                a.surname as surname,
@@ -13,7 +13,7 @@
                c.name as nameCategory
         FROM   user a, category b, subcategory c, profile d, profile_subcategory e
         WHERE
-            a.name= #{nameUser} and a.surname= #{surnameUser}
+            a.user_id= #{userId}
             and a.user_id=d.user_id
             and d.profile_id=e.profile_id
             and c.subcategory_id=e.subcategory_id
