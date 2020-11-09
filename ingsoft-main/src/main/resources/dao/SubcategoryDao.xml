@@ -28,9 +28,8 @@
     </update>
 
     <delete id="subcategorydelete" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
-        DELETE
-        FROM subcategory
-        WHERE
-              subcategory_id = #{subcategoryId}
+        UPDATE subcategory
+        SET status = 0
+        WHERE subcategory_id = #{subcategoryId}
     </delete>
 </mapper>
