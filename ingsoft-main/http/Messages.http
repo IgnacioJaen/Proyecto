@@ -6,6 +6,14 @@ Content-Type: application/json
   "messageId": 9
 }
 ###
+GET http://localhost:8080/v1/messages/request
+Accept: application/json
+Content-Type: application/json
+
+{
+"messageId": 9
+}
+###
 
 
 POST http://localhost:8080/v1/messages

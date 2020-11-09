@@ -17,10 +17,8 @@
 
     <select id="findMessagesReqById" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
         SELECT
-               message_id as messageId,
-               chat_id as chatId,
                date as date,
-               content as content,
+               content as content
         FROM messages
         WHERE
             message_id = #{messageId}

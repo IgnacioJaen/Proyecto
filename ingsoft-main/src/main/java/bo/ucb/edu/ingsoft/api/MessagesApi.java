@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.MessagesBl;
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.Messages;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -28,6 +29,12 @@ public class MessagesApi {
     public Messages findUserById(@RequestBody Messages messages, HttpServletRequest request) {
 
         return messagesBl.findMessagesById(messages);
+    }
+
+    @RequestMapping(value= "/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public MessagesRequest findUserById(@RequestBody MessagesRequest messagesRequest, HttpServletRequest request) {
+
+        return messagesBl.findMessagesReqById(messagesRequest);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

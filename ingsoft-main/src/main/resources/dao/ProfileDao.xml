@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bo.ucb.edu.ingsoft.dao.CategoryDao">
-    <select id="findByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Category">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ProfileDao">
+    <select id="findByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Profile">
         SELECT
                a.name as name,
                a.surname as surname,
