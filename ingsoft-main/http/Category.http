@@ -3,7 +3,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 1
+  "categoryId": 9
 }
 ###
 
@@ -13,7 +13,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Deportes Extremos Outside 1M"
+  "name": "Deportes Extremos Outside 1Md"
 }
 ###
 

@@ -10,7 +10,12 @@
                a.birthdate as birthdate,
                a.gender as gender,
                b.name as nameSubcategory,
-               c.name as nameCategory
+               c.name as nameCategory,
+               a.tx_id as txId,
+               a.tx_host as txHost,
+               a.tx_user as txUserId,
+               a.tx_date as txDate,
+               a.tx_update as txUpdate
         FROM   user a, category b, subcategory c, profile d, profile_subcategory e
         WHERE
             a.user_id= #{userId}
