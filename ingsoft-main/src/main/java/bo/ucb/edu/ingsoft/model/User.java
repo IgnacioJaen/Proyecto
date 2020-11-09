@@ -3,7 +3,9 @@ package bo.ucb.edu.ingsoft.model;
 public class User {
     private Integer userId;
     private Integer accountTypeId;
+    private String accountType;
     private Integer userTypeId;
+    private String userType;
     private String name;
     private String surname;
     private String birthdate;
@@ -16,6 +18,22 @@ public class User {
 
     public User(){
 
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public Integer getUserId() {
@@ -119,7 +137,9 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", accountTypeId=" + accountTypeId +
+                ", accountType='" + accountType + '\'' +
                 ", userTypeId=" + userTypeId +
+                ", userType='" + userType + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthdate='" + birthdate + '\'' +
@@ -128,7 +148,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", userPhoto='" + userPhoto + '\'' +
                 ", status=" + status +
-                ", transaction=" + transaction +
+                ", transaction=" + transaction.toString() +
                 '}';
     }
 }

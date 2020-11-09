@@ -3,7 +3,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 12
+  "userId": 1
 }
 ###
 
@@ -13,13 +13,13 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "accountTypeId": 1,
-  "userTypeId": 1,
-  "name": "Ignacio",
-  "surname": "Jaen",
-  "birthdate": "2020-10-10",
-  "gender": 1,
-  "email": "igna.jaen@gmail.com",
+  "accountTypeId": 2,
+  "userTypeId": 2,
+  "name": "Rodo",
+  "surname": "Mendoza",
+  "birthdate": "1992-10-10",
+  "gender": 0,
+  "email": "ana.mon@gmail.com",
   "password": "12345",
   "userPhoto": "https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg"
 }
@@ -30,9 +30,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "name": "Edgar",
-  "surname": "Robles",
+  "userId": 2,
+  "accountTypeId": 2,
+  "userTypeId": 2,
+  "name": "Alex",
+  "surname": "Montaño",
   "birthdate": "1992-10-10",
   "gender": 0,
   "email": "ed.Robles@gmail.com",

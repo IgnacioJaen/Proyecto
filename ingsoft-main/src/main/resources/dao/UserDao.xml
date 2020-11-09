@@ -5,20 +5,22 @@
 <mapper namespace="bo.ucb.edu.ingsoft.dao.UserDao">
     <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT
-               user_id as userId,
-               account_type_id as accountTypeId,
-               user_type_id as userType,
-               name as name,
-               surname as surname,
-               birthdate as birthdate,
-               gender as gender,
-               email as email,
-               password as password,
-               user_photo as userPhoto,
-               status as status
-        FROM user
+               a.user_id as userId,
+               a.account_type_id as accountTypeId,
+               b.type as accountType,
+               a.user_type_id as userTypeId,
+               c.type as userType,
+               a.name as name,
+               a.surname as surname,
+               a.birthdate as birthdate,
+               a.gender as gender,
+               a.email as email,
+               a.password as password,
+               a.user_photo as userPhoto,
+               a.status as status
+        FROM user a, account_type b, user_type c
         WHERE
-            user_id = #{userId}
+            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
@@ -30,7 +32,7 @@
 
     <update id="userUpdate" parameterType="bo.ucb.edu.ingsoft.model.User">
         UPDATE user
-        SET name = #{name}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
+        SET name = #{name}, account_type_id = #{accountTypeId}, user_type_id = #{userTypeId}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
         WHERE user_id = #{userId}
     </update>
 
