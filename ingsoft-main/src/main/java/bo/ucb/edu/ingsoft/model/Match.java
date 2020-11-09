@@ -1,39 +1,56 @@
 package bo.ucb.edu.ingsoft.model;
 
-import java.util.Date;
 
-public class Photos {
-    private Integer photosId;
-    private Integer categoryId;
-    private String photoPath;
+public class Match {
+    private Integer matchId;
+    private Integer profile1Id;
+    private Integer profile2Id;
+    private Integer dateMatches;
+    private Integer accepted;
     private Integer status;
     private Transaction transaction;
 
-    public Photos() {
+    public Match() {
     }
 
-    public Integer getPhotosId() {
-        return photosId;
+    public Integer getMatchId() {
+        return matchId;
     }
 
-    public void setPhotosId(Integer photosId) {
-        this.photosId = photosId;
+    public void setMatchId(Integer matchId) {
+        this.matchId = matchId;
     }
 
-    public Integer getCategoryId() {
-        return categoryId;
+    public Integer getProfile1Id() {
+        return profile1Id;
     }
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
+    public void setProfile1Id(Integer profile1Id) {
+        this.profile1Id = profile1Id;
     }
 
-    public String getPhotoPath() {
-        return photoPath;
+    public Integer getProfile2Id() {
+        return profile2Id;
     }
 
-    public void setPhotoPath(String photoPath) {
-        this.photoPath = photoPath;
+    public void setProfile2Id(Integer profile2Id) {
+        this.profile2Id = profile2Id;
+    }
+
+    public Integer getDateMatches() {
+        return dateMatches;
+    }
+
+    public void setDateMatches(Integer dateMatches) {
+        this.dateMatches = dateMatches;
+    }
+
+    public Integer getAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(Integer accepted) {
+        this.accepted = accepted;
     }
 
     public Integer getStatus() {
@@ -54,10 +71,12 @@ public class Photos {
 
     @Override
     public String toString() {
-        return "Photos{" +
-                "photosId=" + photosId +
-                ", categoryId=" + categoryId +
-                ", photoPath='" + photoPath + '\'' +
+        return "Match{" +
+                "matchId=" + matchId +
+                ", profile1Id=" + profile1Id +
+                ", profile2Id=" + profile2Id +
+                ", dateMatches=" + dateMatches +
+                ", accepted=" + accepted +
                 ", status=" + status +
                 ", transaction=" + transaction +
                 '}';
