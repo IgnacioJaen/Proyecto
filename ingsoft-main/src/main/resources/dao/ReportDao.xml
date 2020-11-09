@@ -6,6 +6,8 @@
     <select id="findReportById" resultType="bo.ucb.edu.ingsoft.model.Report">
         SELECT
                report_id as reportId,
+               report_op_id as reportOpId,
+               chat_id as chatId,
                status as status,
                tx_id as txId,
                tx_host as txHost,
