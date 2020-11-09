@@ -7,6 +7,15 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:8080/v1/user/userRequest
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+###
+
 
 POST http://localhost:8080/v1/user
 Accept: application/json
@@ -30,9 +39,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 2,
-  "accountTypeId": 2,
-  "userTypeId": 2,
+  "userId": 1,
+  "accountTypeId": 1,
+  "userTypeId": 1,
   "name": "Alex",
   "surname": "Montaño",
   "birthdate": "1992-10-10",

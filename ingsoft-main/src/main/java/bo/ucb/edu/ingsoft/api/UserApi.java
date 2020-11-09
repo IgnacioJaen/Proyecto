@@ -1,6 +1,8 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.UserBl;
+
+import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.User;
 
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -30,6 +32,12 @@ public class UserApi {
         return userBl.findUserById(user);
     }
 
+    @RequestMapping(value = "/userRequest", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserRequest findAccountTypeById(@RequestBody UserRequest userRequest, HttpServletRequest request) {
+
+        return userBl.findUserReqById(userRequest);
+    }
+
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public User insertUser(@RequestBody User user, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -51,4 +59,6 @@ public class UserApi {
     public User deleteUser(@RequestBody User user, HttpServletRequest request) {
         return userBl.deleteUser(user);
     }
+
+
 }

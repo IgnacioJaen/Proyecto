@@ -3,6 +3,8 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.AccountTypeDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 
+import bo.ucb.edu.ingsoft.dto.AccountTypeRequest;
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.AccountType;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +43,9 @@ public class AccountTypeBl {
     public AccountType deleteAccountType(AccountType accountType) {
         accountTypeDao.accountTypeDelete(accountType);
         return accountType;
+    }
+
+    public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest){
+        return accountTypeDao.findAccountTypeReqById(accountTypeRequest);
     }
 }

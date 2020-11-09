@@ -7,6 +7,16 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:8080/v1/accountType/userRequest
+Accept: application/json
+Content-Type: application/json
+
+{
+  "accountTypeId": 2
+}
+
+###
+
 
 POST http://localhost:8080/v1/accountType
 Accept: application/json
@@ -37,3 +47,4 @@ Content-Type: application/json
   "accountTypeId": 3
 }
 ###
+

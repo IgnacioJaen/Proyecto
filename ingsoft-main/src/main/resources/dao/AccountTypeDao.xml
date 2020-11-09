@@ -14,6 +14,16 @@
             account_type_id = #{accountTypeId}
     </select>
 
+    <select id="findAccountTypeReqById" resultType="bo.ucb.edu.ingsoft.dto.AccountTypeRequest">
+        SELECT
+               account_type_id as accountTypeId,
+               type as type,
+               price as price
+        FROM account_type
+        WHERE
+            account_type_id = #{accountTypeId}
+    </select>
+
     <insert id="accountTypeInsert" parameterType="bo.ucb.edu.ingsoft.model.AccountType">
         INSERT INTO account_type VALUES (
             null, #{type}, #{price}, 1, #{transaction.txId}, #{transaction.txHost},

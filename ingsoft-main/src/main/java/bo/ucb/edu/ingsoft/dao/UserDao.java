@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,4 +14,6 @@ public interface UserDao {
     public void userUpdate(User user);
 
     public void userDelete(User user);
+
+    public UserRequest findUserReqById(UserRequest userRequest);
 }

@@ -23,6 +23,24 @@
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
     </select>
 
+    <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
+        SELECT
+               a.user_id as userId,
+               b.type as accountType,
+               c.type as userType,
+               a.name as name,
+               a.surname as surname,
+               a.birthdate as birthdate,
+               a.gender as gender,
+               a.email as email,
+               a.password as password,
+               a.user_photo as userPhoto,
+               a.status as status
+        FROM user a, account_type b, user_type c
+        WHERE
+            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
+    </select>
+
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
         INSERT INTO user VALUES (
             null, #{accountTypeId}, #{userTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},

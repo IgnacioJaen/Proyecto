@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.AccountTypeBl;
+import bo.ucb.edu.ingsoft.dto.AccountTypeRequest;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.AccountType;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -49,5 +50,12 @@ public class AccountTypeApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountType deleteUser(@RequestBody AccountType accountType, HttpServletRequest request) {
         return accountTypeBl.deleteAccountType(accountType);
+    }
+
+
+    @RequestMapping(value = "/userRequest", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public AccountTypeRequest findAccountTypeById(@RequestBody AccountTypeRequest accountTypeRequest, HttpServletRequest request) {
+
+        return accountTypeBl.findAccountTypeReqById(accountTypeRequest);
     }
 }

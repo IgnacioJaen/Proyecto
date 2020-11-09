@@ -3,7 +3,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 8
+  "categoryId": 1
 }
 ###
 

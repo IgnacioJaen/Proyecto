@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.UserDao;
 
+import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.model.User;
@@ -43,4 +44,9 @@ public class UserBl {
         userDao.userDelete(user);
         return user;
     }
+
+    public UserRequest findUserReqById(UserRequest userRequest) {
+        return userDao.findUserReqById(userRequest);
+    }
+
 }
