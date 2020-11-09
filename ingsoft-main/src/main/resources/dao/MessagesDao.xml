@@ -15,6 +15,17 @@
             message_id = #{messageId}
     </select>
 
+    <select id="findMessagesReqById" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
+        SELECT
+               message_id as messageId,
+               chat_id as chatId,
+               date as date,
+               content as content,
+        FROM messages
+        WHERE
+            message_id = #{messageId}
+    </select>
+
     <insert id="messagesInsert" parameterType="bo.ucb.edu.ingsoft.model.Messages">
         INSERT INTO messages VALUES (
             null, #{chatId}, #{date}, #{content}, 1, #{transaction.txId}, #{transaction.txHost},

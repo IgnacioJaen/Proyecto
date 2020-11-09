@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Messages;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -7,6 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MessagesDao {
 
     public Messages findMessagesById(Messages messages);
+
+    public MessagesRequest findMessagesReqById(MessagesRequest messagesRequest);
 
     public void messagesInsert(Messages messages);
 

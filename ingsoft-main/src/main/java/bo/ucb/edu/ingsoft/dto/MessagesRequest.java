@@ -1,14 +1,14 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
 
-public class Messages {
+import bo.ucb.edu.ingsoft.model.Transaction;
+
+public class MessagesRequest {
     private Integer messageId;
     private Integer chatId;
     private String date;
     private String content;
-    private Integer status;
-    private Transaction transaction;
 
-    public Messages(){
+    public MessagesRequest(){
     }
 
     public Integer getMessageId() {
@@ -43,31 +43,13 @@ public class Messages {
         this.content = content;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
     @Override
     public String toString() {
-        return "Messages{" +
+        return "MessagesRequest{" +
                 "messageId=" + messageId +
                 ", chatId=" + chatId +
                 ", date='" + date + '\'' +
                 ", content='" + content + '\'' +
-                ", status=" + status +
-                ", transaction=" + transaction +
                 '}';
     }
 }

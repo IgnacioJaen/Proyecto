@@ -36,7 +36,6 @@ public class MessagesApi {
         Transaction transaction = transactionUtil.createTransaction(request);
         messagesBl.insertMessages(messages,transaction);
         return  messages;
-
     }
 
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
