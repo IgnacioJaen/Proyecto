@@ -21,10 +21,9 @@
     </insert>
 
     <delete id="deleteChat" parameterType="bo.ucb.edu.ingsoft.model.Chat">
-        DELETE
-        FROM chat
-        WHERE
-              chat_id = #{chatId}
+        UPDATE chat
+        SET status = 0
+        WHERE chat_id = #{chatId}
     </delete>
 
 

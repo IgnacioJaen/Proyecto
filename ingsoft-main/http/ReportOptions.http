@@ -1,0 +1,40 @@
+GET http://localhost:8080/v1/reportOptions
+Accept: application/json
+Content-Type: application/json
+
+{
+  "reportId": 2,
+  "messageId": 1,
+  "description": "Mal Vocabulario"
+}
+###
+
+
+POST http://localhost:8080/v1/reportOptions
+Accept: application/json
+Content-Type: application/json
+
+{
+  "chatId": 7
+}
+
+###
+
+PUT http://localhost:8080/v1/reportOptions
+Accept: application/json
+Content-Type: application/json
+
+{
+  "categoryId": 8,
+  "name": "Ximena"
+}
+
+###
+DELETE http://localhost:8080/v1/reportOptions
+Accept: application/json
+Content-Type: application/json
+
+{
+  "reportId": 3
+}
+###
