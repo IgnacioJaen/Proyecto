@@ -27,7 +27,6 @@ public class CategoryApi {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Category findById(@RequestBody Category category, HttpServletRequest request) {
-
         return categoryBl.findCategoryById(category);
     }
 
