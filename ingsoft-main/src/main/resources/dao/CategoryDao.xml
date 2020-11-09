@@ -27,10 +27,9 @@
     </update>
 
     <delete id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
-        DELETE
-        FROM category
-        WHERE
-              category_id = #{categoryId}
+        UPDATE category
+        SET status = 0
+        WHERE category_id = #{categoryId}
     </delete>
 
 
