@@ -16,10 +16,10 @@ public class AccountType {
 
 
 
-
     public void setTxId(Integer txId) {
         this.transaction.setTxId(txId);
     }
+
 
 
     public void setTxHost(String txHost) {
@@ -32,16 +32,17 @@ public class AccountType {
     }
 
 
-
     public void setTxDate(Date txDate) {
         this.transaction.setTxDate(txDate);
     }
-
 
     public void setTxUpdate(Date txUpdate) {
         this.transaction.setTxUpdate(txUpdate);
     }
 
+    public Integer getAccountTypeId() {
+        return accountTypeId;
+    }
 
     public void setAccountTypeId(Integer accountTypeId) {
         this.accountTypeId = accountTypeId;
