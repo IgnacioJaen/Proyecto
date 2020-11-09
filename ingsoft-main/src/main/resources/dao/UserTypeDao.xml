@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.UserTypeDao">
+    <select id="findByUserTypeId" resultType="bo.ucb.edu.ingsoft.model.UserType">
+        SELECT
+               user_type_id as userTypeId,
+               type as type,
+               status as status
+        FROM user_type
+        WHERE
+            user_type_id = #{userTypeId}
+    </select>
+
+    <insert id="userTypeInsert" parameterType="bo.ucb.edu.ingsoft.model.UserType">
+        INSERT INTO user_type VALUES (
+            null, #{type}, 1, #{transaction.txId}, #{transaction.txHost},
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
+        )
+    </insert>
+
+    <update id="userTypeUpdate" parameterType="bo.ucb.edu.ingsoft.model.UserType">
+        UPDATE user_type
+        SET type = #{type}
+        WHERE user_type_id = #{userTypeId}
+    </update>
+
+    <delete id="userTypeDelete" parameterType="bo.ucb.edu.ingsoft.model.UserType">
+        DELETE
+        FROM user_type
+        WHERE
+             user_type_id = #{userTypeId}
+    </delete>
+
+
+</mapper>

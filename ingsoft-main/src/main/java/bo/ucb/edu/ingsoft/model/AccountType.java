@@ -6,15 +6,12 @@ public class AccountType {
     private String type;
     private Float price;
     private Integer status;
-    private Integer txId;
-    private String txHost;
-    private Integer txUser;
-    private String txDate;
-    private String txUpdate;
+    private Transaction transaction;
 
     public AccountType(){
 
     }
+
     public Integer getAccountTypeId() {
         return accountTypeId;
     }
@@ -47,28 +44,22 @@ public class AccountType {
         this.status = status;
     }
 
-    public Integer getTxId() {
-        return txId;
+    public Transaction getTransaction() {
+        return transaction;
     }
 
-    public void setTxId(Integer txId) {
-        this.txId = txId;
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 
-    public String getTxHost() {
-        return txHost;
+    @Override
+    public String toString() {
+        return "AccountType{" +
+                "accountTypeId=" + accountTypeId +
+                ", type='" + type + '\'' +
+                ", price=" + price +
+                ", status=" + status +
+                ", transaction=" + transaction +
+                '}';
     }
-
-    public void setTxHost(String txHost) {
-        this.txHost = txHost;
-    }
-
-    public Integer getTxUser() {
-        return txUser;
-    }
-
-    public void setTxUser(Integer txUser) {
-        this.txUser = txUser;
-    }
-
 }

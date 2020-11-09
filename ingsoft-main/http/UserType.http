@@ -1,0 +1,37 @@
+GET http://localhost:8080/v1/userType
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userTypeId": 1
+}
+###
+
+
+POST http://localhost:8080/v1/userType
+Accept: application/json
+Content-Type: application/json
+
+{
+  "type": "Admi"
+}
+###
+
+PUT http://localhost:8080/v1/userType
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userTypeId": 5,
+  "type": "Client"
+}
+###
+
+DELETE http://localhost:8080/v1/userType
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userTypeId": 5
+}
+###
