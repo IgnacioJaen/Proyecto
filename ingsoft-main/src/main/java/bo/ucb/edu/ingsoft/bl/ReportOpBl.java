@@ -1,0 +1,46 @@
+package bo.ucb.edu.ingsoft.bl;
+
+import bo.ucb.edu.ingsoft.dao.ReportDao;
+import bo.ucb.edu.ingsoft.dao.ReportOptionsDao;
+import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.model.Report;
+import bo.ucb.edu.ingsoft.model.ReportOptions;
+import bo.ucb.edu.ingsoft.model.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReportOpBl {
+    private ReportOptionsDao reportOptionsDao;
+    private TransactionDao transactionDao;
+
+    @Autowired
+    public ReportOpBl(ReportOptionsDao reportOptionsDao, TransactionDao transactionDao) {
+        this.reportOptionsDao = reportOptionsDao;
+        this.transactionDao = transactionDao;
+    }
+
+    public ReportOptions findReportById(ReportOptions reportOptions) {
+
+        return  reportOptionsDao.findReportOpById(reportOptions);
+    }
+
+    public ReportOptions insertReportOp(ReportOptions reportOptions, Transaction transaction) {
+        reportOptions.setTransaction(transaction);
+        reportOptionsDao.reportOpInsert(reportOptions);
+        Integer categoryId = transactionDao.getLastInsertId();
+        reportOptions.setReportId(categoryId);
+        return reportOptions;
+    }
+
+    public ReportOptions updateReportOp(ReportOptions  reportOptions, Transaction transaction) {
+        reportOptions.setTransaction(transaction);
+        reportOptionsDao.reportOpUpdate(reportOptions);
+        return reportOptions;
+    }
+
+    public ReportOptions deleteReportOp(ReportOptions reportOptions) {
+        reportOptionsDao.reportOpDelete(reportOptions);
+        return reportOptions;
+    }
+}

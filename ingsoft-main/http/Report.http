@@ -1,28 +1,28 @@
-GET http://localhost:8080/v1/chat
+GET http://localhost:8080/v1/report
 Accept: application/json
 Content-Type: application/json
 
 {
-  "chatId": 2
+  "reportId": 2
 }
 ###
 
 
-POST http://localhost:8080/v1/chat
+POST http://localhost:8080/v1/report
 Accept: application/json
 Content-Type: application/json
 
 {
-  "profile1Id": 9,
-  "profile2Id": 8
+  "chatId": 7
 }
 ###
 
-DELETE http://localhost:8080/v1/chat
+
+DELETE http://localhost:8080/v1/report
 Accept: application/json
 Content-Type: application/json
 
 {
-  "chatId": 12
+  "reportId": 3
 }
 ###
