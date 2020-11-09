@@ -3,7 +3,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "accountTypeId": 4
+  "accountTypeId": 2
 }
 ###
 
@@ -34,6 +34,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "accountTypeId": 3
+  "accountTypeId": 2
 }
 ###

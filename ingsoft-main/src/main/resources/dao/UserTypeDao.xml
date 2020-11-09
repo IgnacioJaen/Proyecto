@@ -27,10 +27,9 @@
     </update>
 
     <delete id="userTypeDelete" parameterType="bo.ucb.edu.ingsoft.model.UserType">
-        DELETE
-        FROM user_type
-        WHERE
-             user_type_id = #{userTypeId}
+        UPDATE user_type
+        SET status = 0
+        WHERE user_type_id = #{userTypeId}
     </delete>
 
 

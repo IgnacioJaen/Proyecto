@@ -28,10 +28,9 @@
     </update>
 
     <delete id="accountTypeDelete" parameterType="bo.ucb.edu.ingsoft.model.AccountType">
-        DELETE
-        FROM account_type
-        WHERE
-             account_type_id = #{accountTypeId}
+        UPDATE account_type
+        SET status = 0
+        WHERE account_type_id = #{accountTypeId}
     </delete>
 
 
