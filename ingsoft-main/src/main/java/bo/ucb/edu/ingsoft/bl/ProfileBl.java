@@ -15,7 +15,7 @@ public class ProfileBl {
         this.profileDao = profileDao;
     }
 
-    public ProfileRequest profileget(String nameUser, String surnameUser) {
-        return profileDao.profilegetp(nameUser,surnameUser);
+    public ProfileRequest profileget(Integer userId) {
+        return profileDao.profilegetp(userId);
     }
 }
