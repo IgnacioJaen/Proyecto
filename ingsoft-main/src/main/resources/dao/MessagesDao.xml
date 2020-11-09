@@ -9,7 +9,12 @@
                chat_id as chatId,
                date as date,
                content as content,
-               status as status
+               status as status,
+               tx_id as txId,
+               tx_host as txHost,
+               tx_user as txUserId,
+               tx_date as txDate,
+               tx_update as txUpdate
         FROM messages
         WHERE
             message_id = #{messageId}

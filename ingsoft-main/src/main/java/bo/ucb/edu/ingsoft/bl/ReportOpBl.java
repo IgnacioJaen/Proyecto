@@ -35,6 +35,7 @@ public class ReportOpBl {
         reportOptions.setTransaction(transaction);
         reportOptionsDao.reportOpInsert(reportOptions);
         Integer reportOpId = transactionDao.getLastInsertId();
+        reportOptions.setTransaction(transaction);
         reportOptions.setReportOpId(reportOpId);
         return reportOptions;
     }
