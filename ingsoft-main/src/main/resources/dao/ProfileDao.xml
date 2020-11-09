@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CategoryDao">
+    <select id="findByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Category">
+        SELECT
+               a.name as name,
+               a.surname as surname,
+               a.birthdate as birthdate,
+               a.gender as gender,
+               b.name as nameSubcategory,
+               c.name as nameCategory
+        FROM   user a, category b, subcategory c, profile d, profile_subcategory e
+        WHERE
+            a.name= #{nameUser} and a.surname= #{surnameUser}
+            and a.user_id=d.user_id
+            and d.profile_id=e.profile_id
+            and c.subcategory_id=e.subcategory_id
+            and c.category_id= b.category_id
+
+    </select>
+
+
+
+
+</mapper>

@@ -19,6 +19,7 @@ public class CategoryBl {
     }
 
     public Category findCategoryById(Category category) {
+
         return  categoryDao.findByCategoryId(category);
     }
 
