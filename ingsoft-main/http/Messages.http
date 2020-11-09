@@ -1,0 +1,29 @@
+GET http://localhost:8080/v1/messages
+Accept: application/json
+Content-Type: application/json
+
+{
+  "messageId": 9
+}
+###
+
+
+POST http://localhost:8080/v1/messages
+Accept: application/json
+Content-Type: application/json
+
+{
+  "chatId": 1,
+  "date": "2020-10-29 22:12:10",
+  "content": "Hola Mundo"
+}
+###
+
+
+DELETE http://localhost:8080/v1/messages
+Accept: application/json
+Content-Type: application/json
+
+{
+  "messageId": 9
+}
