@@ -8,7 +8,12 @@
                account_type_id as accountTypeId,
                type as type,
                price as price,
-               status as status
+               status as status,
+               tx_id as txId,
+               tx_host as txHost,
+               tx_user as txUserId,
+               tx_date as txDate,
+               tx_update as txUpdate
         FROM account_type
         WHERE
             account_type_id = #{accountTypeId}

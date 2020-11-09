@@ -7,7 +7,12 @@
         SELECT
                user_type_id as userTypeId,
                type as type,
-               status as status
+               status as status,
+               tx_id as txId,
+               tx_host as txHost,
+               tx_user as txUserId,
+               tx_date as txDate,
+               tx_update as txUpdate
         FROM user_type
         WHERE
             user_type_id = #{userTypeId}
