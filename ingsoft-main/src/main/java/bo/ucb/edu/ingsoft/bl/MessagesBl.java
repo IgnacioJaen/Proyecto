@@ -3,6 +3,7 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.MessagesDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Messages;
 import bo.ucb.edu.ingsoft.model.Transaction;
 
@@ -36,5 +37,9 @@ public class MessagesBl {
     public Messages deleteMessages(Messages messages) {
         messagesDao.messagesDelete(messages);
         return messages;
+    }
+
+    public MessagesRequest findMessagesReqById(MessagesRequest messagesRequest){
+        return messagesDao.findMessagesReqById(messagesRequest);
     }
 }
