@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.ChatBl;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -26,6 +27,11 @@ public class ChatApi {
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat findChatById(@RequestBody Chat chat, HttpServletRequest request) {
         return chatBl.findChatById(chat);
+    }
+
+    @RequestMapping(value = "/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ChatRequest findChatReqById(@RequestBody ChatRequest chatRequest, HttpServletRequest request) {
+        return chatBl.findChatReqById(chatRequest);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

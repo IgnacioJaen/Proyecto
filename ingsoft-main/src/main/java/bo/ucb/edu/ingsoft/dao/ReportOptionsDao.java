@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
 import org.apache.ibatis.annotations.Mapper;
@@ -7,6 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ReportOptionsDao {
     public ReportOptions findReportOpById(ReportOptions reportOptions);
+
+    public ReportOpRequest findReportOpReqById(ReportOpRequest reportOpRequest);
 
     public void reportOpInsert(ReportOptions reportOptions);
 

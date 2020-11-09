@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.ChatDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class ChatBl {
 
     public Chat findChatById(Chat chat) {
         return chatDao.findChatById(chat);
+    }
+
+    public ChatRequest findChatReqById(ChatRequest chatRequest) {
+        return chatDao.findChatReqById(chatRequest);
     }
 
     public Chat createChat(Chat chat, Transaction transaction) {

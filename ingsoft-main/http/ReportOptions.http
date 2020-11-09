@@ -6,6 +6,14 @@ Content-Type: application/json
   "reportOpId": 3
 }
 ###
+GET http://localhost:8080/v1/reportOptions/request
+Accept: application/json
+Content-Type: application/json
+
+{
+  "reportOpId": 3
+}
+###
 
 
 POST http://localhost:8080/v1/reportOptions

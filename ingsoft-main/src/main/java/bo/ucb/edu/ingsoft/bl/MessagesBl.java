@@ -42,4 +42,9 @@ public class MessagesBl {
     public MessagesRequest findMessagesReqById(MessagesRequest messagesRequest){
         return messagesDao.findMessagesReqById(messagesRequest);
     }
+    /*
+     public MessagesRequest findMessagesReqById(String date, String content){
+        return messagesDao.findMessagesReqById(date, content);
+    }
+     */
 }

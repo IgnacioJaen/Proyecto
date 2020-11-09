@@ -6,6 +6,16 @@
     <select id="findReportOpById" resultType="bo.ucb.edu.ingsoft.model.ReportOptions">
         SELECT
                report_op_id as reportOpId,
+               description as description,
+               status as status
+        FROM report_options
+        WHERE
+            report_op_id = #{reportOpId}
+    </select>
+
+    <select id="findReportOpReqById" resultType="bo.ucb.edu.ingsoft.dto.ReportOpRequest">
+        SELECT
+               report_op_id as reportOpId,
                description as description
         FROM report_options
         WHERE

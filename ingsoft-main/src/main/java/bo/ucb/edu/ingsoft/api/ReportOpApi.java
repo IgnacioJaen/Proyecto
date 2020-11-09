@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.ReportBl;
 import bo.ucb.edu.ingsoft.bl.ReportOpBl;
+import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Report;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -28,6 +29,11 @@ public class ReportOpApi {
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions findById(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         return reportOpBl.findReportOpById(reportOptions);
+    }
+
+    @RequestMapping(value="/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ReportOpRequest findById(@RequestBody ReportOpRequest reportOpRequest, HttpServletRequest request) {
+        return reportOpBl.findReportOpReqById(reportOpRequest);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

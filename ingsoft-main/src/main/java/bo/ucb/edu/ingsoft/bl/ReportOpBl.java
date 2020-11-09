@@ -3,6 +3,7 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.ReportDao;
 import bo.ucb.edu.ingsoft.dao.ReportOptionsDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Report;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -23,6 +24,11 @@ public class ReportOpBl {
     public ReportOptions findReportOpById(ReportOptions reportOptions) {
 
         return  reportOptionsDao.findReportOpById(reportOptions);
+    }
+
+    public ReportOpRequest findReportOpReqById(ReportOpRequest reportOpRequest) {
+
+        return  reportOptionsDao.findReportOpReqById(reportOpRequest);
     }
 
     public ReportOptions insertReportOp(ReportOptions reportOptions, Transaction transaction) {

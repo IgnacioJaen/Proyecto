@@ -13,6 +13,17 @@
             chat_id = #{chatId}
     </select>
 
+    <select id="findChatReqById" resultType="bo.ucb.edu.ingsoft.dto.ChatRequest">
+        SELECT
+               c.chat_id as chatId,
+               u.name as profile2UserName
+        FROM chat c, profile p, user u
+        WHERE
+            c.chat_id = #{chatId} and
+            c.profile2_id = p.profile_id and
+            p.user_id = u.user_id
+    </select>
+
     <insert id="createChat" parameterType="bo.ucb.edu.ingsoft.model.Chat">
         INSERT INTO chat VALUES (
             null, #{profile1Id}, #{profile2Id}, 1, #{transaction.txId}, #{transaction.txHost},

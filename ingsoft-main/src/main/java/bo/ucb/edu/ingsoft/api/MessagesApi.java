@@ -36,6 +36,12 @@ public class MessagesApi {
 
         return messagesBl.findMessagesReqById(messagesRequest);
     }
+    /*
+    @RequestMapping(value= "/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public MessagesRequest findUserById(@RequestBody String date, String content, HttpServletRequest request) {
+
+        return messagesBl.findMessagesReqById(date,content);
+    }*/
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages insertMessages(@RequestBody Messages messages, HttpServletRequest request) {
