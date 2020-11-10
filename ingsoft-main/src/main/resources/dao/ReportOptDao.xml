@@ -15,7 +15,7 @@
                tx_update as txUpdate
         FROM report_options
         WHERE
-            report_op_id = #{reportOpId}
+            report_op_id = #{reportOpId} and status=1
     </select>
 
     <select id="findReportOpReqById" resultType="bo.ucb.edu.ingsoft.dto.ReportOpRequest">
@@ -24,7 +24,7 @@
                description as description
         FROM report_options
         WHERE
-            report_op_id = #{reportOpId}
+            report_op_id = #{reportOpId} and status=1
     </select>
 
     <insert id="reportOpInsert" parameterType="bo.ucb.edu.ingsoft.model.ReportOptions">
@@ -37,7 +37,7 @@
     <update id="reportOpUpdate" parameterType="bo.ucb.edu.ingsoft.model.ReportOptions">
         UPDATE report_options
         SET description = #{description}
-        WHERE report_op_id = #{reportOpId}
+        WHERE report_op_id = #{reportOpId} and status=1
 
     </update>
 

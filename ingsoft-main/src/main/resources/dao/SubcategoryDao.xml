@@ -16,7 +16,7 @@
                tx_update as txUpdate
         FROM subcategory
         WHERE
-            subcategory_id = #{subcategoryId}
+            subcategory_id = #{subcategoryId} and status=1
     </select>
 
     <insert id="subcategoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
@@ -29,7 +29,7 @@
     <update id="subcategoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
         UPDATE subcategory
         SET name = #{name}
-        WHERE subcategory_id = #{subcategoryId}
+        WHERE subcategory_id = #{subcategoryId} and status=1
 
     </update>
 

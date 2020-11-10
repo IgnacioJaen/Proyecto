@@ -15,7 +15,7 @@
                tx_update as txUpdate
         FROM user_type
         WHERE
-            user_type_id = #{userTypeId}
+            user_type_id = #{userTypeId} and status=1
     </select>
 
     <insert id="userTypeInsert" parameterType="bo.ucb.edu.ingsoft.model.UserType">
@@ -28,7 +28,7 @@
     <update id="userTypeUpdate" parameterType="bo.ucb.edu.ingsoft.model.UserType">
         UPDATE user_type
         SET type = #{type}
-        WHERE user_type_id = #{userTypeId}
+        WHERE user_type_id = #{userTypeId} and status=1
     </update>
 
     <delete id="userTypeDelete" parameterType="bo.ucb.edu.ingsoft.model.UserType">

@@ -26,6 +26,7 @@
         FROM user a, account_type b, user_type c
         WHERE
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
+            and status=1
     </select>
 
     <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
@@ -44,6 +45,7 @@
         FROM user a, account_type b, user_type c
         WHERE
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
+            and status=1
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
@@ -56,7 +58,7 @@
     <update id="userUpdate" parameterType="bo.ucb.edu.ingsoft.model.User">
         UPDATE user
         SET name = #{name}, account_type_id = #{accountTypeId}, user_type_id = #{userTypeId}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
-        WHERE user_id = #{userId}
+        WHERE user_id = #{userId} and status=1
     </update>
 
     <delete id="userDelete" parameterType="bo.ucb.edu.ingsoft.model.User">

@@ -16,7 +16,7 @@
                tx_update as txUpdate
         FROM report
         WHERE
-            report_id = #{reportId}
+            report_id = #{reportId} and status=1
     </select>
 
     <insert id="reportInsert" parameterType="bo.ucb.edu.ingsoft.model.Report">
