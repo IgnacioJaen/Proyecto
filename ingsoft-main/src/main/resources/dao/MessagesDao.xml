@@ -17,7 +17,7 @@
                tx_update as txUpdate
         FROM messages
         WHERE
-            message_id = #{messageId}
+            message_id = #{messageId} and status=1
     </select>
 
     <select id="findMessagesReqById" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
@@ -27,7 +27,7 @@
                content as content
         FROM messages
         WHERE
-            message_id = #{messageId}
+            message_id = #{messageId} and status=1
     </select>
 
     <insert id="messagesInsert" parameterType="bo.ucb.edu.ingsoft.model.Messages">

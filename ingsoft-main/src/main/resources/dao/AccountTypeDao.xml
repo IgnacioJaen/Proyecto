@@ -16,7 +16,7 @@
                tx_update as txUpdate
         FROM account_type
         WHERE
-            account_type_id = #{accountTypeId}
+            account_type_id = #{accountTypeId} and status=1
     </select>
 
     <select id="findAccountTypeReqById" resultType="bo.ucb.edu.ingsoft.dto.AccountTypeRequest">
@@ -26,7 +26,7 @@
                price as price
         FROM account_type
         WHERE
-            account_type_id = #{accountTypeId}
+            account_type_id = #{accountTypeId} and status=1
     </select>
 
     <insert id="accountTypeInsert" parameterType="bo.ucb.edu.ingsoft.model.AccountType">
@@ -39,7 +39,7 @@
     <update id="accountTypeUpdate" parameterType="bo.ucb.edu.ingsoft.model.AccountType">
         UPDATE account_type
         SET type = #{type}, price = #{price}
-        WHERE account_type_id = #{accountTypeId}
+        WHERE account_type_id = #{accountTypeId} and status=1
     </update>
 
     <delete id="accountTypeDelete" parameterType="bo.ucb.edu.ingsoft.model.AccountType">

@@ -23,5 +23,6 @@
             and d.profile_id=e.profile_id
             and c.subcategory_id=e.subcategory_id
             and c.category_id= b.category_id
+            and status=1
     </select>
 </mapper>

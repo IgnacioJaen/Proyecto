@@ -15,7 +15,7 @@
                tx_update as txUpdate
         FROM category
         WHERE
-            category_id = #{categoryId}
+            category_id = #{categoryId} and status=1
     </select>
 
     <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
@@ -28,14 +28,14 @@
     <update id="categoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Category">
         UPDATE category
         SET name = #{name}
-        WHERE category_id = #{categoryId}
+        WHERE category_id = #{categoryId} and status=1
 
     </update>
 
     <update id="categorydelete" parameterType="bo.ucb.edu.ingsoft.model.Category">
         UPDATE category
         SET status = 0
-        WHERE category_id = #{categoryId}
+        WHERE category_id = #{categoryId} and status=1
     </update>
 
 
