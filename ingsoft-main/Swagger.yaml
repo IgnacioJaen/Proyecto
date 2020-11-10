@@ -37,8 +37,6 @@ tags:
     description: "operations for viewing and adding a friend"
   - name: "messages"
     description: "gets messages"
-  - name: "user_type"
-    description: "operations with C.R.U.D for user type"
 paths:
   /users:
     post:
@@ -93,7 +91,7 @@ paths:
   /profile/{profileId}:
     get:
       tags:
-        - "user"
+        - "users"
       summary: "Get profile"
       operationId: "getProfileById"
       parameters:
@@ -120,7 +118,7 @@ paths:
         "404":
           description: "Category not found"
 
-  /users/{userId}/profile/{profileId}:
+  /users/{userId}/profile:
     put:
       tags:
         - "users"
@@ -129,14 +127,6 @@ paths:
         \ email."
       parameters:
         - name: "userId"
-          in: "path"
-          description: "The ID of the user that wants to edit its data"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "profileId"
           in: "path"
           description: "The ID of the user that wants to edit its data"
           required: true
@@ -156,7 +146,7 @@ paths:
           description: "Invalid user supplied"
         "404":
           description: "User not found"
-  /userchats/{userId}/{friendUserId}:
+  /userchats/{userId}:
     post:
       tags:
         - "users"
@@ -166,14 +156,6 @@ paths:
         - name: "userId"
           in: "path"
           description: "The ID of the user that added another user"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "friendUserId"
-          in: "path"
-          description: "The ID of the accepted friend"
           required: true
           style: "simple"
           explode: false
@@ -193,37 +175,13 @@ paths:
                     type: "integer"
                 items:
                   type: "object"
-  /messages/{messageId}/chats/{chatId}/{user_one_id}/{user_two_id}:
+  /messages/{messageId}:
     get:
       tags:
         - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getMessagesByIdandChatId"
       parameters:
-        - name: "user_one_id"
-          in: "path"
-          description: "The id of one of the users"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "user_two_id"
-          in: "path"
-          description: "The id of one of the users"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "chatId"
-          in: "path"
-          description: "The id of the chat, user must have at least one friend added"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
         - name: "messageId"
           in: "path"
           description: "The id of one of the messages of the chat id"
@@ -246,7 +204,7 @@ paths:
           description: "Invalid chatId supplied"
         "404":
           description: "ChatId not found"
-  /users/{userId}/messages/{content}:
+  /users/{userId}/messages:
     post:
       tags:
         - "messages"
@@ -261,14 +219,6 @@ paths:
           explode: false
           schema:
             type: "integer"
-        - name: "content"
-          in: "path"
-          description: "content of the message"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -276,29 +226,13 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ApiResponse"
-  /chats/{chatId}/{user_one_id}/{user_two_id}:
+  /chats/{user_two_id}:
     post:
       tags:
         - "reports"
       summary: "Adds a report to the reported users list"
       operationId: "addsAReport"
       parameters:
-        - name: "chatId"
-          in: "path"
-          description: "chatId where the report was made"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "user_one_id"
-          in: "path"
-          description: "The id of one of the users"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
         - name: "user_two_id"
           in: "path"
           description: "The id of one of the users"
@@ -314,7 +248,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ApiResponse"
-  /users/{userId}/chats/{chatId}:
+  /users/{userId}/chats:
     get:
       tags:
         - "chats"
@@ -329,14 +263,6 @@ paths:
           explode: false
           schema:
             type: "integer"
-        - name: "chatId"
-          in: "path"
-          description: "The id of the chat, user must have at least one friend added"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -351,7 +277,7 @@ paths:
           description: "Invalid chatId supplied"
         "404":
           description: "ChatId not found"
-  /users/{userId}/userTypes/{userType}/reports/{reportId}/users/{username}:
+  /users/{userId}/userTypes:
     get:
       tags:
         - "chats"
@@ -366,30 +292,7 @@ paths:
           explode: false
           schema:
             type: "integer"
-        - name: "userType"
-          in: "path"
-          description: "The type of user, user must be an administrator"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "reportId"
-          in: "path"
-          description: "The report id"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "username"
-          in: "path"
-          description: "The username of the reported person"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "string"
+
       responses:
         "200":
           description: "successful operation"
@@ -404,7 +307,7 @@ paths:
           description: "Invalid chatId supplied"
         "404":
           description: "ChatId not found"
-  /users/{userId}/userTypes/{userType}/reports/{reportId}/chats/{chatId}:
+  /users/{userId}/reports:
     get:
       tags:
         - "chats"
@@ -419,30 +322,8 @@ paths:
           explode: false
           schema:
             type: "integer"
-        - name: "userType"
-          in: "path"
-          description: "The type of user, user must be an administrator"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "reportId"
-          in: "path"
-          description: "The report id"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
-        - name: "chatId"
-          in: "path"
-          description: "The chatId of the reported conversation"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
+
+
       responses:
         "200":
           description: "successful operation"
@@ -468,14 +349,14 @@ paths:
       responses:
         "405":
           description: "Invalid input"
-  /categories/{nameCategory}:
+  /categories/{categoryId}:
     get:
       tags:
         - "category"
       summary: "Get category by category name"
       operationId: "getCategoryByName"
       parameters:
-        - name: "nameCategory"
+        - name: "categoryId"
           in: "path"
           description: "The name that needs to be fetched. Use category1 for testing."
           required: true
@@ -504,7 +385,7 @@ paths:
       description: "This can only be done by the created category."
       operationId: "updateCategory"
       parameters:
-        - name: "nameCategory"
+        - name: "categoryId"
           in: "path"
           description: "name that need to be updated"
           required: true
@@ -531,7 +412,7 @@ paths:
       description: "This can only be done by the created category."
       operationId: "deleteCategory"
       parameters:
-        - name: "nameCategory"
+        - name: "categoryId"
           in: "path"
           description: "The name that needs to be deleted"
           required: true
@@ -544,14 +425,14 @@ paths:
           description: "Invalid nameCategory supplied"
         "404":
           description: "Category not found"
-  /categories/{nameCategory}/Image:
+  /categories/{categoryId}/Image:
     post:
       tags:
         - "category"
       summary: "uploads an image"
       operationId: "uploadFile"
       parameters:
-        - name: "nameCategory"
+        - name: "categoryId"
           in: "path"
           description: "nameCategory to update"
           required: true
@@ -583,14 +464,14 @@ paths:
       responses:
         "405":
           description: "Invalid input"
-  /subcategories/{nameSubcategory}:
+  /subcategories/{subcategoryId}:
     get:
       tags:
         - "sub_category"
       summary: "Get category by subcategory name"
       operationId: "getSubcategoryByName"
       parameters:
-        - name: "nameSubcategory"
+        - name: "subcategoryId"
           in: "path"
           description: "The name that needs to be fetched. Use subcategory1 for testing."
           required: true
@@ -619,7 +500,7 @@ paths:
       description: "This can only be done by the created subcategory."
       operationId: "updateSubcategory"
       parameters:
-        - name: "nameSubcategory"
+        - name: "subcategoryId"
           in: "path"
           description: "name that need to be updated"
           required: true
@@ -646,7 +527,7 @@ paths:
       description: "This can only be done by the created subcategory."
       operationId: "deleteSubcategory"
       parameters:
-        - name: "nameSubcategory"
+        - name: "subcategoryId"
           in: "path"
           description: "The name that needs to be deleted"
           required: true
@@ -659,14 +540,14 @@ paths:
           description: "Invalid nameSubcategory supplied"
         "404":
           description: "Subcategory not found"
-  /categories/{nameSubcategory}/Image:
+  /categories/{subcategoryId}/Image:
     post:
       tags:
         - "sub_category"
       summary: "uploads an image"
       operationId: "uploadFileSubcategory"
       parameters:
-        - name: "nameSubcategory"
+        - name: "subcategoryId"
           in: "path"
           description: "nameSubcategory to update"
           required: true
