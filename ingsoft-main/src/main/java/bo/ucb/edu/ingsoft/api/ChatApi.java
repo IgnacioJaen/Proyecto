@@ -19,21 +19,29 @@ import javax.servlet.http.HttpServletRequest;
 public class ChatApi {
     private ChatBl chatBl;
 
+    //Constructor de la clase ChatApi recibe un parametro de tipo ChatBl
     @Autowired
     public ChatApi(ChatBl chatBl) {
         this.chatBl = chatBl;
     }
 
+    //Metodo que obtiene un chat por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat findChatById(@RequestBody Chat chat, HttpServletRequest request) {
         return chatBl.findChatById(chat);
     }
 
+    //Metodo que obitene un chat por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo cliente
     @RequestMapping(value = "/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ChatRequest findChatReqById(@RequestBody ChatRequest chatRequest, HttpServletRequest request) {
         return chatBl.findChatReqById(chatRequest);
     }
 
+    //Metodo que actualiza una chat a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat createChat(@RequestBody Chat chat, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -43,6 +51,7 @@ public class ChatApi {
 
     }
 
+    //Metodo que elimina una chat a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat deleteChat(@RequestBody Chat chat, HttpServletRequest request) {
         return chatBl.deleteChat(chat);

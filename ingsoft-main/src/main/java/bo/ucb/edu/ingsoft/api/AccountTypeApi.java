@@ -19,17 +19,22 @@ import javax.servlet.http.HttpServletRequest;
 public class AccountTypeApi {
     private AccountTypeBl accountTypeBl;
 
+    //Constructor de la clase AccountTypeApi recibe un parametro de tipo AccountTypeBl
     @Autowired
     public AccountTypeApi(AccountTypeBl accountTypeBl) {
         this.accountTypeBl = accountTypeBl;
     }
 
+    //Metodo que obtiene un tipo de cuenta por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountType findAccountTypeById(@RequestBody AccountType accountType, HttpServletRequest request) {
 
         return accountTypeBl.findAccountTypeById(accountType);
     }
 
+   //Metodo que agrega un tipo de cuenta a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountType insertAccountType(@RequestBody AccountType accountType, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -39,6 +44,7 @@ public class AccountTypeApi {
 
     }
 
+    //Metodo que actualiza un tipo de cuenta a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountType updateAccountType(@RequestBody AccountType accountType, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -47,12 +53,15 @@ public class AccountTypeApi {
         return  accountType;
     }
 
+    //Metodo que elimina un tipo de cuenta a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountType deleteUser(@RequestBody AccountType accountType, HttpServletRequest request) {
         return accountTypeBl.deleteAccountType(accountType);
     }
 
-
+    //Metodo que obitene un tipo de cuenta por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo cliente
     @RequestMapping(value = "/userRequest", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public AccountTypeRequest findAccountTypeById(@RequestBody AccountTypeRequest accountTypeRequest, HttpServletRequest request) {
 
