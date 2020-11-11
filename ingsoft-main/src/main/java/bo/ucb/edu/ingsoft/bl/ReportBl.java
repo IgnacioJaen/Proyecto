@@ -12,16 +12,21 @@ public class ReportBl {
     private ReportDao reportDao;
     private TransactionDao transactionDao;
 
+    //Constructor de la clase ReportBl recibe dos parametros de tipo reportDao y transactionDao
     @Autowired
     public ReportBl(ReportDao reportDao, TransactionDao transactionDao) {
         this.reportDao = reportDao;
         this.transactionDao = transactionDao;
     }
 
+    //Metodo que a traves del objeto reportDao llama al metodo para encontrar un
+    //reporte por medio del ID
     public Report findReportById(Report report) {
         return  reportDao.findReportById(report);
     }
 
+    //Metodo que a traves del objeto reportDao llama al metodo para agregar un
+    //reporte
     public Report insertReport(Report report, Transaction transaction) {
         report.setTransaction(transaction);
         reportDao.reportInsert(report);
@@ -30,12 +35,16 @@ public class ReportBl {
         return report;
     }
 
+    //Metodo que a traves del objeto reportDao llama al metodo para actualizar un
+    //reporte por medio del ID
     public Report updateReport(Report  report, Transaction transaction) {
         report.setTransaction(transaction);
         reportDao.reportUpdate(report);
         return report;
     }
 
+    //Metodo que a traves del objeto reportDao llama al metodo para eliminar un
+    //reporte por medio del ID
     public Report deleteReport(Report report) {
         reportDao.reportDelete(report);
         return report;

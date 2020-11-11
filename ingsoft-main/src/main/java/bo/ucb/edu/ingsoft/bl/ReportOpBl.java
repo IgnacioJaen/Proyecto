@@ -15,22 +15,29 @@ public class ReportOpBl {
     private ReportOptionsDao reportOptionsDao;
     private TransactionDao transactionDao;
 
+    //Constructor de la clase ReportOpBl recibe dos parametros de tipo reportOpionsDao y transactionDao
     @Autowired
     public ReportOpBl(ReportOptionsDao reportOptionsDao, TransactionDao transactionDao) {
         this.reportOptionsDao = reportOptionsDao;
         this.transactionDao = transactionDao;
     }
 
+    //Metodo que a traves del objeto reportOptionsDao llama al metodo para encontrar una
+    //opcion de reporte por medio del ID
     public ReportOptions findReportOpById(ReportOptions reportOptions) {
 
         return  reportOptionsDao.findReportOpById(reportOptions);
     }
 
+    //Metodo que a traves del objeto reportOptionsDao llama al metodo para encontrar una
+    //opcion de reporte por medio del ID
     public ReportOpRequest findReportOpReqById(ReportOpRequest reportOpRequest) {
 
         return  reportOptionsDao.findReportOpReqById(reportOpRequest);
     }
 
+    //Metodo que a traves del objeto reportOptionsDao llama al metodo para agregar una
+    //opcion de reporte
     public ReportOptions insertReportOp(ReportOptions reportOptions, Transaction transaction) {
         reportOptions.setTransaction(transaction);
         reportOptionsDao.reportOpInsert(reportOptions);
@@ -40,12 +47,16 @@ public class ReportOpBl {
         return reportOptions;
     }
 
+    //Metodo que a traves del objeto reportOptionsDao llama al metodo para actualizar una
+    //opcion de reporte por medio del ID
     public ReportOptions updateReportOp(ReportOptions  reportOptions, Transaction transaction) {
         reportOptions.setTransaction(transaction);
         reportOptionsDao.reportOpUpdate(reportOptions);
         return reportOptions;
     }
 
+    //Metodo que a traves del objeto reportOptionsDao llama al metodo para eliminar una
+    //opcion de reporte por medio del ID
     public ReportOptions deleteReportOp(ReportOptions reportOptions) {
         reportOptionsDao.reportOpDelete(reportOptions);
         return reportOptions;
