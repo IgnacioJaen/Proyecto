@@ -19,17 +19,22 @@ public class UserTypeApi {
 
     private UserTypeBl userTypeBl;
 
+    //Constructor de la clase UserTypeApi recibe un parametro de tipo UserTypeBl
     @Autowired
     public UserTypeApi(UserTypeBl userTypeBl) {
         this.userTypeBl = userTypeBl;
     }
 
+    //Metodo que obtiene un tipo de usuario usuario por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserType findUserTypeById(@RequestBody UserType userType, HttpServletRequest request) {
 
         return userTypeBl.findUserTypeById(userType);
     }
 
+    //Metodo que agrega un tipo de usuario a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserType insertUserType(@RequestBody UserType userType, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -39,6 +44,7 @@ public class UserTypeApi {
 
     }
 
+    //Metodo que actualiza un tipo de usuario a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserType updateUserType(@RequestBody UserType userType, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -47,6 +53,7 @@ public class UserTypeApi {
         return  userType;
     }
 
+    //Metodo que elimina un tipo de usuario a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserType deleteUserType(@RequestBody UserType userType, HttpServletRequest request) {
         return userTypeBl.deleteUserType    (userType);
