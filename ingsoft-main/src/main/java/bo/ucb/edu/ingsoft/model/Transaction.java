@@ -9,14 +9,16 @@ public class Transaction {
     private Date txDate;
     private Date txUpdate;
 
+    // Constructor de la clase Transaction
+    public Transaction()
+    {
 
-    public Transaction() {
     }
 
+    // Setters Y Getters generados para los demas atributos de la clase Transaction
     public Integer getTxId() {
         return txId;
     }
-
     public void setTxId(Integer txId) {
         this.txId = txId;
     }
@@ -24,7 +26,6 @@ public class Transaction {
     public String getTxHost() {
         return txHost;
     }
-
     public void setTxHost(String txHost) {
         this.txHost = txHost;
     }
@@ -32,7 +33,6 @@ public class Transaction {
     public Integer getTxUserId() {
         return txUserId;
     }
-
     public void setTxUserId(Integer txUserId) {
         this.txUserId = txUserId;
     }
@@ -40,7 +40,6 @@ public class Transaction {
     public Date getTxDate() {
         return txDate;
     }
-
     public void setTxDate(Date txDate) {
         this.txDate = txDate;
     }
@@ -48,11 +47,11 @@ public class Transaction {
     public Date getTxUpdate() {
         return txUpdate;
     }
-
     public void setTxUpdate(Date txUpdate) {
         this.txUpdate = txUpdate;
     }
 
+    // Funcion toString generado para imprimir el objeto en una cadena String
     @Override
     public String toString() {
         return "Transaction{" +
