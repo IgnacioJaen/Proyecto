@@ -20,16 +20,21 @@ import javax.servlet.http.HttpServletRequest;
 public class ReportApi {
     private ReportBl reportBl;
 
+    //Constructor de la clase ReportApi recibe un parametro de tipo ReportBl
     @Autowired
     public ReportApi(ReportBl reportBl) {
         this.reportBl = reportBl;
     }
 
+    //Metodo que obtiene un reporte por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report findById(@RequestBody Report report, HttpServletRequest request) {
         return reportBl.findReportById(report);
     }
 
+    //Metodo que agrega una opcion de reporte a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report insertReport(@RequestBody Report report, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -39,6 +44,7 @@ public class ReportApi {
 
     }
 
+    //Metodo que actualiza una opcion de reporte a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report updateReport(@RequestBody Report report, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -47,6 +53,7 @@ public class ReportApi {
         return  report;
     }
 
+    //Metodo que elimina una opcion de reporte a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report deleteReport(@RequestBody Report report, HttpServletRequest request) {
         return reportBl.deleteReport(report);

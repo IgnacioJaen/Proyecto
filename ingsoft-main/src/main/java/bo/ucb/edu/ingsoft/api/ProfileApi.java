@@ -15,12 +15,15 @@ public class ProfileApi {
 
     private ProfileBl profileBl;
 
+    //Constructor de la clase ProfileApi recibe un parametro de tipo ProfileBl
     @Autowired
     public ProfileApi(ProfileBl profileBl) {
         this.profileBl = profileBl;
     }
 
-
+    //Metodo que obtiene un perfil por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo cliente
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ProfileRequest findById(@RequestParam Integer userId, HttpServletRequest request) {
         return profileBl.profileget(userId);

@@ -18,17 +18,22 @@ public class SubcategoryApi {
 
     private SubcategoryBl subcategoryBl;
 
+    //Constructor de la clase SubcategoryApi recibe un parametro de tipo SubcategoryBl
     @Autowired
     public SubcategoryApi(SubcategoryBl subcategoryBl) {
         this.subcategoryBl = subcategoryBl;
     }
 
+    //Metodo que obtiene una subcategoria por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory findById(@RequestBody Subcategory subcategory, HttpServletRequest request) {
 
         return subcategoryBl.findSubcategoryById(subcategory);
     }
 
+    //Metodo que agrega una subcategoria a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory insertcategory(@RequestBody Subcategory subcategory, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -38,6 +43,7 @@ public class SubcategoryApi {
 
     }
 
+    //Metodo que actualiza una subcategoria a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory updatecategory(@RequestBody Subcategory subcategory, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -46,6 +52,7 @@ public class SubcategoryApi {
         return  subcategory;
     }
 
+    //Metodo que elimina una subcategoria a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory deletecategory(@RequestBody Subcategory subcategory, HttpServletRequest request) {
         return subcategoryBl.deleteSubcategory(subcategory);

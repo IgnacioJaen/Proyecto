@@ -20,17 +20,24 @@ public class MessagesApi {
 
     private MessagesBl messagesBl;
 
+    //Constructor de la clase MessagesApi recibe un parametro de tipo MesssagesBl
     @Autowired
     public MessagesApi(MessagesBl messagesBl) {
         this.messagesBl = messagesBl;
     }
 
+    //Metodo que obtiene un mensje por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages findUserById(@RequestBody Messages messages, HttpServletRequest request) {
 
         return messagesBl.findMessagesById(messages);
     }
 
+    //Metodo que obtiene un mensje por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo cliente
     @RequestMapping(value= "/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public MessagesRequest findUserById(@RequestBody MessagesRequest messagesRequest, HttpServletRequest request) {
 
@@ -43,6 +50,7 @@ public class MessagesApi {
         return messagesBl.findMessagesReqById(date,content);
     }*/
 
+    //Metodo que actualiza un mensaje a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages insertMessages(@RequestBody Messages messages, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -51,6 +59,7 @@ public class MessagesApi {
         return  messages;
     }
 
+    //Metodo que elimina un mensaje a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages deleteUser(@RequestBody Messages messages, HttpServletRequest request) {
         return messagesBl.deleteMessages(messages);

@@ -21,21 +21,29 @@ import javax.servlet.http.HttpServletRequest;
 public class ReportOpApi {
     private ReportOpBl reportOpBl;
 
+    //Constructor de la clase ReportOpApi recibe un parametro de tipo ReportOpBl
     @Autowired
     public ReportOpApi(ReportOpBl reportOpBl) {
         this.reportOpBl = reportOpBl;
     }
 
+    //Metodo que obtiene una opcion de reporte por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions findById(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         return reportOpBl.findReportOpById(reportOptions);
     }
 
+    //Metodo que obtiene una opcion de reporte por el ID a traves del
+    // requestMethod GET con los parametros para la vista del usuario de
+    // tipo cliente
     @RequestMapping(value="/request", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOpRequest findById(@RequestBody ReportOpRequest reportOpRequest, HttpServletRequest request) {
         return reportOpBl.findReportOpReqById(reportOpRequest);
     }
 
+    //Metodo que agrega un reporte a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions insertReportOp(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -45,6 +53,7 @@ public class ReportOpApi {
 
     }
 
+    //Metodo que actualiza un reporte a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions updateReport(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -52,6 +61,7 @@ public class ReportOpApi {
         reportOpBl.updateReportOp(reportOptions,transaction);
         return  reportOptions;
     }
+
 
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions deleteReport(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {

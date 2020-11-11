@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CategoryApi {
 
     private CategoryBl categoryBl;
+
     //Constructor de la clase CategoryApi recibe un parametro de tipo CategoryBl
     @Autowired
     public CategoryApi(CategoryBl categoryBl) {
