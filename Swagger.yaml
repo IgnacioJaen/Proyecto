@@ -781,26 +781,26 @@ components:
           type: "string"
     Messages:
       type: "object"
-      properties:
-        messageId:
-          type: "integer"
-          format: "int64"
-        date:
-          type: "string"
-        content:
-          type: "string"
+        properties:
+          messageId:
+            type: "integer"
+            format: "int64"
+          date:
+            type: "string"
+          content:
+            type: "string"
     Reports:
       type: "object"
       properties:
-        reportOpId:
+        id:
           type: "integer"
           format: "int64"
-        description:
-          type: "string"
+        report_options:
+          type: "integer"
     Report_options:
       type: "object"
       properties:
-        id:
+        reportOpId:
           type: "integer"
           format: "int64"
         description:
