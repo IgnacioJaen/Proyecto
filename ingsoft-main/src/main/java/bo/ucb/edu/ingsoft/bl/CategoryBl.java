@@ -2,10 +2,13 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.CategoryDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CategoryBl {
@@ -52,4 +55,11 @@ public class CategoryBl {
         categoryDao.categorydelete(category);
         return category;
     }
+
+    public List<CategoryRequest> categories(){
+
+        List<CategoryRequest> category=categoryDao.categories();
+        return category;
+    }
+
 }

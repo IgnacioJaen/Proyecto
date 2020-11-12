@@ -1,7 +1,10 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface CategoryDao {
@@ -19,4 +22,9 @@ public interface CategoryDao {
 
     //Metodo para eliminar una categoria y tiene un parametro de tipo category
     public void categorydelete(Category category);
+
+    //Metodo para ver todas las categorias
+    public List<CategoryRequest> categories();
+
+
 }
