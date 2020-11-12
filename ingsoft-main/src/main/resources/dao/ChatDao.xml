@@ -27,7 +27,7 @@
         WHERE
             c.chat_id = #{chatId} and
             c.profile2_id = p.profile_id and
-            p.user_id = u.user_id and status=1
+            p.user_id = u.user_id and c.status=1
     </select>
 
     <insert id="createChat" parameterType="bo.ucb.edu.ingsoft.model.Chat">
