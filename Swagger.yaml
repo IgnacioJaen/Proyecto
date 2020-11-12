@@ -735,7 +735,7 @@ components:
         birthdate:
           type: "String"
         gender:
-          type: "Boolean"
+          type: "String"
         nameSubcategory:
           type: "String"
         nameCategory:
