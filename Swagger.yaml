@@ -792,11 +792,11 @@ components:
     Reports:
       type: "object"
       properties:
-        id:
+        reportOpId:
           type: "integer"
           format: "int64"
-        report_options:
-          type: "integer"
+        description:
+          type: "string"
     Report_options:
       type: "object"
       properties:
