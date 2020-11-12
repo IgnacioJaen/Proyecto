@@ -1,4 +1,125 @@
---INSERTS
+-- TRIGGERS
+
+DELIMITER |
+
+CREATE TRIGGER insertTransaction AFTER INSERT ON category
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+
+DELIMITER |
+
+CREATE TRIGGER insertTransactionAccountType AFTER INSERT ON account_type
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionChat AFTER INSERT ON chat
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionMatch AFTER INSERT ON `match`
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionMessages AFTER INSERT ON messages
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionPhotos AFTER INSERT ON photos
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionProfile AFTER INSERT ON `profile`
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionProfileSubcategory AFTER INSERT ON profile_subcategory
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionReport AFTER INSERT ON report
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionReportOptions AFTER INSERT ON report_options
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionSubcategory AFTER INSERT ON subcategory
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+DELIMITER |
+
+CREATE TRIGGER insertTransactionUser AFTER INSERT ON `user`
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+
+DELIMITER |
+
+CREATE TRIGGER insertTransactionUserType AFTER INSERT ON user_type
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+-- INSERTS
 
 INSERT INTO `account_type` (`account_type_id`, `type`, `price`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (1, '1', '0.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29'),
@@ -34,7 +155,7 @@ INSERT INTO `chat` (`chat_id`, `profile1_id`, `profile2_id`, `status`, `tx_id`, 
 
 -- --------------------------------------------------------
 
-INSERT INTO `match` (`match_id`, `profile1_id`, `profile2_id`, `date_matches`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
+INSERT INTO `match` (`match_id`, `profile1_id`, `profile2_id`, `date`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (11, 1, 10, '2020-10-29', 1, 2, '192.168.31.148', 12, '2020-10-30 02:10:19', '2020-10-29'),
 (12, 2, 9, '2020-10-29', 1, 2, '192.168.31.148', 12, '2020-10-30 02:10:19', '2020-10-29'),
 (13, 3, 8, '2020-10-29', 0, 2, '192.168.31.148', 12, '2020-10-30 02:10:19', '2020-10-29'),
@@ -163,136 +284,4 @@ INSERT INTO `report` (`report_id`, `report_op_id`, `chat_id`, `status`, `tx_id`,
 (9, 3, 2, 1, 12, '192.168.1.1', 1, '2020-11-07 16:36:43', '2020-10-29'),
 (10, 1, 4, 0, 14, '192.168.1.1', 1, '2020-11-07 16:36:43', '2020-10-29');
 
--- TRIGGERS
 
-DELIMITER |
-
-CREATE TRIGGER insertTransaction AFTER INSERT ON category
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-
-DELIMITER |
-
-CREATE TRIGGER insertTransactionAccountType AFTER INSERT ON account_type
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionChat AFTER INSERT ON chat
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionMatch AFTER INSERT ON `match`
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionMessages AFTER INSERT ON messages
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionPhotos AFTER INSERT ON photos
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionProfile AFTER INSERT ON `profile`
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionProfileSubcategory AFTER INSERT ON profile_subcategory
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionReport AFTER INSERT ON report
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionReportOptions AFTER INSERT ON report_options
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionSubcategory AFTER INSERT ON subcategory
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-DELIMITER |
-
-CREATE TRIGGER insertTransactionUser AFTER INSERT ON `user`
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-
-DELIMITER |
-
-CREATE TRIGGER insertTransactionUserType AFTER INSERT ON user_type
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
-
-
--- TRIGGER HUSER
-DELIMITER |
-
-CREATE TRIGGER insertHUser AFTER INSERT ON `user`
-  FOR EACH ROW BEGIN
-    INSERT INTO h_user(h_user_id, name, surname, birthdate, gender, email, `password`, user_photo, account_type_id, user_type_id, `status`, tx_id, tx_host, tx_user, tx_date, tx_update) values (NEW.h_user_id, NEW.name, NEW.surname, NEW.birthdate, NEW.gender, NEW.email, NEW.password, NEW.user_photo, NEW.account_type_id, NEW.user_type_id, NEW.status, NEW.tx_id, NEW.tx_host, NEW.tx_user, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
