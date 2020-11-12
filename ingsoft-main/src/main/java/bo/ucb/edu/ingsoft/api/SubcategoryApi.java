@@ -1,5 +1,7 @@
 package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.SubcategoryBl;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/subcategory")
@@ -56,5 +59,14 @@ public class SubcategoryApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Subcategory deletecategory(@RequestBody Subcategory subcategory, HttpServletRequest request) {
         return subcategoryBl.deleteSubcategory(subcategory);
+    }
+
+
+    //Metodo para sacar todas las categorias existentes
+
+    @RequestMapping(path="/subcategories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CategoryRequest> subcategories(@RequestBody Category category, HttpServletRequest request) {
+        List<CategoryRequest> subcategory=subcategoryBl.subcategories(category);
+        return subcategory;
     }
 }

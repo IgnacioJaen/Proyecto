@@ -2,10 +2,14 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.SubcategoryDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SubcategoryBl {
@@ -51,6 +55,8 @@ public class SubcategoryBl {
     }
 
 
-
-
+    public List<CategoryRequest> subcategories(Category category) {
+        List<CategoryRequest> subcategory=subcategoryDao.subcategories(category);
+        return subcategory;
+    }
 }
