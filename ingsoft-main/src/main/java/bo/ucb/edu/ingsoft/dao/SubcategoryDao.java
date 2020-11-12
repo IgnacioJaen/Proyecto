@@ -1,6 +1,10 @@
 package bo.ucb.edu.ingsoft.dao;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface SubcategoryDao {
@@ -18,4 +22,6 @@ public interface SubcategoryDao {
 
     //Metodo para eliminar una subcategoria y tiene un parametro de tipo subcategory
     public void subcategorydelete(Subcategory subcategory);
+
+    public List<CategoryRequest> subcategories(Category category);
 }

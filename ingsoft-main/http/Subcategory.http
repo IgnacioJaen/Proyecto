@@ -23,8 +23,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "subcategoryId": 8,
-  "name": "Ximena"
+  "subcategoryId": 1,
+  "name": "Terror"
 }
 ###
 
@@ -34,5 +34,14 @@ Content-Type: application/json
 
 {
   "subcategoryId": 3
+}
+###
+
+GET http://localhost:8080/v1/subcategory/subcategories
+Accept: application/json
+Content-Type: application/json
+
+{
+  "categoryId": 1
 }
 ###
