@@ -3,109 +3,100 @@
 DELIMITER |
 
 CREATE TRIGGER insertTransaction AFTER INSERT ON category
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+    FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+END
 |
 
 DELIMITER ;
 
-DELIMITER |
-
-CREATE TRIGGER insertTransactionAccountType AFTER INSERT ON account_type
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
-|
-
-DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionChat AFTER INSERT ON chat
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+    FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionMatch AFTER INSERT ON `match`
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+    FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionMessages AFTER INSERT ON messages
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+    FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionPhotos AFTER INSERT ON photos
-  FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+    FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionProfile AFTER INSERT ON `profile`
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionProfileSubcategory AFTER INSERT ON profile_subcategory
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionReport AFTER INSERT ON report
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionReportOptions AFTER INSERT ON report_options
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionSubcategory AFTER INSERT ON subcategory
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionUser AFTER INSERT ON `user`
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
@@ -113,19 +104,13 @@ DELIMITER ;
 DELIMITER |
 
 CREATE TRIGGER insertTransactionUserType AFTER INSERT ON user_type
-  FOR EACH ROW BEGIN
+    FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
-  END
+END
 |
 
 DELIMITER ;
 -- INSERTS
-
-INSERT INTO `account_type` (`account_type_id`, `type`, `price`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, '1', '0.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29'),
-(2, '2', '5.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29');
-
--- --------------------------------------------------------
 
 
 INSERT INTO `category` (`category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
@@ -138,6 +123,46 @@ INSERT INTO `category` (`category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx
 (7, 'Filosofia', 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29');
 
 -- --------------------------------------------------------
+
+INSERT INTO `user_type` (`user_type_id`, `type`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
+(1, '1', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29'),
+(2, '2', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29');
+
+-- --------------------------------------------------------
+
+INSERT INTO `user` (`user_id`, `account_type_id`, `user_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
+(1, 1, 1, 'Jose', 'Chura', '1998-10-10', 'Masculino', 'jc@gmail.com', '12345', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(2, 2, 1, 'Andres', 'Roque', '1997-09-03', 'Masculino', 'ar@gmail.com', '48944', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(3, 1, 1, 'Manuel', 'Melez', '1996-08-04', 'Masculino', 'mmg@gmail.com', 'ewa456', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(4, 2, 1, 'Sophia', 'Rich', '1995-07-05', 'Femenino', 'sr@gmail.com', 'fas489', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(5, 1, 1, 'Rene', 'Menji', '1994-06-11', 'Masculino', 'rm@gmail.com', 'ee1264', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(6, 2, 1, 'Alejandra', 'Savedra', '2000-05-09', 'Femenino', 'as@gmail.com', 'das451', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(7, 1, 1, 'Maria', 'Avaroa', '2001-10-05', 'Femenino', 'ma@gmail.com', 'vcx56', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(8, 2, 1, 'Jhon', 'Perez', '1998-09-04', 'Masculino', 'jps@gmail.com', 'vdsvds44', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(9, 1, 1, 'Ibonne', 'Chon', '1998-11-03', 'Femenino', 'df@gmail.com', 'bea56', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(10, 2, 1, 'Tania', 'Dumphy', '1997-10-02', 'Femenino', 'jtdg@gmail.com', 'feacs55', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(11, 1, 2, 'Ignacio', 'Jaen', '1996-01-01', 'Masculino', 'ignajaen@gmail.com', 'sacvasv99', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(12, 1, 2, 'Marioly', 'Vargas', '1990-02-12', 'Femenino', 'mollyv@gmail.com', 'vasvas54', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(13, 1, 2, 'Rodrigo', 'Saravia', '1980-03-11', 'Masculino', 'rodriSa@gmail.com', '12sfs345', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
+(14, 1, 2, 'Ximena', 'Cruz', '1988-04-05', 'Femenino', 'ximenaC@gmail.com', 'mbrewq48', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29');
+
+-- --------------------------------------------------------
+
+
+INSERT INTO `profile` (`profile_id`, `user_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
+(1, 1, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
+(2, 2, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
+(3, 3, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
+(4, 4, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
+(5, 5, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
+(6, 6, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
+(7, 7, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
+(8, 8, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
+(9, 9, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
+(10, 10, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29');
+
+-- --------------------------------------------------------
+
 
 INSERT INTO `chat` (`chat_id`, `profile1_id`, `profile2_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (1, 1, 2, 1, 1, '192.168.31.148', 12, '2020-10-30 02:12:49', '2020-10-29'),
@@ -184,45 +209,16 @@ INSERT INTO `messages` (`message_id`, `chat_id`, `date`, `content`, `status`, `t
 -- --------------------------------------------------------
 
 INSERT INTO `photos` (`photos_id`, `category_id`, `photo_path`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:32:05', '2020-10-29'),
-(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29');
-
--- --------------------------------------------------------
-
-INSERT INTO `profile` (`profile_id`, `user_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
-(2, 2, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
-(3, 3, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
-(4, 4, 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
-(5, 5, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
-(6, 6, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
-(7, 7, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
-(8, 8, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
-(9, 9, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29'),
-(10, 10, 1, 1, '192.168.15.25', 11, '2020-10-30 02:10:00', '2020-10-29');
-
--- --------------------------------------------------------
-
-
-INSERT INTO `profile_subcategory` (`profile_sub_id`, `profile_id`, `subcategory_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 1, 1, 10, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(2, 2, 2, 1, 9, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(3, 3, 3, 1, 8, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(4, 4, 4, 1, 7, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(5, 5, 5, 1, 6, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(6, 6, 6, 1, 5, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(7, 7, 7, 1, 4, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(8, 8, 8, 1, 3, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(9, 9, 9, 1, 2, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
-(10, 10, 10, 1, 1, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29');
+(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '13', 1, '2020-11-07 16:32:05', '2020-10-29'),
+(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29');
 
 -- --------------------------------------------------------
 
@@ -240,27 +236,22 @@ INSERT INTO `subcategory` (`subcategory_id`, `category_id`, `name`, `status`, `t
 
 -- --------------------------------------------------------
 
-INSERT INTO `user` (`user_id`, `account_type_id`, `user_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 1, 'Jose', 'Chura', '1998-10-10', 'Masculino', 'jc@gmail.com', '12345', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(2, 2, 1, 'Andres', 'Roque', '1997-09-03', 'Masculino', 'ar@gmail.com', '48944', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(3, 1, 1, 'Manuel', 'Melez', '1996-08-04', 'Masculino', 'mmg@gmail.com', 'ewa456', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(4, 2, 1, 'Sophia', 'Rich', '1995-07-05', 'Femenino', 'sr@gmail.com', 'fas489', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(5, 1, 1, 'Rene', 'Menji', '1994-06-11', 'Masculino', 'rm@gmail.com', 'ee1264', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(6, 2, 1, 'Alejandra', 'Savedra', '2000-05-09', 'Femenino', 'as@gmail.com', 'das451', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(7, 1, 1, 'Maria', 'Avaroa', '2001-10-05', 'Femenino', 'ma@gmail.com', 'vcx56', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(8, 2, 1, 'Jhon', 'Perez', '1998-09-04', 'Masculino', 'jps@gmail.com', 'vdsvds44', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(9, 1, 1, 'Ibonne', 'Chon', '1998-11-03', 'Femenino', 'df@gmail.com', 'bea56', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(10, 2, 1, 'Tania', 'Dumphy', '1997-10-02', 'Femenino', 'jtdg@gmail.com', 'feacs55', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(11, 1, 2, 'Ignacio', 'Jaen', '1996-01-01', 'Masculino', 'ignajaen@gmail.com', 'sacvasv99', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(12, 1, 2, 'Marioly', 'Vargas', '1990-02-12', 'Femenino', 'mollyv@gmail.com', 'vasvas54', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(13, 1, 2, 'Rodrigo', 'Saravia', '1980-03-11', 'Masculino', 'rodriSa@gmail.com', '12sfs345', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29'),
-(14, 1, 2, 'Ximena', 'Cruz', '1988-04-05', 'Femenino', 'ximenaC@gmail.com', 'mbrewq48', 'URL', 1, 1, '192.168.15.25', 13, '2020-10-30 02:09:03', '2020-10-29');
 
--- --------------------------------------------------------
+INSERT INTO `profile_subcategory` (`profile_sub_id`, `profile_id`, `subcategory_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
+(1, 1, 1, 1, 10, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(2, 2, 2, 1, 9, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(3, 3, 3, 1, 8, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(4, 4, 4, 1, 7, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(5, 5, 5, 1, 6, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(6, 6, 6, 1, 5, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(7, 7, 7, 1, 4, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(8, 8, 8, 1, 3, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(9, 9, 9, 1, 2, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29'),
+(10, 10, 10, 1, 1, '192.168.15.25', 11, '2020-10-30 02:12:41', '2020-10-29');
 
-INSERT INTO `user_type` (`user_type_id`, `type`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, '1', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29'),
-(2, '2', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29');
+
+
+
 
 --
 
@@ -283,5 +274,3 @@ INSERT INTO `report` (`report_id`, `report_op_id`, `chat_id`, `status`, `tx_id`,
 (8, 2, 3, 0, 11, '192.168.1.1', 1, '2020-11-07 16:36:43', '2020-10-29'),
 (9, 3, 2, 1, 12, '192.168.1.1', 1, '2020-11-07 16:36:43', '2020-10-29'),
 (10, 1, 4, 0, 14, '192.168.1.1', 1, '2020-11-07 16:36:43', '2020-10-29');
-
-
