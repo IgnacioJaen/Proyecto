@@ -3,6 +3,7 @@ package bo.ucb.edu.ingsoft.dto;
 public class ChatRequest {
     private Integer chatId;
     private String profile2UserName;
+    //falta descripcion del ultimo mensaje de user2
 
     // Constructor vacio de la clase ChatRequest
     public ChatRequest(){
