@@ -12,6 +12,16 @@ DELIMITER ;
 
 DELIMITER |
 
+CREATE TRIGGER insertTransactionAccountType AFTER INSERT ON account_type
+  FOR EACH ROW BEGIN
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+  END
+|
+
+DELIMITER ;
+
+DELIMITER |
+
 CREATE TRIGGER insertTransactionChat AFTER INSERT ON chat
     FOR EACH ROW BEGIN
     INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
@@ -112,6 +122,9 @@ END
 DELIMITER ;
 -- INSERTS
 
+INSERT INTO account_type (account_type_id, type, price, status, tx_id, tx_host, tx_user, tx_date, tx_update) VALUES
+(1, '1', '0.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29'),
+(2, '2', '5.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29');
 
 INSERT INTO `category` (`category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (1, 'Peliculas', 1, 1, '192.168.15.25', 11, '2020-10-30 02:09:59', '2020-10-29'),
@@ -209,16 +222,17 @@ INSERT INTO `messages` (`message_id`, `chat_id`, `date`, `content`, `status`, `t
 -- --------------------------------------------------------
 
 INSERT INTO `photos` (`photos_id`, `category_id`, `photo_path`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '13', 1, '2020-11-07 16:32:05', '2020-10-29'),
-(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29');
+(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:32:05', '2020-10-29'),
+(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29');
+
 
 -- --------------------------------------------------------
 
