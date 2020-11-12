@@ -728,21 +728,18 @@ components:
     Profiles:
       type: "object"
       properties:
-        id:
-          type: "integer"
-          format: "int64"
-        profile_id_1:
-          type: "integer"
-          format: "int64"
-        profile_id_2:
-          type: "integer"
-          format: "int64"
-        date:
-          type: "integer"
-          format: "int64"
-        status:
-          type: "integer"
-          format: "int64"
+        name:
+          type: "String"
+        surname:
+          type: "String"
+        birthdate:
+          type: "String"
+        gender:
+          type: "Boolean"
+        nameSubcategory:
+          type: "String"
+        nameCategory:
+            type: "String"
     Users:
       type: "object"
       properties:
