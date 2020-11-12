@@ -50,6 +50,7 @@
 
     <select id="reportOptions" resultType="bo.ucb.edu.ingsoft.dto.ReportOpRequest">
         SELECT
+               report_op_id as reportOpId,
                description as description
         FROM report_options
 

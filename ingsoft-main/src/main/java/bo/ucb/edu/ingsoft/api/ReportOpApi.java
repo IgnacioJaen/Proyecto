@@ -71,7 +71,7 @@ public class ReportOpApi {
     }
 
     @RequestMapping(path="/reports",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ReportOpRequest> categories(HttpServletRequest request) {
+    public List<ReportOpRequest> reportOptions(HttpServletRequest request) {
         List<ReportOpRequest> reportOp=reportOpBl.reportOptions();
         return reportOp;
     }
