@@ -4,7 +4,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransaction AFTER INSERT ON category
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -14,7 +14,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransactionAccountType AFTER INSERT ON account_type
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -23,7 +23,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransactionChat AFTER INSERT ON chat
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -32,7 +32,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransactionMatch AFTER INSERT ON `match`
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -41,7 +41,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransactionMessages AFTER INSERT ON messages
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -50,7 +50,7 @@ DELIMITER |
 
 CREATE TRIGGER insertTransactionPhotos AFTER INSERT ON photos
   FOR EACH ROW BEGIN
-    INSERT INTO transaction(tx_user, tx_host, tx_date, tx_update) values (NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
+    INSERT INTO transaction(tx_id, tx_user, tx_host, tx_date, tx_update) values (null, NEW.tx_user, NEW.tx_host, NEW.tx_date, NEW.tx_update);
   END
 |
 
@@ -184,16 +184,16 @@ INSERT INTO `messages` (`message_id`, `chat_id`, `date`, `content`, `status`, `t
 -- --------------------------------------------------------
 
 INSERT INTO `photos` (`photos_id`, `category_id`, `photo_path`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
-(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '13', 1, '2020-11-07 16:32:05', '2020-10-29'),
-(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '11', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '12', 1, '2020-11-07 16:33:59', '2020-10-29'),
-(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '14', 1, '2020-11-07 16:33:59', '2020-10-29');
+(1, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:32:05', '2020-10-29'),
+(2, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(3, 6, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(4, 7, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(5, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(6, 5, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(7, 1, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(8, 3, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(9, 2, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 1, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29'),
+(10, 4, 'https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg', 0, 192168, '192.168.31.148', 1, '2020-11-07 16:33:59', '2020-10-29');
 
 -- --------------------------------------------------------
 
