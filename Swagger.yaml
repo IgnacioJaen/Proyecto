@@ -743,9 +743,13 @@ components:
     Users:
       type: "object"
       properties:
-        id:
+        userId:
           type: "integer"
           format: "int64"
+        accountType:
+          type: "string"
+        userType:
+          type: "string"
         name:
           type: "string"
         surname:
@@ -758,16 +762,8 @@ components:
           type: "string"
         password:
           type: "string"
-        status:
-          type: "boolean"
-        user_type:
-          type: "integer"
-          format: "int64"
-        account_type:
-          type: "integer"
-          format: "int64"
-        photoUrls:
-          type: "array"
+        userPhoto:
+          type: "string"
           xml:
             name: "photoUrlUser"
             wrapped: true
