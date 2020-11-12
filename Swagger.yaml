@@ -774,18 +774,11 @@ components:
     Chats:
       type: "object"
       properties:
-        id:
+        chatId:
           type: "integer"
           format: "int64"
-        user_one_id:
-          type: "integer"
-          format: "int64"
-        user_two_id:
-          type: "integer"
-          format: "int64"
-        report_id:
-          type: "integer"
-          format: "int64"
+        profile2UserName:
+          type: "string"
     Messages:
       type: "object"
       properties:
