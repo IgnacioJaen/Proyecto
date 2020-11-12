@@ -2,8 +2,10 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.MessagesBl;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
+import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.Messages;
+import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/messages")
@@ -63,5 +66,11 @@ public class MessagesApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages deleteUser(@RequestBody Messages messages, HttpServletRequest request) {
         return messagesBl.deleteMessages(messages);
+    }
+
+    @RequestMapping(path="/messagesList",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MessagesRequest> messagesList(User user, HttpServletRequest request) {
+        List<MessagesRequest> message=messagesBl.messages(user);
+        return message;
     }
 }

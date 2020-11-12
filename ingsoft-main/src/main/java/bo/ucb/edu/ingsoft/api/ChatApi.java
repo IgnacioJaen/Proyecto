@@ -2,8 +2,10 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.ChatBl;
 import bo.ucb.edu.ingsoft.dto.ChatRequest;
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/chat")
@@ -55,5 +58,11 @@ public class ChatApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat deleteChat(@RequestBody Chat chat, HttpServletRequest request) {
         return chatBl.deleteChat(chat);
+    }
+
+    @RequestMapping(path="/chats",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ChatRequest> chatsList(User user, HttpServletRequest request) {
+        List<ChatRequest> chat=chatBl.chats(user);
+        return chat;
     }
 }

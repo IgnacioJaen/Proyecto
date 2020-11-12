@@ -43,4 +43,16 @@
         SET status = 0
         WHERE message_id = #{messageId}
         </delete>
+
+    <select id="messages" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
+        SELECT
+            a.name as nameCategory,
+            b.name as nameSubcategory
+
+            FROM category a, subcategory b
+            WHERE  a.category_id=#{categoryId}
+            and a.category_id=b.category_id
+            and b.status=1
+
+    </select>
 </mapper>

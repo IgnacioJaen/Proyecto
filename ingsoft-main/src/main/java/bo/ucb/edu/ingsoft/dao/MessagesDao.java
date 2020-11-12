@@ -2,7 +2,10 @@ package bo.ucb.edu.ingsoft.dao;
 
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Messages;
+import bo.ucb.edu.ingsoft.model.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface MessagesDao {
@@ -28,4 +31,6 @@ public interface MessagesDao {
 
     //Metodo para eliminar un mensaje y tiene un parametro de tipo messages
     public void messagesDelete(Messages messages);
+
+    public List<MessagesRequest> messages(User user);
 }

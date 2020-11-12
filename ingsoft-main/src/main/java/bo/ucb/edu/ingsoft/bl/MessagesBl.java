@@ -3,12 +3,16 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.MessagesDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Messages;
 import bo.ucb.edu.ingsoft.model.Transaction;
 
+import bo.ucb.edu.ingsoft.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MessagesBl {
@@ -50,9 +54,10 @@ public class MessagesBl {
     public MessagesRequest findMessagesReqById(MessagesRequest messagesRequest){
         return messagesDao.findMessagesReqById(messagesRequest);
     }
-    /*
-     public MessagesRequest findMessagesReqById(String date, String content){
-        return messagesDao.findMessagesReqById(date, content);
+
+    public List<MessagesRequest> messages(User user) {
+        List<MessagesRequest> message=messagesDao.messages(user);
+        return message;
     }
-     */
+
 }

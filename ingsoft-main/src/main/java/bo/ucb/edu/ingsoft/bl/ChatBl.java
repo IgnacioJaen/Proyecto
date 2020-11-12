@@ -3,10 +3,14 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.ChatDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.ChatRequest;
+import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ChatBl {
@@ -46,6 +50,11 @@ public class ChatBl {
     //chat por medio del ID
     public Chat deleteChat(Chat chat) {
         chatDao.deleteChat(chat);
+        return chat;
+    }
+
+    public List<ChatRequest> chats(User user) {
+        List<ChatRequest> chat=chatDao.chats(user);
         return chat;
     }
 }
