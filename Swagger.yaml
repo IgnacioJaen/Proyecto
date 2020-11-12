@@ -18,32 +18,32 @@ externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
 servers:
-- url: "https://virtserver.swaggerhub.com/Ro-Nel/Pru/1.0.0-oas3"
-  description: "SwaggerHub API Auto Mocking"
-- url: "https://virtserver.swaggerhub.com/bipersonal/NoAppearence/1.0.0"
-  description: "SwaggerHub API Auto Mocking"
-- url: "https://virtserver.swaggerhub.com/bipersonal/CATEGORY/1.0.0"
-  description: "SwaggerHub API Auto Mocking"
+  - url: "https://virtserver.swaggerhub.com/Ro-Nel/Pru/1.0.0-oas3"
+    description: "SwaggerHub API Auto Mocking"
+  - url: "https://virtserver.swaggerhub.com/bipersonal/NoAppearence/1.0.0"
+    description: "SwaggerHub API Auto Mocking"
+  - url: "https://virtserver.swaggerhub.com/bipersonal/CATEGORY/1.0.0"
+    description: "SwaggerHub API Auto Mocking"
 tags:
-- name: "category"
-  description: "operations with C.R.U.D for the categories"
-- name: "sub_category"
-  description: "operations with C.R.U.D for the subcategories"
-- name: "users"
-  description: "operations with C.R.U.D for the users"
-- name: "reports"
-  description: "operations for viewing and generating a report"
-- name: "chats"
-  description: "operations for viewing and adding a friend"
-- name: "messages"
-  description: "gets messages"
-- name: "user_type"
-  description: "operations with C.R.U.D for user type"
+  - name: "category"
+    description: "operations with C.R.U.D for the categories"
+  - name: "sub_category"
+    description: "operations with C.R.U.D for the subcategories"
+  - name: "users"
+    description: "operations with C.R.U.D for the users"
+  - name: "reports"
+    description: "operations for viewing and generating a report"
+  - name: "chats"
+    description: "operations for viewing and adding a friend"
+  - name: "messages"
+    description: "gets messages"
+  - name: "user_type"
+    description: "operations with C.R.U.D for user type"
 paths:
   /users:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "Add a new user to the system"
       operationId: "addUser"
       requestBody:
@@ -54,7 +54,7 @@ paths:
   /profile:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "add a subcategory to the user's profile"
       operationId: "addSubcategoryaddProfile"
       requestBody:
@@ -65,19 +65,19 @@ paths:
   /users/{userId}:
     put:
       tags:
-      - "users"
+        - "users"
       summary: "Updates the user data"
       description: "Updates the user data-categories, password, name, surname, birthdate,\
         \ email."
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The ID of the user that wants to edit its data"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "userId"
+          in: "path"
+          description: "The ID of the user that wants to edit its data"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       requestBody:
         description: "Updated user object"
         content:
@@ -93,18 +93,18 @@ paths:
   /profile/{profileId}:
     get:
       tags:
-      - "user"
+        - "user"
       summary: "Get profile"
       operationId: "getProfileById"
       parameters:
-      - name: "profileId"
-        in: "path"
-        description: "The name that needs to be fetched. Use category1 for testing."
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "profileId"
+          in: "path"
+          description: "The name that needs to be fetched. Use category1 for testing."
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -122,26 +122,26 @@ paths:
   /profile/{profileId}/subcategories/{subcategories}:
     get:
       tags:
-      - "user"
+        - "user"
       summary: "Get feed-back Main "
       operationId: "getMatchByIdandChatId"
       parameters:
-      - name: "profileid"
-        in: "path"
-        description: "The id of one of the profile"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "subcategoriesId"
-        in: "path"
-        description: "The id of one of the subcategories"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "profileid"
+          in: "path"
+          description: "The id of one of the profile"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "subcategories"
+          in: "path"
+          description: "The id of one of the subcategories"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -159,27 +159,27 @@ paths:
   /users/{userId}/profile/{profileId}:
     put:
       tags:
-      - "users"
+        - "users"
       summary: "Updates the user data"
       description: "Updates the user data-categories, password, name, surname, birthdate,\
         \ email."
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The ID of the user that wants to edit its data"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "profileId"
-        in: "path"
-        description: "The ID of the user that wants to edit its data"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "userId"
+          in: "path"
+          description: "The ID of the user that wants to edit its data"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "profileId"
+          in: "path"
+          description: "The ID of the user that wants to edit its data"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       requestBody:
         description: "Updated user object"
         content:
@@ -195,26 +195,26 @@ paths:
   /userchats/{userId}/{friendUserId}:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "Adds an user to the friend's list of another user"
       description: "Adds an user to the friend's list of another user"
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The ID of the user that added another user"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "friendUserId"
-        in: "path"
-        description: "The ID of the accepted friend"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "userId"
+          in: "path"
+          description: "The ID of the user that added another user"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "friendUserId"
+          in: "path"
+          description: "The ID of the accepted friend"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "The user has been added to the friend list succesfully"
@@ -232,42 +232,42 @@ paths:
   /messages/{messageId}/chats/{chatId}/{user_one_id}/{user_two_id}:
     get:
       tags:
-      - "chats"
+        - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getMessagesByIdandChatId"
       parameters:
-      - name: "user_one_id"
-        in: "path"
-        description: "The id of one of the users"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "user_two_id"
-        in: "path"
-        description: "The id of one of the users"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "chatId"
-        in: "path"
-        description: "The id of the chat, user must have at least one friend added"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "messageId"
-        in: "path"
-        description: "The id of one of the messages of the chat id"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "user_one_id"
+          in: "path"
+          description: "The id of one of the users"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "user_two_id"
+          in: "path"
+          description: "The id of one of the users"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "chatId"
+          in: "path"
+          description: "The id of the chat, user must have at least one friend added"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "messageId"
+          in: "path"
+          description: "The id of one of the messages of the chat id"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -285,26 +285,26 @@ paths:
   /users/{userId}/messages/{content}:
     post:
       tags:
-      - "messages"
+        - "messages"
       summary: "sends a message"
       operationId: "sendMessage"
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "userId of the user that is sendig the message"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "content"
-        in: "path"
-        description: "content of the message"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "userId"
+          in: "path"
+          description: "userId of the user that is sendig the message"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "content"
+          in: "path"
+          description: "content of the message"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -315,34 +315,34 @@ paths:
   /chats/{chatId}/{user_one_id}/{user_two_id}:
     post:
       tags:
-      - "reports"
+        - "reports"
       summary: "Adds a report to the reported users list"
       operationId: "addsAReport"
       parameters:
-      - name: "chatId"
-        in: "path"
-        description: "chatId where the report was made"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "user_one_id"
-        in: "path"
-        description: "The id of one of the users"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "user_two_id"
-        in: "path"
-        description: "The id of one of the users"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "chatId"
+          in: "path"
+          description: "chatId where the report was made"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "user_one_id"
+          in: "path"
+          description: "The id of one of the users"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "user_two_id"
+          in: "path"
+          description: "The id of one of the users"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -353,26 +353,26 @@ paths:
   /users/{userId}/chats/{chatId}:
     get:
       tags:
-      - "chats"
+        - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getChatById"
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The id of the user, user must be logged"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "chatId"
-        in: "path"
-        description: "The id of the chat, user must have at least one friend added"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "userId"
+          in: "path"
+          description: "The id of the user, user must be logged"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "chatId"
+          in: "path"
+          description: "The id of the chat, user must have at least one friend added"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -390,42 +390,42 @@ paths:
   /users/{userId}/userTypes/{userType}/reports/{reportId}/users/{username}:
     get:
       tags:
-      - "chats"
+        - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getReportByUsername"
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The id of the user, user must be logged"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "userType"
-        in: "path"
-        description: "The type of user, user must be an administrator"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "reportId"
-        in: "path"
-        description: "The report id"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "username"
-        in: "path"
-        description: "The username of the reported person"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "userId"
+          in: "path"
+          description: "The id of the user, user must be logged"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "userType"
+          in: "path"
+          description: "The type of user, user must be an administrator"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "reportId"
+          in: "path"
+          description: "The report id"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "username"
+          in: "path"
+          description: "The username of the reported person"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -443,42 +443,42 @@ paths:
   /users/{userId}/userTypes/{userType}/reports/{reportId}/chats/{chatId}:
     get:
       tags:
-      - "chats"
+        - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getReportByChatId"
       parameters:
-      - name: "userId"
-        in: "path"
-        description: "The id of the user, user must be logged"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "userType"
-        in: "path"
-        description: "The type of user, user must be an administrator"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "reportId"
-        in: "path"
-        description: "The report id"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
-      - name: "chatId"
-        in: "path"
-        description: "The chatId of the reported conversation"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "integer"
+        - name: "userId"
+          in: "path"
+          description: "The id of the user, user must be logged"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "userType"
+          in: "path"
+          description: "The type of user, user must be an administrator"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "reportId"
+          in: "path"
+          description: "The report id"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
+        - name: "chatId"
+          in: "path"
+          description: "The chatId of the reported conversation"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "integer"
       responses:
         "200":
           description: "successful operation"
@@ -496,7 +496,7 @@ paths:
   /categories:
     post:
       tags:
-      - "category"
+        - "category"
       summary: "Add a new category to the system"
       operationId: "addCategory"
       requestBody:
@@ -507,18 +507,18 @@ paths:
   /categories/{nameCategory}:
     get:
       tags:
-      - "category"
+        - "category"
       summary: "Get category by category name"
       operationId: "getCategoryByName"
       parameters:
-      - name: "nameCategory"
-        in: "path"
-        description: "The name that needs to be fetched. Use category1 for testing."
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameCategory"
+          in: "path"
+          description: "The name that needs to be fetched. Use category1 for testing."
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -535,19 +535,19 @@ paths:
           description: "Category not found"
     put:
       tags:
-      - "category"
+        - "category"
       summary: "Updated category"
       description: "This can only be done by the created category."
       operationId: "updateCategory"
       parameters:
-      - name: "nameCategory"
-        in: "path"
-        description: "name that need to be updated"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameCategory"
+          in: "path"
+          description: "name that need to be updated"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       requestBody:
         description: "Updated category object"
         content:
@@ -562,19 +562,19 @@ paths:
           description: "Category not found"
     delete:
       tags:
-      - "category"
+        - "category"
       summary: "Delete category"
       description: "This can only be done by the created category."
       operationId: "deleteCategory"
       parameters:
-      - name: "nameCategory"
-        in: "path"
-        description: "The name that needs to be deleted"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameCategory"
+          in: "path"
+          description: "The name that needs to be deleted"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "400":
           description: "Invalid nameCategory supplied"
@@ -583,18 +583,18 @@ paths:
   /categories/{nameCategory}/Image:
     post:
       tags:
-      - "category"
+        - "category"
       summary: "uploads an image"
       operationId: "uploadFile"
       parameters:
-      - name: "nameCategory"
-        in: "path"
-        description: "nameCategory to update"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameCategory"
+          in: "path"
+          description: "nameCategory to update"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       requestBody:
         content:
           application/octet-stream:
@@ -611,7 +611,7 @@ paths:
   /subcategories:
     post:
       tags:
-      - "sub_category"
+        - "sub_category"
       summary: "Add a new subcategory to the system"
       operationId: "addSubcategory"
       requestBody:
@@ -622,18 +622,18 @@ paths:
   /subcategories/{nameSubcategory}:
     get:
       tags:
-      - "sub_category"
+        - "sub_category"
       summary: "Get category by subcategory name"
       operationId: "getSubcategoryByName"
       parameters:
-      - name: "nameSubcategory"
-        in: "path"
-        description: "The name that needs to be fetched. Use subcategory1 for testing."
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameSubcategory"
+          in: "path"
+          description: "The name that needs to be fetched. Use subcategory1 for testing."
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "200":
           description: "successful operation"
@@ -650,19 +650,19 @@ paths:
           description: "Subcategory not found"
     put:
       tags:
-      - "sub_category"
+        - "sub_category"
       summary: "Updated subategory"
       description: "This can only be done by the created subcategory."
       operationId: "updateSubcategory"
       parameters:
-      - name: "nameSubcategory"
-        in: "path"
-        description: "name that need to be updated"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameSubcategory"
+          in: "path"
+          description: "name that need to be updated"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       requestBody:
         description: "Updated subcategory object"
         content:
@@ -677,19 +677,19 @@ paths:
           description: "Subcategory not found"
     delete:
       tags:
-      - "sub_category"
+        - "sub_category"
       summary: "Delete subcategory"
       description: "This can only be done by the created subcategory."
       operationId: "deleteSubcategory"
       parameters:
-      - name: "nameSubcategory"
-        in: "path"
-        description: "The name that needs to be deleted"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameSubcategory"
+          in: "path"
+          description: "The name that needs to be deleted"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       responses:
         "400":
           description: "Invalid nameSubcategory supplied"
@@ -698,18 +698,18 @@ paths:
   /categories/{nameSubcategory}/Image:
     post:
       tags:
-      - "sub_category"
+        - "sub_category"
       summary: "uploads an image"
       operationId: "uploadFileSubcategory"
       parameters:
-      - name: "nameSubcategory"
-        in: "path"
-        description: "nameSubcategory to update"
-        required: true
-        style: "simple"
-        explode: false
-        schema:
-          type: "string"
+        - name: "nameSubcategory"
+          in: "path"
+          description: "nameSubcategory to update"
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
       requestBody:
         content:
           application/octet-stream:
@@ -729,17 +729,17 @@ components:
       type: "object"
       properties:
         name:
-          type: "String"
+          type: "string"
         surname:
-          type: "String"
+          type: "string"
         birthdate:
-          type: "String"
+          type: "string"
         gender:
-          type: "String"
+          type: "boolean"
         nameSubcategory:
-          type: "String"
+          type: "string"
         nameCategory:
-            type: "String"
+          type: "string"
     Users:
       type: "object"
       properties:
@@ -781,14 +781,14 @@ components:
           type: "string"
     Messages:
       type: "object"
-        properties:
-          messageId:
-            type: "integer"
-            format: "int64"
-          date:
-            type: "string"
-          content:
-            type: "string"
+      properties:
+        messageId:
+          type: "integer"
+          format: "int64"
+        date:
+          type: "string"
+        content:
+          type: "string"
     Reports:
       type: "object"
       properties:
@@ -822,7 +822,7 @@ components:
         type:
           type: "string"
         price:
-          type: "Float"
+          type: "float"
     Categories:
       type: "object"
       properties:
