@@ -1,7 +1,5 @@
 package bo.ucb.edu.ingsoft.dto;
 
-import bo.ucb.edu.ingsoft.model.Transaction;
-
 public class UserRequest {
 
     private Integer userId;
@@ -15,35 +13,30 @@ public class UserRequest {
     private String password;
     private String userPhoto;
 
+    // Constructor vacio de la clase UserRequest
     public UserRequest()
     {
 
     }
 
+    // Setters Y Getters generados para los demas atributos de la clase ReportOpRequest
     public Integer getUserId() {
         return userId;
     }
-
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-
-
     public String getAccountType() {
         return accountType;
     }
-
     public void setAccountType(String accountType) {
         this.accountType = accountType;
     }
 
-
-
     public String getUserType() {
         return userType;
     }
-
     public void setUserType(String userType) {
         this.userType = userType;
     }
@@ -51,7 +44,6 @@ public class UserRequest {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -59,7 +51,6 @@ public class UserRequest {
     public String getSurname() {
         return surname;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -67,7 +58,6 @@ public class UserRequest {
     public String getBirthdate() {
         return birthdate;
     }
-
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
@@ -75,7 +65,6 @@ public class UserRequest {
     public Boolean getGender() {
         return gender;
     }
-
     public void setGender(Boolean gender) {
         this.gender = gender;
     }
@@ -83,7 +72,6 @@ public class UserRequest {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -91,7 +79,6 @@ public class UserRequest {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -99,11 +86,11 @@ public class UserRequest {
     public String getUserPhoto() {
         return userPhoto;
     }
-
     public void setUserPhoto(String userPhoto) {
         this.userPhoto = userPhoto;
     }
 
+    // Funcion toString generado para imprimir el objeto en una cadena String
     @Override
     public String toString() {
         return "UserRequest{" +

@@ -8,13 +8,14 @@ public class ProfileRequest {
     private String nameSubcategory;
     private String nameCategory;
 
+    // Constructor vacio de la clase ProfileRequest
     public ProfileRequest() {
     }
 
+    // Setters Y Getters generados para los demas atributos de la clase ProfileRequest
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -22,7 +23,6 @@ public class ProfileRequest {
     public String getSurname() {
         return surname;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -30,7 +30,6 @@ public class ProfileRequest {
     public String getBirthdate() {
         return birthdate;
     }
-
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
@@ -38,7 +37,6 @@ public class ProfileRequest {
     public Boolean getGender() {
         return gender;
     }
-
     public void setGender(Boolean gender) {
         this.gender = gender;
     }
@@ -46,7 +44,6 @@ public class ProfileRequest {
     public String getNameSubcategory() {
         return nameSubcategory;
     }
-
     public void setNameSubcategory(String nameSubcategory) {
         this.nameSubcategory = nameSubcategory;
     }
@@ -54,11 +51,11 @@ public class ProfileRequest {
     public String getNameCategory() {
         return nameCategory;
     }
-
     public void setNameCategory(String nameCategory) {
         this.nameCategory = nameCategory;
     }
 
+    // Funcion toString generado para imprimir el objeto en una cadena String
     @Override
     public String toString() {
         return "ProfileRequest{" +

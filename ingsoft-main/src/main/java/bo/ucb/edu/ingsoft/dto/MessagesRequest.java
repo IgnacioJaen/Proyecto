@@ -5,13 +5,14 @@ public class MessagesRequest {
     private String date;
     private String content;
 
+    // Constructor vacio de la clase MessageRequest
     public MessagesRequest(){
     }
 
+    // Setters Y Getters generados para los demas atributos de la clase MessageRequest
     public Integer getMessageId() {
         return messageId;
     }
-
     public void setMessageId(Integer messageId) {
         this.messageId = messageId;
     }
@@ -19,7 +20,6 @@ public class MessagesRequest {
     public String getDate() {
         return date;
     }
-
     public void setDate(String date) {
         this.date = date;
     }
@@ -27,11 +27,11 @@ public class MessagesRequest {
     public String getContent() {
         return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
 
+    // Funcion toString generado para imprimir el objeto en una cadena String
     @Override
     public String toString() {
         return "MessagesRequest{" +
