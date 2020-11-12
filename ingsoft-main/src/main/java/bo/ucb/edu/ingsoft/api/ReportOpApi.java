@@ -43,7 +43,7 @@ public class ReportOpApi {
         return reportOpBl.findReportOpReqById(reportOpRequest);
     }
 
-    //Metodo que agrega un reporte a traves del requestMethod POST
+    //Metodo que agrega una opcion de reporte a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions insertReportOp(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -53,7 +53,7 @@ public class ReportOpApi {
 
     }
 
-    //Metodo que actualiza un reporte a traves del requestMethod PUT
+    //Metodo que actualiza una opcion de reporte a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions updateReport(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -62,7 +62,7 @@ public class ReportOpApi {
         return  reportOptions;
     }
 
-
+    //Metodo que actualiza una opcion de reporte a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions deleteReport(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         return reportOpBl.deleteReportOp(reportOptions);

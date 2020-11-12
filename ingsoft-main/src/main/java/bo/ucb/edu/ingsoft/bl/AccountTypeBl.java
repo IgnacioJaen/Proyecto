@@ -15,17 +15,21 @@ public class AccountTypeBl {
     private AccountTypeDao accountTypeDao;
     private TransactionDao transactionDao;
 
+    //Constructor de la clase AccountTypeBl recibe dos parametros de tipo accountTypeDao y transactionDao
     @Autowired
     public AccountTypeBl(AccountTypeDao accountTypeDao, TransactionDao transactionDao) {
         this.accountTypeDao = accountTypeDao;
         this.transactionDao = transactionDao;
     }
 
-
+    //Metodo que a traves del objeto accountTypeDao llama al metodo para encontrar un
+    //tipo de cuenta por medio del ID
     public AccountType findAccountTypeById(AccountType accountType) {
         return accountTypeDao.findByAccountTypeId(accountType);
     }
 
+    //Metodo que a traves del objeto accountTypeDao llama al metodo para agregar un
+    //tipo de cuenta
     public AccountType insertAccountType(AccountType accountType, Transaction transaction) {
         accountType.setTransaction(transaction);
         accountTypeDao.accountTypeInsert(accountType);
@@ -34,17 +38,23 @@ public class AccountTypeBl {
         return accountType;
     }
 
+    //Metodo que a traves del objeto accountTypeDao llama al metodo para actualizar un
+    //tipo de cuenta por medio del ID
     public AccountType updateAccountType(AccountType accountType, Transaction transaction) {
         accountType.setTransaction(transaction);
         accountTypeDao.accountTypeUpdate(accountType);
         return accountType;
     }
 
+    //Metodo que a traves del objeto accountTypeDao llama al metodo para eliminar un
+    //tipo de cuenta por medio del ID
     public AccountType deleteAccountType(AccountType accountType) {
         accountTypeDao.accountTypeDelete(accountType);
         return accountType;
     }
 
+    //Metodo que a traves del objeto accountTypeReqDao llama al metodo para encontrar un
+    //tipo de cuenta por medio del ID para el request del usuario de tipo cliente
     public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest){
         return accountTypeDao.findAccountTypeReqById(accountTypeRequest);
     }

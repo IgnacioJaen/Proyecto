@@ -7,11 +7,23 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AccountTypeDao {
+    //Metodos de la clase AccountTypeDao que seran utilizadas por los .xml de la
+    //carpeta resources/dao que utilicen como mapper esta clase
 
+    //Metodo para encontrar un tipo de cuenta y tiene un parametro de tipo accountType
     public AccountType findByAccountTypeId(AccountType accountType);
+
+    //Metodo para agregar un tipo de cuenta y tiene un parametro de tipo accountType
     public void accountTypeInsert(AccountType accountType);
+
+    //Metodo para actualizar un tipo de cuenta y tiene un parametro de tipo accountType
     public void accountTypeUpdate(AccountType accountType);
+
+    //Metodo para eliminar un tipo de cuenta y tiene un parametro de tipo accountType
     public void accountTypeDelete(AccountType accountType);
+
+    //Metodo para encontrar un tipo de cuenta y tiene un parametro de tipo accountTypeRequest
+    //ya que es el request para la vista del usuario de tipo cliente
     public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest);
 
 }

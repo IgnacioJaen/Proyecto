@@ -15,17 +15,21 @@ public class UserBl {
     private UserDao userDao;
     private TransactionDao transactionDao;
 
+    //Constructor de la clase UserBl recibe dos parametros de tipo userDao y transactionDao
     @Autowired
     public UserBl(UserDao userDao, TransactionDao transactionDao) {
         this.userDao = userDao;
         this.transactionDao = transactionDao;
     }
 
-
+    //Metodo que a traves del objeto userDao llama al metodo para encontrar un
+    //usuario por medio del ID
     public User findUserById(User user) {
         return userDao.findByUserId(user);
     }
 
+    //Metodo que a traves del objeto userDao llama al metodo para agregar un
+    //usuario
     public User insertUser(User user, Transaction transaction) {
         user.setTransaction(transaction);
         userDao.userInsert(user);
@@ -34,17 +38,23 @@ public class UserBl {
         return user;
     }
 
+    //Metodo que a traves del objeto userDao llama al metodo para actualizar un
+    //usuario por medio del ID
     public User updateUser(User user, Transaction transaction) {
         user.setTransaction(transaction);
         userDao.userUpdate(user);
         return user;
     }
 
+    //Metodo que a traves del objeto userDao llama al metodo para eliminar un
+    //usuario por medio del ID
     public User deleteUser(User user) {
         userDao.userDelete(user);
         return user;
     }
 
+    //Metodo que a traves del objeto userDao llama al metodo para encontrar un
+    //usuario por medio del ID para el request del usuario de tipo cliente
     public UserRequest findUserReqById(UserRequest userRequest) {
         return userDao.findUserReqById(userRequest);
     }

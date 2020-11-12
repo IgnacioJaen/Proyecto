@@ -10,11 +10,14 @@ public class ProfileBl {
 
     private ProfileDao profileDao;
 
+    //Constructor de la clase ProfileBl recibe dos parametros de tipo profileDao y transactionDao
     @Autowired
     public ProfileBl(ProfileDao profileDao) {
         this.profileDao = profileDao;
     }
 
+    //Metodo que a traves del objeto profileDao llama al metodo para encontrar un
+    //perfil por medio del ID
     public ProfileRequest profileget(Integer userId) {
         return profileDao.profilegetp(userId);
     }

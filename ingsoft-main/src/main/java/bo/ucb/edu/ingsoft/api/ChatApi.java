@@ -41,7 +41,7 @@ public class ChatApi {
         return chatBl.findChatReqById(chatRequest);
     }
 
-    //Metodo que actualiza una chat a traves del requestMethod PUT
+    //Metodo que agrega un chat a traves del requestMethod PUT
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat createChat(@RequestBody Chat chat, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
@@ -51,7 +51,7 @@ public class ChatApi {
 
     }
 
-    //Metodo que elimina una chat a traves del requestMethod DELETE es decir cambia el status a 0
+    //Metodo que elimina un chat a traves del requestMethod DELETE es decir cambia el status a 0
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat deleteChat(@RequestBody Chat chat, HttpServletRequest request) {
         return chatBl.deleteChat(chat);
