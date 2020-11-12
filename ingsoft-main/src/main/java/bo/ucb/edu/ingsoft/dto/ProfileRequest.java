@@ -4,7 +4,7 @@ public class ProfileRequest {
     private String name;
     private String surname;
     private String birthdate;
-    private Boolean gender;
+    private String gender;
     private String nameSubcategory;
     private String nameCategory;
 
@@ -34,10 +34,10 @@ public class ProfileRequest {
         this.birthdate = birthdate;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
