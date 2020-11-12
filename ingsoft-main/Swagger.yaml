@@ -25,10 +25,7 @@ servers:
   - url: "https://virtserver.swaggerhub.com/bipersonal/CATEGORY/1.0.0"
     description: "SwaggerHub API Auto Mocking"
 tags:
-  - name: "category"
-    description: "operations with C.R.U.D for the categories"
-  - name: "sub_category"
-    description: "operations with C.R.U.D for the subcategories"
+
   - name: "users"
     description: "operations with C.R.U.D for the users"
   - name: "reports"
@@ -37,6 +34,10 @@ tags:
     description: "operations for viewing and adding a friend"
   - name: "messages"
     description: "gets messages"
+  - name: "category"
+    description: "operations with C.R.U.D for the categories"
+  - name: "sub_category"
+    description: "operations with C.R.U.D for the subcategories"
 paths:
   /users:
     post:
@@ -88,6 +89,35 @@ paths:
           description: "Invalid user supplied"
         "404":
           description: "User not found"
+  /user/{userId}:
+    get:
+      tags:
+        - "users"
+      summary: "Get data user"
+      operationId: "getUserById"
+      parameters:
+        - name: "userId"
+          in: "path"
+          description: "The name that needs to be fetched. Use category1 for testing."
+          required: true
+          style: "simple"
+          explode: false
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profiles"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Profiles"
+        "400":
+          description: "Invalid name category supplied"
+        "404":
+          description: "Category not found"
   /profile/{profileId}:
     get:
       tags:
@@ -175,7 +205,7 @@ paths:
                     type: "integer"
                 items:
                   type: "object"
-  /messages/{messageId}:
+  /chats/{messageId}:
     get:
       tags:
         - "chats"
@@ -248,7 +278,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ApiResponse"
-  /users/{userId}/chats:
+  /chats/{userId}:
     get:
       tags:
         - "chats"
@@ -277,44 +307,15 @@ paths:
           description: "Invalid chatId supplied"
         "404":
           description: "ChatId not found"
-  /users/{userId}/userTypes:
-    get:
-      tags:
-        - "chats"
-      summary: "Get all the chat_id from an user"
-      operationId: "getReportByUsername"
-      parameters:
-        - name: "userId"
-          in: "path"
-          description: "The id of the user, user must be logged"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "integer"
 
-      responses:
-        "200":
-          description: "successful operation"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Chats"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/Chats"
-        "400":
-          description: "Invalid chatId supplied"
-        "404":
-          description: "ChatId not found"
-  /users/{userId}/reports:
+  /chats/{reportId}:
     get:
       tags:
         - "chats"
       summary: "Get all the chat_id from an user"
       operationId: "getReportByChatId"
       parameters:
-        - name: "userId"
+        - name: "reportId"
           in: "path"
           description: "The id of the user, user must be logged"
           required: true
@@ -573,21 +574,18 @@ components:
     Profiles:
       type: "object"
       properties:
-        id:
-          type: "integer"
-          format: "int64"
-        profile_id_1:
-          type: "integer"
-          format: "int64"
-        profile_id_2:
-          type: "integer"
-          format: "int64"
-        date:
-          type: "integer"
-          format: "int64"
-        status:
-          type: "integer"
-          format: "int64"
+        name:
+          type: "string"
+        surname:
+          type: "string"
+        birthdate:
+          type: "string"
+        gender:
+          type: "string"
+        nameSubcategory:
+          type: "string"
+        nameCategory:
+          type: "string"
     Users:
       type: "object"
       properties:
