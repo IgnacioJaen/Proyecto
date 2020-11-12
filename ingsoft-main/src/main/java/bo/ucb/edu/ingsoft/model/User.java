@@ -11,7 +11,7 @@ public class User {
     private String name;
     private String surname;
     private String birthdate;
-    private Boolean gender;
+    private String gender;
     private String email;
     private String password;
     private String userPhoto;
@@ -97,12 +97,8 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public Boolean getGender() {
-        return gender;
-    }
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
+    public String getGender() {return gender;}
+    public void setGender(String gender) {this.gender = gender;}
 
     public String getEmail() {
         return email;
