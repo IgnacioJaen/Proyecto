@@ -6,7 +6,7 @@
 CREATE TABLE Account_type (
     account_type_id int NOT NULL AUTO_INCREMENT COMMENT 'Primary key de la tabla account_type_id
 PK of this table',
-    type varchar(100) NOT NULL COMMENT 'Cadena de texto que indica el typo de cuenta el tipo de plan, como ser "Premium"
+    type varchar(100) NOT NULL COMMENT 'Cadena de texto que indica el typo de cuenta el tipo de plan, como ser "Premium" 
 String that show user''''s accoun type like "Premium"',
     price numeric(10,2) NOT NULL COMMENT 'Indica el precio de ese tipo de usuario',
     status int NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE Messages (
 Chat Foreign Key ',
     date timestamp NOT NULL COMMENT 'Fecha y hora actual del mensaje
 Message current date and time',
-    content varchar(5000) NOT NULL COMMENT 'Cadena con el contenido del mensaje con capacidad de 5000 letras
+    content varchar(5000) NOT NULL COMMENT 'Cadena con el contenido del mensaje con capacidad de 5000 letras 
 Message content, capacity 5000',
     status int NOT NULL,
     tx_id int NOT NULL,

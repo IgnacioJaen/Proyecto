@@ -728,27 +728,28 @@ components:
     Profiles:
       type: "object"
       properties:
-        id:
-          type: "integer"
-          format: "int64"
-        profile_id_1:
-          type: "integer"
-          format: "int64"
-        profile_id_2:
-          type: "integer"
-          format: "int64"
-        date:
-          type: "integer"
-          format: "int64"
-        status:
-          type: "integer"
-          format: "int64"
+        name:
+          type: "String"
+        surname:
+          type: "String"
+        birthdate:
+          type: "String"
+        gender:
+          type: "Boolean"
+        nameSubcategory:
+          type: "String"
+        nameCategory:
+            type: "String"
     Users:
       type: "object"
       properties:
-        id:
+        userId:
           type: "integer"
           format: "int64"
+        accountType:
+          type: "string"
+        userType:
+          type: "string"
         name:
           type: "string"
         surname:
@@ -761,16 +762,8 @@ components:
           type: "string"
         password:
           type: "string"
-        status:
-          type: "boolean"
-        user_type:
-          type: "integer"
-          format: "int64"
-        account_type:
-          type: "integer"
-          format: "int64"
-        photoUrls:
-          type: "array"
+        userPhoto:
+          type: "string"
           xml:
             name: "photoUrlUser"
             wrapped: true
@@ -781,31 +774,21 @@ components:
     Chats:
       type: "object"
       properties:
-        id:
+        chatId:
           type: "integer"
           format: "int64"
-        user_one_id:
-          type: "integer"
-          format: "int64"
-        user_two_id:
-          type: "integer"
-          format: "int64"
-        report_id:
-          type: "integer"
-          format: "int64"
+        profile2UserName:
+          type: "string"
     Messages:
       type: "object"
-      properties:
-        id:
-          type: "integer"
-          format: "int64"
-        date:
-          type: "string"
-        chat_id:
-          type: "integer"
-          format: "int64"
-        content:
-          type: "string"
+        properties:
+          messageId:
+            type: "integer"
+            format: "int64"
+          date:
+            type: "string"
+          content:
+            type: "string"
     Reports:
       type: "object"
       properties:
@@ -817,7 +800,7 @@ components:
     Report_options:
       type: "object"
       properties:
-        id:
+        reportOpId:
           type: "integer"
           format: "int64"
         description:
@@ -833,13 +816,13 @@ components:
     Account_types:
       type: "object"
       properties:
-        id:
+        accountTypeId:
           type: "integer"
           format: "int64"
         type:
           type: "string"
         price:
-          type: "number"
+          type: "Float"
     Categories:
       type: "object"
       properties:
