@@ -1,17 +1,18 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.CategoryBl;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
+import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
+import java.util.List;
 
 
 @RestController
@@ -33,6 +34,7 @@ public class CategoryApi {
     public Category findById(@RequestBody Category category, HttpServletRequest request) {
         return categoryBl.findCategoryById(category);
     }
+
 
     //Metodo que agrega una categoria a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -58,6 +60,14 @@ public class CategoryApi {
     public Category deletecategory(@RequestBody Category category, HttpServletRequest request) {
 
         return categoryBl.deleteCategory(category);
+    }
+
+    //Metodo para sacar todas las categorias existentes
+
+    @RequestMapping(path="/categories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CategoryRequest> categories(HttpServletRequest request) {
+        List<CategoryRequest> category=categoryBl.categories();
+        return category;
     }
 
 }

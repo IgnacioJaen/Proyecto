@@ -15,7 +15,7 @@
                tx_update as txUpdate
         FROM category
         WHERE
-            category_id = #{categoryId} and status=1
+            category_id = #{category} and status=1
     </select>
 
     <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
@@ -37,6 +37,14 @@
         SET status = 0
         WHERE category_id = #{categoryId} and status=1
     </update>
+
+    <select id="categories" resultType="bo.ucb.edu.ingsoft.dto.CategoryRequest">
+        SELECT
+               category_id as categoryId,
+               name as nameCategory
+        FROM category
+
+    </select>
 
 
 </mapper>
