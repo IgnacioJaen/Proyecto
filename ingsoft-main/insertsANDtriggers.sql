@@ -1,6 +1,6 @@
 --INSERTS
 
-INSERT INTO `account_type` (`account_type_id`, `type`, `price`, `status`, `tx_id`, `tx_host`, `tx_user_id`, `tx_date`, `tx_update`) VALUES
+INSERT INTO `account_type` (`account_type_id`, `type`, `price`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (1, '1', '0.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29'),
 (2, '2', '5.00', 1, 1, '192.168.1.68', 12, '2020-10-30 02:09:03', '2020-10-29');
 
@@ -137,7 +137,7 @@ INSERT INTO `user` (`user_id`, `account_type_id`, `user_type_id`, `name`, `surna
 
 -- --------------------------------------------------------
 
-INSERT INTO `user_type` (`user_type_id`, `type`, `status`, `tx_id`, `tx_host`, `tx_user_id`, `tx_date`, `tx_update`) VALUES
+INSERT INTO `user_type` (`user_type_id`, `type`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES
 (1, '1', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29'),
 (2, '2', 1, 1, '192.168.1.65', 11, '2020-10-30 02:09:02', '2020-10-29');
 
