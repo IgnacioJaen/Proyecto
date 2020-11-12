@@ -26,7 +26,7 @@
         FROM user a, account_type b, user_type c
         WHERE
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
-            and status=1
+            and a.status=1
     </select>
 
     <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
@@ -45,7 +45,7 @@
         FROM user a, account_type b, user_type c
         WHERE
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
-            and status=1
+            and a.status=1
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
