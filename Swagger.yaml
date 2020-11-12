@@ -816,13 +816,13 @@ components:
     Account_types:
       type: "object"
       properties:
-        id:
+        accountTypeId:
           type: "integer"
           format: "int64"
         type:
           type: "string"
         price:
-          type: "number"
+          type: "Float"
     Categories:
       type: "object"
       properties:
