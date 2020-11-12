@@ -48,5 +48,14 @@
         WHERE account_type_id = #{accountTypeId}
     </delete>
 
+    <select id="accountTypes" resultType="bo.ucb.edu.ingsoft.dto.AccountTypeRequest">
+        SELECT
+               account_type_id as accountTypeId,
+               type as type,
+               price as price
+        FROM account_type
+
+    </select>
+
 
 </mapper>

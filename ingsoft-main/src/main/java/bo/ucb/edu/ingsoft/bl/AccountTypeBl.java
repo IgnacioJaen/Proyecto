@@ -4,11 +4,14 @@ import bo.ucb.edu.ingsoft.dao.AccountTypeDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 
 import bo.ucb.edu.ingsoft.dto.AccountTypeRequest;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.AccountType;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AccountTypeBl {
@@ -57,5 +60,11 @@ public class AccountTypeBl {
     //tipo de cuenta por medio del ID para el request del usuario de tipo cliente
     public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest){
         return accountTypeDao.findAccountTypeReqById(accountTypeRequest);
+    }
+
+    public List<AccountTypeRequest> accountTypes(){
+
+        List<AccountTypeRequest> accountType=accountTypeDao.accountTypes();
+        return accountType;
     }
 }

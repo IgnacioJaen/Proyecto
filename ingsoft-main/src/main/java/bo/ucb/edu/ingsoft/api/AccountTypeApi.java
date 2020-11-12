@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.AccountTypeBl;
 import bo.ucb.edu.ingsoft.dto.AccountTypeRequest;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.AccountType;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/accountType")
@@ -66,5 +68,11 @@ public class AccountTypeApi {
     public AccountTypeRequest findAccountTypeById(@RequestBody AccountTypeRequest accountTypeRequest, HttpServletRequest request) {
 
         return accountTypeBl.findAccountTypeReqById(accountTypeRequest);
+    }
+
+    @RequestMapping(path="/accounts",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<AccountTypeRequest> accountTypes(HttpServletRequest request) {
+        List<AccountTypeRequest> accountType=accountTypeBl.accountTypes();
+        return accountType;
     }
 }

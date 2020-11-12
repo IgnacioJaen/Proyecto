@@ -1,9 +1,12 @@
 package bo.ucb.edu.ingsoft.dao;
 
 import bo.ucb.edu.ingsoft.dto.AccountTypeRequest;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.AccountType;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface AccountTypeDao {
@@ -26,4 +29,5 @@ public interface AccountTypeDao {
     //ya que es el request para la vista del usuario de tipo cliente
     public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest);
 
+    public List<AccountTypeRequest> accountTypes();
 }
