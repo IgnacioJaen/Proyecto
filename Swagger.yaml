@@ -782,14 +782,11 @@ components:
     Messages:
       type: "object"
       properties:
-        id:
+        messageId:
           type: "integer"
           format: "int64"
         date:
           type: "string"
-        chat_id:
-          type: "integer"
-          format: "int64"
         content:
           type: "string"
     Reports:
