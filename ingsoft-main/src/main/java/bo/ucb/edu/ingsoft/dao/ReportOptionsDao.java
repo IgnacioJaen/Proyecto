@@ -1,9 +1,12 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface ReportOptionsDao {
@@ -25,4 +28,6 @@ public interface ReportOptionsDao {
 
     //Metodo para eliminar una opcion de reporte y tiene un parametro de tipo reportOptions
     public void reportOpDelete(ReportOptions reportOptions);
+
+    public List<ReportOpRequest> reportOptions();
 }

@@ -48,5 +48,12 @@
         WHERE report_op_id = #{reportOpId}
     </delete>
 
+    <select id="reportOptions" resultType="bo.ucb.edu.ingsoft.dto.ReportOpRequest">
+        SELECT
+               description as description
+        FROM report_options
+
+    </select>
+
 
 </mapper>

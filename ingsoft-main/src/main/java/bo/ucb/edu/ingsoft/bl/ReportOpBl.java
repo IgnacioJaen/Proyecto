@@ -3,12 +3,15 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.ReportDao;
 import bo.ucb.edu.ingsoft.dao.ReportOptionsDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Report;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ReportOpBl {
@@ -60,5 +63,11 @@ public class ReportOpBl {
     public ReportOptions deleteReportOp(ReportOptions reportOptions) {
         reportOptionsDao.reportOpDelete(reportOptions);
         return reportOptions;
+    }
+
+    public List<ReportOpRequest> reportOptions(){
+
+        List<ReportOpRequest> reportOp=reportOptionsDao.reportOptions();
+        return reportOp;
     }
 }

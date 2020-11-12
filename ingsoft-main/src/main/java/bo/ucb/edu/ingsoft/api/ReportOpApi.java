@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.ReportBl;
 import bo.ucb.edu.ingsoft.bl.ReportOpBl;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
 import bo.ucb.edu.ingsoft.model.Report;
 import bo.ucb.edu.ingsoft.model.ReportOptions;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/reportOptions")
@@ -66,5 +68,11 @@ public class ReportOpApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ReportOptions deleteReport(@RequestBody ReportOptions reportOptions, HttpServletRequest request) {
         return reportOpBl.deleteReportOp(reportOptions);
+    }
+
+    @RequestMapping(path="/reports",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ReportOpRequest> categories(HttpServletRequest request) {
+        List<ReportOpRequest> reportOp=reportOpBl.reportOptions();
+        return reportOp;
     }
 }

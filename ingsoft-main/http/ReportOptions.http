@@ -1,3 +1,8 @@
+GET http://localhost:8080/v1/reportOptions/reports
+Accept: application/json
+
+###
+
 GET http://localhost:8080/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
