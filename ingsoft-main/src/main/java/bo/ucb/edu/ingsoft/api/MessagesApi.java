@@ -68,8 +68,8 @@ public class MessagesApi {
         return messagesBl.deleteMessages(messages);
     }
 
-    @RequestMapping(path="/messagesList",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MessagesRequest> messagesList(User user, HttpServletRequest request) {
+    @RequestMapping(path="/messages",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MessagesRequest> messages(User user, HttpServletRequest request) {
         List<MessagesRequest> message=messagesBl.messages(user);
         return message;
     }

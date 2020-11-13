@@ -2,13 +2,12 @@ package bo.ucb.edu.ingsoft.dto;
 
 public class MessagesRequest {
     private String userName;
-    private String date;
+    private String datemessage;
     private String content;
 
-    // Constructor vacio de la clase MessageRequest
-    public MessagesRequest(){
+    public MessagesRequest() {
     }
-    // Setters Y Getters generados para los demas atributos de la clase MessageRequest
+
     public String getUserName() {
         return userName;
     }
@@ -16,27 +15,28 @@ public class MessagesRequest {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getDate() {
-        return date;
+
+    public String getDatemessage() {
+        return datemessage;
     }
-    public void setDate(String date) {
-        this.date = date;
+
+    public void setDatemessage(String datemessage) {
+        this.datemessage = datemessage;
     }
 
     public String getContent() {
         return content;
     }
+
     public void setContent(String content) {
         this.content = content;
     }
-
-    // Funcion toString generado para imprimir el objeto en una cadena String
 
     @Override
     public String toString() {
         return "MessagesRequest{" +
                 "userName='" + userName + '\'' +
-                ", date='" + date + '\'' +
+                ", datemessage='" + datemessage + '\'' +
                 ", content='" + content + '\'' +
                 '}';
     }

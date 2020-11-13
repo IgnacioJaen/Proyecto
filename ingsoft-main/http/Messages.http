@@ -1,4 +1,4 @@
-GET http://localhost:8080/v1/messages/messagesList
+GET http://localhost:8080/v1/messages/messages
 Accept: application/json
 Content-Type: application/json
 

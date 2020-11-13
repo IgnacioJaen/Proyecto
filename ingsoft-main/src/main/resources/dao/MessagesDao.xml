@@ -42,17 +42,21 @@
         UPDATE messages
         SET status = 0
         WHERE message_id = #{messageId}
-        </delete>
+    </delete>
+
+
 
     <select id="messages" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
         SELECT
-            a.name as nameCategory,
-            b.name as nameSubcategory
-
-            FROM category a, subcategory b
-            WHERE  a.category_id=#{categoryId}
-            and a.category_id=b.category_id
-            and b.status=1
+            d.name as userName,
+            a.date as datemessage,
+            a.content as content
+        FROM messages a, chat b, profile c, user d
+        WHERE  d.user_id= #{userId}
+        and d.user_id=c.user_id
+        and c.profile_id=b.profile1_id
+        and b.chat_id=a.chat_id
+        and a.status=1
 
     </select>
 </mapper>
