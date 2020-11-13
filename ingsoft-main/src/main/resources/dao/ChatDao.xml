@@ -45,13 +45,15 @@
 
     <select id="chats" resultType="bo.ucb.edu.ingsoft.dto.ChatRequest">
         SELECT
-            a.name as nameCategory,
-            b.name as nameSubcategory
+            d.name as profile2UserName,
+            Max(a.date) as dateChat,
+            a.content as contentChat
 
-            FROM category a, subcategory b
-            WHERE  a.category_id=#{categoryId}
-            and a.category_id=b.category_id
-            and b.status=1
+        FROM messages a, chat b, profile c, user d
+        WHERE  b.profile1_id=1
+        and d.user_id=c.user_id
+        and c.profile_id=b.profile2_id
+        and a.status=1
 
     </select>
 

@@ -61,7 +61,7 @@ public class ChatApi {
     }
 
     @RequestMapping(path="/chats",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ChatRequest> chatsList(User user, HttpServletRequest request) {
+    public List<ChatRequest> chatsList(@RequestBody User user, HttpServletRequest request) {
         List<ChatRequest> chat=chatBl.chats(user);
         return chat;
     }
