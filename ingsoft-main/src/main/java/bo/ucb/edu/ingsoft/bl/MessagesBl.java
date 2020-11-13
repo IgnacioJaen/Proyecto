@@ -5,6 +5,7 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
+import bo.ucb.edu.ingsoft.model.Chat;
 import bo.ucb.edu.ingsoft.model.Messages;
 import bo.ucb.edu.ingsoft.model.Transaction;
 

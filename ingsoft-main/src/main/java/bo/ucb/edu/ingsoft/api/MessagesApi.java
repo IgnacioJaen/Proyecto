@@ -1,11 +1,10 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.MessagesBl;
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.dto.ReportOpRequest;
-import bo.ucb.edu.ingsoft.model.Transaction;
-import bo.ucb.edu.ingsoft.model.Messages;
-import bo.ucb.edu.ingsoft.model.User;
+import bo.ucb.edu.ingsoft.model.*;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -69,8 +68,12 @@ public class MessagesApi {
     }
 
     @RequestMapping(path="/messages",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MessagesRequest> messages(User user, HttpServletRequest request) {
+    public List<MessagesRequest> messages(@RequestBody User user, HttpServletRequest request) {
         List<MessagesRequest> message=messagesBl.messages(user);
         return message;
     }
+
+
+
+
 }
