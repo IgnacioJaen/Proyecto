@@ -426,34 +426,6 @@ paths:
           description: "Invalid nameCategory supplied"
         "404":
           description: "Category not found"
-  /categories/{categoryId}/Image:
-    post:
-      tags:
-        - "category"
-      summary: "uploads an image"
-      operationId: "uploadFile"
-      parameters:
-        - name: "categoryId"
-          in: "path"
-          description: "nameCategory to update"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "string"
-      requestBody:
-        content:
-          application/octet-stream:
-            schema:
-              type: "string"
-              format: "binary"
-      responses:
-        "200":
-          description: "successful operation"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ApiResponse"
   /subcategories:
     post:
       tags:
@@ -541,34 +513,6 @@ paths:
           description: "Invalid nameSubcategory supplied"
         "404":
           description: "Subcategory not found"
-  /categories/{subcategoryId}/Image:
-    post:
-      tags:
-        - "sub_category"
-      summary: "uploads an image"
-      operationId: "uploadFileSubcategory"
-      parameters:
-        - name: "subcategoryId"
-          in: "path"
-          description: "nameSubcategory to update"
-          required: true
-          style: "simple"
-          explode: false
-          schema:
-            type: "string"
-      requestBody:
-        content:
-          application/octet-stream:
-            schema:
-              type: "string"
-              format: "binary"
-      responses:
-        "200":
-          description: "successful operation"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ApiResponse"
 components:
   schemas:
     Account_types:
