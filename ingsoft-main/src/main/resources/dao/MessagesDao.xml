@@ -49,7 +49,7 @@
     <select id="messages" resultType="bo.ucb.edu.ingsoft.dto.MessagesRequest">
         SELECT
             d.name as userName,
-            a.date as datemessage,
+            a.date as dateMessage,
             a.content as content
         FROM messages a, chat b, profile c, user d
         WHERE  d.user_id= #{userId}
