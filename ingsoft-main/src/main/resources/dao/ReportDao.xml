@@ -20,7 +20,7 @@
     </select>
 
     <insert id="reportInsert" parameterType="bo.ucb.edu.ingsoft.model.Report">
-        INSERT INTO report VALUES (
+        INSERT INTO report (`report_id`, `report_op_id`, `chat_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
             null, #{reportOpId}, #{chatId}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
