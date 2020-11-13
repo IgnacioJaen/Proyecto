@@ -49,7 +49,7 @@
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
-        INSERT INTO user VALUES (
+        INSERT INTO user INSERT INTO `user` (`user_id`, `account_type_id`, `user_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
             null, #{accountTypeId}, #{userTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
