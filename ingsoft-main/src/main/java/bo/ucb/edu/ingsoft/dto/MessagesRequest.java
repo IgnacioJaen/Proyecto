@@ -2,7 +2,7 @@ package bo.ucb.edu.ingsoft.dto;
 
 public class MessagesRequest {
     private String userName;
-    private String datemessage;
+    private String dateMessage;
     private String content;
 
     public MessagesRequest() {
@@ -16,12 +16,12 @@ public class MessagesRequest {
         this.userName = userName;
     }
 
-    public String getDatemessage() {
-        return datemessage;
+    public String getDateMessage() {
+        return dateMessage;
     }
 
-    public void setDatemessage(String datemessage) {
-        this.datemessage = datemessage;
+    public void setDateMessage(String dateMessage) {
+        this.dateMessage = dateMessage;
     }
 
     public String getContent() {
@@ -36,7 +36,7 @@ public class MessagesRequest {
     public String toString() {
         return "MessagesRequest{" +
                 "userName='" + userName + '\'' +
-                ", datemessage='" + datemessage + '\'' +
+                ", dateMessage='" + dateMessage + '\'' +
                 ", content='" + content + '\'' +
                 '}';
     }
