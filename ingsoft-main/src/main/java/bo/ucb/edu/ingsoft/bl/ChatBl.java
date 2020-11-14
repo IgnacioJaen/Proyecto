@@ -5,6 +5,7 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
+import bo.ucb.edu.ingsoft.model.Profile;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +54,8 @@ public class ChatBl {
         return chat;
     }
 
-    public List<ChatRequest> chats(User user) {
-        List<ChatRequest> chat=chatDao.chats(user);
+    public List<ChatRequest> chats(Profile profile) {
+        List<ChatRequest> chat=chatDao.chats(profile);
         return chat;
     }
 }

@@ -50,7 +50,7 @@
             a.content as contentChat
 
         FROM messages a, chat b, profile c, user d
-        WHERE  b.profile1_id=1
+        WHERE  b.profile1_id=#{profileId}
         and d.user_id=c.user_id
         and c.profile_id=b.profile2_id
         and a.status=1

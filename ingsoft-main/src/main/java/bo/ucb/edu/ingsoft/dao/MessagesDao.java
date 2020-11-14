@@ -33,5 +33,5 @@ public interface MessagesDao {
     //Metodo para eliminar un mensaje y tiene un parametro de tipo messages
     public void messagesDelete(Messages messages);
 
-    public List<MessagesRequest> messages(User user);
+    public List<MessagesRequest> messages(Chat chat);
 }

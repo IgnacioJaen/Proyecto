@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.dao;
 
 import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
+import bo.ucb.edu.ingsoft.model.Profile;
 import bo.ucb.edu.ingsoft.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -28,5 +29,5 @@ public interface ChatDao {
     //Metodo para eliminar un chat y tiene un parametro de tipo chat
     public void deleteChat(Chat chat);
 
-    public List<ChatRequest> chats(User user);
+    public List<ChatRequest> chats(Profile profile);
 }

@@ -68,8 +68,8 @@ public class MessagesApi {
     }
 
     @RequestMapping(path="/messages",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MessagesRequest> messages(@RequestBody User user, HttpServletRequest request) {
-        List<MessagesRequest> message=messagesBl.messages(user);
+    public List<MessagesRequest> messages(@RequestBody Chat chat, HttpServletRequest request) {
+        List<MessagesRequest> message=messagesBl.messages(chat);
         return message;
     }
 

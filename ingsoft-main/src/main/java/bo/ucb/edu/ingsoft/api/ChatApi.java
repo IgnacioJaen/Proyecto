@@ -4,6 +4,7 @@ import bo.ucb.edu.ingsoft.bl.ChatBl;
 import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.dto.MessagesRequest;
 import bo.ucb.edu.ingsoft.model.Chat;
+import bo.ucb.edu.ingsoft.model.Profile;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -61,8 +62,8 @@ public class ChatApi {
     }
 
     @RequestMapping(path="/chats",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ChatRequest> chatsList(@RequestBody User user, HttpServletRequest request) {
-        List<ChatRequest> chat=chatBl.chats(user);
+    public List<ChatRequest> chatsList(@RequestBody Profile profile, HttpServletRequest request) {
+        List<ChatRequest> chat=chatBl.chats(profile);
         return chat;
     }
 }
