@@ -176,6 +176,8 @@ CREATE TABLE User_Subcategory (
 -- Table: h_user
 CREATE TABLE h_user (
     h_user_id int NOT NULL AUTO_INCREMENT,
+    user_type varchar(100) NOT NULL,
+    account_type_id int NOT NULL COMMENT 'Tipo de cuenta del usuario como ser "PREMIUM"',
     name varchar(100) NOT NULL COMMENT 'Nombre del usuario',
     surname varchar(100) NOT NULL COMMENT 'Apellido del usuario',
     birthdate date NOT NULL COMMENT 'Fecha de nacimiento del usuario',
@@ -183,8 +185,6 @@ CREATE TABLE h_user (
     email varchar(100) NOT NULL COMMENT 'Correo electronico del usuario',
     password varchar(100) NOT NULL COMMENT 'Contraseña del usuario',
     user_photo varchar(255) NOT NULL COMMENT 'Direccion o URL de la ubicacion de la foto del usuario',
-    account_type_id int NOT NULL COMMENT 'Tipo de cuenta del usuario como ser "PREMIUM"',
-    user_type_id int NOT NULL COMMENT 'Tipo de usuario, si es cliente o administrador',
     status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
@@ -193,6 +193,7 @@ CREATE TABLE h_user (
     tx_update date NOT NULL,
     CONSTRAINT user_id PRIMARY KEY (h_user_id)
 ) COMMENT 'Registered users in the app';
+
 
 -- Table: transaction
 CREATE TABLE transaction (
