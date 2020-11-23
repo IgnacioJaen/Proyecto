@@ -15,7 +15,7 @@
                tx_user as txUserId,
                tx_date as txDate,
                tx_update as txUpdate
-        FROM messages
+        FROM message
         WHERE
             message_id = #{messageId} and status=1
     </select>
@@ -25,21 +25,21 @@
                message_id as messageId,
                date as date,
                content as content
-        FROM messages
+        FROM message
         WHERE
             message_id = #{messageId} and status=1
     </select>
 
     <insert id="messagesInsert" parameterType="bo.ucb.edu.ingsoft.model.Messages">
-        INSERT INTO messages (`message_id`, `chat_id`, `date`, `content`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
+        INSERT INTO message (`message_id`, `chat_id`, `date`, `content`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`, `receiver_user_id`, `transmitter_user_id`) VALUES (
             null, #{chatId}, #{date}, #{content}, 1, #{transaction.txId}, #{transaction.txHost},
-            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}, #{receiverUserId}, #{transmitterUserId}
         )
     </insert>
 
 
     <delete id="messagesDelete" parameterType="bo.ucb.edu.ingsoft.model.Messages">
-        UPDATE messages
+        UPDATE message
         SET status = 0
         WHERE message_id = #{messageId}
     </delete>
@@ -51,10 +51,9 @@
             d.name as userName,
             a.date as dateMessage,
             a.content as content
-        FROM messages a, chat b, profile c, user d
+        FROM message a, chat b, profile c, user d
         WHERE b.chat_id=#{chatId}
-        and d.user_id=c.user_id
-        and c.profile_id=b.profile1_id
+        and d.user_id= b.user1_id
         and b.chat_id=a.chat_id
         and a.status=1
 

@@ -7,6 +7,8 @@ public class Messages {
     private Integer chatId;
     private String date;
     private String content;
+    private Integer receiverUserId;
+    private Integer transmitterUserId;
     private Integer status;
     private Transaction transaction;
 
@@ -39,6 +41,22 @@ public class Messages {
     }
     public void setMessageId(Integer messageId) {
         this.messageId = messageId;
+    }
+
+    public Integer getReceiverUserId() {
+        return receiverUserId;
+    }
+
+    public void setReceiverUserId(Integer receiverUserId) {
+        this.receiverUserId = receiverUserId;
+    }
+
+    public Integer getTransmitterUserId() {
+        return transmitterUserId;
+    }
+
+    public void setTransmitterUserId(Integer transmitterUserId) {
+        this.transmitterUserId = transmitterUserId;
     }
 
     public Integer getChatId() {
@@ -77,6 +95,7 @@ public class Messages {
     }
 
     // Funcion toString generado para imprimir el objeto en una cadena String
+
     @Override
     public String toString() {
         return "Messages{" +
@@ -84,12 +103,10 @@ public class Messages {
                 ", chatId=" + chatId +
                 ", date='" + date + '\'' +
                 ", content='" + content + '\'' +
+                ", receiverUserId=" + receiverUserId +
+                ", transmitterUserId=" + transmitterUserId +
                 ", status=" + status +
-                ", txId=" + this.transaction.getTxId() +
-                ", txHost='" + this.transaction.getTxHost() + '\'' +
-                ", txUserId=" + this.transaction.getTxUserId() +
-                ", txDate=" + this.transaction.getTxDate() +
-                ", txUpdate=" + this.transaction.getTxUpdate() +
+                ", transaction=" + transaction +
                 '}';
     }
 }

@@ -6,8 +6,8 @@
     <select id="findChatById" resultType="bo.ucb.edu.ingsoft.model.Chat">
         SELECT
                chat_id as chatId,
-               profile1_id as profile1Id,
-               profile2_id as profile2Id,
+               user1_id as user1Id,
+               user2_id as user2Id,
                status as status,
                tx_id as txId,
                tx_host as txHost,
@@ -31,9 +31,9 @@
     </select>
 
     <insert id="createChat" parameterType="bo.ucb.edu.ingsoft.model.Chat">
-        INSERT INTO chat (`chat_id`, `profile1_id`, `profile2_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
-            null, #{profile1Id}, #{profile2Id}, 1, #{transaction.txId}, #{transaction.txHost},
-            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
+        INSERT INTO chat (`chat_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`, `user1_id`, `user2_id`) VALUES (
+            null, 1, #{transaction.txId}, #{transaction.txHost},
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}, #{user1Id}, #{user2Id}
         )
     </insert>
 
@@ -45,15 +45,14 @@
 
     <select id="chats" resultType="bo.ucb.edu.ingsoft.dto.ChatRequest">
         SELECT
-            d.name as profile2UserName,
-            Max(a.date) as dateChat,
+            d.name as user2UserName,
+            a.date as dateChat,
             a.content as contentChat
-
-        FROM messages a, chat b, profile c, user d
-        WHERE  b.profile1_id=#{profileId}
-        and d.user_id=c.user_id
-        and c.profile_id=b.profile2_id
-        and a.status=1
+        FROM message a, chat b, user d
+        WHERE a.transmitter_user_id=#{userId}
+        AND a.chat_id = b.chat_id
+        AND a.receiver_user_id = d.user_id
+        GROUP BY a.date DESC
 
     </select>
 

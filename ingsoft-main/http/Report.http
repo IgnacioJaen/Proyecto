@@ -3,7 +3,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "reportId": 2
+  "reportId": 5
 }
 ###
 
@@ -13,7 +13,10 @@ Content-Type: application/json
 
 {
   "reportOpId": 2,
-  "chatId": 7
+  "chatId": 7,
+  "date": "2020-10-29 22:12:10",
+  "reportedUserId": 7,
+  "userId": 2
 }
 ###
 
@@ -23,6 +26,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "reportId": 3
+  "reportId": 1
 }
 ###

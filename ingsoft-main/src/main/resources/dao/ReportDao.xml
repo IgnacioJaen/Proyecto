@@ -8,6 +8,9 @@
                report_id as reportId,
                report_op_id as reportOpId,
                chat_id as chatId,
+               date as date,
+               reported_user_id as reportedUserId,
+               user_id as userId,
                status as status,
                tx_id as txId,
                tx_host as txHost,
@@ -20,8 +23,8 @@
     </select>
 
     <insert id="reportInsert" parameterType="bo.ucb.edu.ingsoft.model.Report">
-        INSERT INTO report (`report_id`, `report_op_id`, `chat_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
-            null, #{reportOpId}, #{chatId}, 1, #{transaction.txId}, #{transaction.txHost},
+        INSERT INTO report (`report_id`, `report_op_id`, `chat_id`, `date`, `reported_user_id`, `user_id`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
+            null, #{reportOpId}, #{chatId}, #{date}, #{reportedUserId}, #{userId}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
     </insert>

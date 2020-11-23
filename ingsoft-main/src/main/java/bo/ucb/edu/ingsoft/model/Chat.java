@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Chat {
     private Integer chatId;
-    private Integer profile1Id;
-    private Integer profile2Id;
+    private Integer user1Id;
+    private Integer user2Id;
     private Integer status;
     private Transaction transaction;
 
@@ -40,18 +40,20 @@ public class Chat {
         this.chatId = chatId;
     }
 
-    public Integer getProfile1Id() {
-        return profile1Id;
-    }
-    public void setProfile1Id(Integer profile1Id) {
-        this.profile1Id = profile1Id;
+    public Integer getUser1Id() {
+        return user1Id;
     }
 
-    public Integer getProfile2Id() {
-        return profile2Id;
+    public void setUser1Id(Integer user1Id) {
+        this.user1Id = user1Id;
     }
-    public void setProfile2Id(Integer profile2Id) {
-        this.profile2Id = profile2Id;
+
+    public Integer getUser2Id() {
+        return user2Id;
+    }
+
+    public void setUser2Id(Integer user2Id) {
+        this.user2Id = user2Id;
     }
 
     public Integer getStatus() {
@@ -73,8 +75,8 @@ public class Chat {
     public String toString() {
         return "Chat{" +
                 "chatId=" + chatId +
-                ", profile1Id=" + profile1Id +
-                ", profile2Id=" + profile2Id +
+                ", profile1Id=" + user1Id +
+                ", profile2Id=" + user2Id +
                 ", status=" + status +
                 ", txId=" + this.transaction.getTxId() +
                 ", txHost='" + this.transaction.getTxHost() + '\'' +

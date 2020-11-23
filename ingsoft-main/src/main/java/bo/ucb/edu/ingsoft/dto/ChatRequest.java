@@ -1,7 +1,7 @@
 package bo.ucb.edu.ingsoft.dto;
 
 public class ChatRequest {
-    private String profile2UserName;
+    private String user2UserName;
     private String contentChat;
     private String dateChat;
 
@@ -13,11 +13,11 @@ public class ChatRequest {
 
 
     public String getProfile2UserName() {
-        return profile2UserName;
+        return user2UserName;
     }
 
     public void setProfile2UserName(String profile2UserName) {
-        this.profile2UserName = profile2UserName;
+        this.user2UserName = profile2UserName;
     }
 
     public String getContentChat() {
@@ -39,7 +39,7 @@ public class ChatRequest {
     @Override
     public String toString() {
         return "ChatRequest{" +
-                "profile2UserName='" + profile2UserName + '\'' +
+                "profile2UserName='" + user2UserName + '\'' +
                 ", contentChat='" + contentChat + '\'' +
                 ", dateChat='" + dateChat + '\'' +
                 '}';
