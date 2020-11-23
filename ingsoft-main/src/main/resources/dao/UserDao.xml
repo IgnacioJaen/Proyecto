@@ -6,10 +6,9 @@
     <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT
                a.user_id as userId,
+               a.user_type as userType,
                a.account_type_id as accountTypeId,
                b.type as accountType,
-               a.user_type_id as userTypeId,
-               c.type as userType,
                a.name as name,
                a.surname as surname,
                a.birthdate as birthdate,
@@ -23,17 +22,16 @@
                a.tx_user as txUserId,
                a.tx_date as txDate,
                a.tx_update as txUpdate
-        FROM user a, account_type b, user_type c
+        FROM user a, account_type b
         WHERE
-            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
-            and a.status=1
+            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.status=1
     </select>
 
     <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
         SELECT
                a.user_id as userId,
+               a.user_type as userType,
                b.type as accountType,
-               c.type as userType,
                a.name as name,
                a.surname as surname,
                a.birthdate as birthdate,
@@ -42,22 +40,21 @@
                a.password as password,
                a.user_photo as userPhoto,
                a.status as status
-        FROM user a, account_type b, user_type c
+        FROM user a, account_type b
         WHERE
-            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.user_type_id=c.user_type_id
-            and a.status=1
+            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.status=1
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
-        INSERT INTO user INSERT INTO `user` (`user_id`, `account_type_id`, `user_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
-            null, #{accountTypeId}, #{userTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
+        INSERT INTO user (`user_id`, `user_type`, `account_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
+            null, #{userType}, #{accountTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
         )
     </insert>
 
     <update id="userUpdate" parameterType="bo.ucb.edu.ingsoft.model.User">
         UPDATE user
-        SET name = #{name}, account_type_id = #{accountTypeId}, user_type_id = #{userTypeId}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
+        SET name = #{name}, user_type = #{userType}, account_type_id = #{accountTypeId}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
         WHERE user_id = #{userId} and status=1
     </update>
 
