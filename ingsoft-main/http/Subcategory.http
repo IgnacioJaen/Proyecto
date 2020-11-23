@@ -37,11 +37,7 @@ Content-Type: application/json
 }
 ###
 
-GET http://localhost:8080/v1/subcategory/subcategories
+GET http://localhost:8080/v1/subcategory/1
 Accept: application/json
-Content-Type: application/json
 
-{
-  "categoryId": 1
-}
 ###

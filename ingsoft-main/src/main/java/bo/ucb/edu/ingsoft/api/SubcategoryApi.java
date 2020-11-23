@@ -6,13 +6,13 @@ import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -62,11 +62,13 @@ public class SubcategoryApi {
     }
 
 
-    //Metodo para sacar todas las categorias existentes
+    //Metodo para sacar todas las subcategorias existentes
 
-    @RequestMapping(path="/subcategories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CategoryRequest> subcategories(@RequestBody Category category, HttpServletRequest request) {
-        List<CategoryRequest> subcategory=subcategoryBl.subcategories(category);
+    @RequestMapping(path="/{categoryId}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CategoryRequest> subcategories(@PathVariable("categoryId") Integer categoryId, HttpServletRequest request) {
+        List<CategoryRequest> subcategory=subcategoryBl.subcategories(categoryId);
         return subcategory;
     }
+
+
 }
