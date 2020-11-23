@@ -106,6 +106,17 @@ END
 
 DELIMITER ;
 
+
+DELIMITER |
+
+CREATE TRIGGER insertUserIntoHUser AFTER INSERT ON `user`
+    FOR EACH ROW BEGIN
+    INSERT INTO h_user(user_type, account_type_id,  name, surname, birthdate, gender, email, password, user_photo, status, tx_id, tx_host, tx_user, tx_date, tx_update) values (NEW.user_type, NEW.account_type_id,  NEW.name, NEW.surname, NEW.birthdate, NEW.gender, NEW.email, NEW.password, NEW.user_photo, NEW.status, NEW.tx_id, NEW.tx_host, NEW.tx_user, NEW.tx_date, NEW.tx_update);
+END
+|
+
+DELIMITER ;
+
 -- INSERTS
 
 INSERT INTO account_type (account_type_id, type, price, status, tx_id, tx_host, tx_user, tx_date, tx_update) VALUES
