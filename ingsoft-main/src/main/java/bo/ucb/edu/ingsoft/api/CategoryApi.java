@@ -3,15 +3,15 @@ package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.CategoryBl;
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
-import bo.ucb.edu.ingsoft.model.Subcategory;
+import bo.ucb.edu.ingsoft.model.Photos;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -68,6 +68,18 @@ public class CategoryApi {
     public List<CategoryRequest> categories(HttpServletRequest request) {
         List<CategoryRequest> category=categoryBl.categories();
         return category;
+    }
+
+    @RequestMapping(path="/images/{categoryId}" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void uploadImages(@RequestParam MultipartFile images, @PathVariable("categoryId") Integer categoryId, HttpServletRequest request){
+        TransactionUtil transactionUtil=new TransactionUtil();
+        Transaction transaction = transactionUtil.createTransaction(request);
+        categoryBl.uploadImages(images,categoryId,transaction);
+    }
+
+    @RequestMapping(path="/image/categories/{categoryId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Photos findByIdPhoto(@PathVariable Integer categoryId, HttpServletRequest request) {
+        return categoryBl.findImageCategoryById(categoryId);
     }
 
 }

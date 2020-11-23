@@ -40,10 +40,29 @@
 
     <select id="categories" resultType="bo.ucb.edu.ingsoft.dto.CategoryRequest">
         SELECT
-               category_id as categoryId,
-               name as nameCategory
-        FROM category
+            a.category_id as categoryId,
+            a.name as nameCategory,
+            b.photo_path as photoCategory
+        FROM category a, photo b
+        where a.status=1
+        and a.category_id=b.category_id
+
+    </select>
+
+    <insert id="createphotoCategory" parameterType="bo.ucb.edu.ingsoft.model.Photos">
+        INSERT INTO photo
+        VALUES (
+            null,#{categoryId},#{photoPath},1,#{transaction.txId}, "127.0.0.1",
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate})
+    </insert>
+
+    <select id="findImageByCategoryId" resultType="bo.ucb.edu.ingsoft.model.Photos">
+        SELECT
+            category_id as categoryId,
+            photo_path as photoPath
+        FROM photo
         where status=1
+        and category_id=#{categoryId}
 
     </select>
 

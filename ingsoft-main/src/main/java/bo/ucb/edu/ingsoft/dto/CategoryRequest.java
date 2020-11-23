@@ -2,7 +2,8 @@ package bo.ucb.edu.ingsoft.dto;
 
 public class CategoryRequest {
     private Integer categoryId;
-        private String nameCategory;
+    private String nameCategory;
+    private String photoCategory;
 
     public CategoryRequest() {
     }
@@ -23,11 +24,20 @@ public class CategoryRequest {
         this.nameCategory = nameCategory;
     }
 
+    public String getPhotoCategory() {
+        return photoCategory;
+    }
+
+    public void setPhotoCategory(String photoCategory) {
+        this.photoCategory = photoCategory;
+    }
+
     @Override
     public String toString() {
         return "CategoryRequest{" +
                 "categoryId=" + categoryId +
                 ", nameCategory='" + nameCategory + '\'' +
+                ", photoCategory='" + photoCategory + '\'' +
                 '}';
     }
 }

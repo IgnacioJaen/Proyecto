@@ -43,3 +43,8 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:8080/v1/category/image/categories/1
+Accept: application/json
+###
+
+
