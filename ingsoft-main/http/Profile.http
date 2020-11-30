@@ -1,4 +1,4 @@
-GET http://localhost:8080/v1/profile?userId=1
+GET http://localhost:8081/v1/profile?userId=1
 Accept: application/json
 
 ###

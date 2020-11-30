@@ -10,10 +10,7 @@ import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -34,6 +31,7 @@ public class ChatApi {
     // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat findChatById(@RequestBody Chat chat, HttpServletRequest request) {
+
         return chatBl.findChatById(chat);
     }
 
@@ -62,8 +60,8 @@ public class ChatApi {
     }
 
     @RequestMapping(path="/chats",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ChatRequest> chatsList(@RequestBody Profile profile, HttpServletRequest request) {
-        List<ChatRequest> chat=chatBl.chats(profile);
+    public List<ChatRequest> chatsList(@RequestParam Integer userId, HttpServletRequest request) {
+        List<ChatRequest> chat=chatBl.chats(userId);
         return chat;
     }
 }

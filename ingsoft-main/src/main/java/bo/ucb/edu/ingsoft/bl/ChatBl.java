@@ -54,8 +54,8 @@ public class ChatBl {
         return chat;
     }
 
-    public List<ChatRequest> chats(Profile profile) {
-        List<ChatRequest> chat=chatDao.chats(profile);
+    public List<ChatRequest> chats(Integer userId) {
+        List<ChatRequest> chat=chatDao.chats(userId);
         return chat;
     }
 }

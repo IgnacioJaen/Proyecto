@@ -83,7 +83,7 @@ Message content, capacity 5000',
 
 -- Table: Photo
 CREATE TABLE Photo (
-    photo_id int NOT NULL,
+    photo_id int NOT NULL AUTO_INCREMENT,
     photo_path varchar(255) NULL COMMENT 'Path de la ubicacion de la foto para la categoria',
     status int NOT NULL,
     tx_id int NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE User (
 
 -- Table: User_Subcategory
 CREATE TABLE User_Subcategory (
-    user_sub_id int NOT NULL,
+    user_sub_id int NOT NULL AUTO_INCREMENT,
     subcategory_id int NOT NULL COMMENT 'Llave Foranea de la sub categoria seleccionado por el usuario',
     user_id int NOT NULL,
     status int NOT NULL,

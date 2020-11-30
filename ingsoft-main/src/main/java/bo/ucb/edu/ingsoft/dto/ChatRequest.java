@@ -12,12 +12,12 @@ public class ChatRequest {
     // Setters Y Getters generados para los demas atributos de la clase ChatRequest
 
 
-    public String getProfile2UserName() {
+    public String getUser2UserName() {
         return user2UserName;
     }
 
-    public void setProfile2UserName(String profile2UserName) {
-        this.user2UserName = profile2UserName;
+    public void setUser2UserName(String user2UserName) {
+        this.user2UserName = user2UserName;
     }
 
     public String getContentChat() {
