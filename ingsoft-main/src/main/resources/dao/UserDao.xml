@@ -27,19 +27,9 @@
             a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.status=1
     </select>
 
-    <select id="findUserByEmailPassword" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
+    <select id="findUserByEmailPassword" resultType="Integer">
         SELECT
-               a.user_id as userId,
-               a.user_type as userType,
-               b.type as accountType,
-               a.name as name,
-               a.surname as surname,
-               a.birthdate as birthdate,
-               a.gender as gender,
-               a.email as email,
-               a.password as password,
-               a.user_photo as userPhoto,
-               a.status as status
+               a.user_id as userId
         FROM user a, account_type b
         WHERE
             a.email = #{email} and a.password = #{password}

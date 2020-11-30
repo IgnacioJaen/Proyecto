@@ -44,7 +44,7 @@ public class UserApi {
 
     //Inicio de sesion
     @RequestMapping(value = "/userRequest/login", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserRequest findUserByEmailPassword(@RequestParam String email, @RequestParam String password, HttpServletRequest request) {
+    public Integer findUserByEmailPassword(@RequestParam String email, @RequestParam String password, HttpServletRequest request) {
 
         return userBl.findUserByEmailPassword(email, password);
     }

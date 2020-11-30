@@ -60,7 +60,7 @@ public class UserBl {
     }
 
     //inicio de sesion
-    public UserRequest findUserByEmailPassword(String email, String password) {
+    public Integer findUserByEmailPassword(String email, String password) {
         return userDao.findUserByEmailPassword(email, password);
     }
 
