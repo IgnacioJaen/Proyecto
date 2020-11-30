@@ -12,7 +12,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 1
+  "userId": 16
 }
 ###
 
@@ -22,14 +22,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
+  "userType": "Client",
   "accountTypeId": 2,
-  "userTypeId": 2,
   "name": "Rodo",
-  "surname": "Mendoza",
-  "birthdate": "1992-10-10",
-  "gender": 0,
-  "email": "ana.mon@gmail.com",
-  "password": "12345",
+  "surname": "Tarqui",
+  "birthdate": "1998-10-10",
+  "gender": "Masculino",
+  "email": "Rodo.Tarqui@gmail.com",
+  "password": "14785",
   "userPhoto": "https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg"
 }
 ###

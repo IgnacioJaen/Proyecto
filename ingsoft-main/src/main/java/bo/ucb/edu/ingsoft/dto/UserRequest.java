@@ -8,7 +8,7 @@ public class UserRequest {
     private String name;
     private String surname;
     private String birthdate;
-    private Boolean gender;
+    private String gender;
     private String email;
     private String password;
     private String userPhoto;
@@ -62,10 +62,10 @@ public class UserRequest {
         this.birthdate = birthdate;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

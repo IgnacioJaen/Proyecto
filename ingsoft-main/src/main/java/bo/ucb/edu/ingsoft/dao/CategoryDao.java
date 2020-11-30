@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.dao;
 
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
+import bo.ucb.edu.ingsoft.model.Photos;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,4 +28,7 @@ public interface CategoryDao {
     public List<CategoryRequest> categories();
 
 
+    public void createphotoCategory(Photos photocategory);
+
+    public Photos findImageByCategoryId(Integer categoryId);
 }

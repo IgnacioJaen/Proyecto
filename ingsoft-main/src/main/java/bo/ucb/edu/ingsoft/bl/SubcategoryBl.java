@@ -55,8 +55,8 @@ public class SubcategoryBl {
     }
 
 
-    public List<CategoryRequest> subcategories(Category category) {
-        List<CategoryRequest> subcategory=subcategoryDao.subcategories(category);
+    public List<CategoryRequest> subcategories(Integer categoryId) {
+        List<CategoryRequest> subcategory=subcategoryDao.subcategories(categoryId);
         return subcategory;
     }
 }

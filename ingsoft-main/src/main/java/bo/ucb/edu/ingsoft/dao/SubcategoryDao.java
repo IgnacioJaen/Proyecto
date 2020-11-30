@@ -23,5 +23,5 @@ public interface SubcategoryDao {
     //Metodo para eliminar una subcategoria y tiene un parametro de tipo subcategory
     public void subcategorydelete(Subcategory subcategory);
 
-    public List<CategoryRequest> subcategories(Category category);
+    public List<CategoryRequest> subcategories(Integer categoryId);
 }

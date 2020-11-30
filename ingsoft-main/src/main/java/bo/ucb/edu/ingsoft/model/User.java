@@ -4,10 +4,9 @@ import java.util.Date;
 
 public class User {
     private Integer userId;
+    private String userType;
     private Integer accountTypeId;
     private String accountType;
-    private Integer userTypeId;
-    private String userType;
     private String name;
     private String surname;
     private String birthdate;
@@ -67,13 +66,6 @@ public class User {
     }
     public void setAccountTypeId(Integer accountTypeId) {
         this.accountTypeId = accountTypeId;
-    }
-
-    public Integer getUserTypeId() {
-        return userTypeId;
-    }
-    public void setUserTypeId(Integer userTypeId) {
-        this.userTypeId = userTypeId;
     }
 
     public String getName() {
@@ -140,23 +132,18 @@ public class User {
     public String toString() {
         return "User{" +
                 "userId=" + userId +
+                ", userType='" + userType + '\'' +
                 ", accountTypeId=" + accountTypeId +
                 ", accountType='" + accountType + '\'' +
-                ", userTypeId=" + userTypeId +
-                ", userType='" + userType + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthdate='" + birthdate + '\'' +
-                ", gender=" + gender +
+                ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", userPhoto='" + userPhoto + '\'' +
-                ", status=" + status + '\'' +
-                ", txId=" + this.transaction.getTxId() + '\'' +
-                ", txHost='" + this.transaction.getTxHost() + '\'' +
-                ", txUserId=" + this.transaction.getTxUserId() + '\'' +
-                ", txDate=" + this.transaction.getTxDate() + '\'' +
-                ", txUpdate=" + this.transaction.getTxUpdate() + '\'' +
+                ", status=" + status +
+                ", transaction=" + transaction +
                 '}';
     }
 }

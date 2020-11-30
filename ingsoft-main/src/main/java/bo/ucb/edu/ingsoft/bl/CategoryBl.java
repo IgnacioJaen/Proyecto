@@ -4,10 +4,15 @@ import bo.ucb.edu.ingsoft.dao.CategoryDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.model.Category;
+import bo.ucb.edu.ingsoft.model.Photos;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.util.PhotoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -62,4 +67,18 @@ public class CategoryBl {
         return category;
     }
 
+    public void uploadImages(MultipartFile images, Integer categoryId, Transaction transaction) {
+
+        PhotoUtil photoUtil= new PhotoUtil();
+        String nombre= photoUtil.upload(images,"photocategories");
+        Photos photocategory = new Photos();
+        photocategory.setPhotoPath(nombre);
+        photocategory.setCategoryId(categoryId);
+        photocategory.setTransaction(transaction);
+        categoryDao.createphotoCategory(photocategory);
+    }
+
+    public Photos findImageCategoryById(Integer categoryId) {
+        return  categoryDao.findImageByCategoryId(categoryId);
+    }
 }
