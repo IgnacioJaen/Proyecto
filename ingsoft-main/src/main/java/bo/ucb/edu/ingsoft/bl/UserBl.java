@@ -55,8 +55,13 @@ public class UserBl {
 
     //Metodo que a traves del objeto userDao llama al metodo para encontrar un
     //usuario por medio del ID para el request del usuario de tipo cliente
-    public UserRequest findUserReqById(UserRequest userRequest) {
-        return userDao.findUserReqById(userRequest);
+    public UserRequest findUserReqById(Integer userId) {
+        return userDao.findUserReqById(userId);
+    }
+
+    //inicio de sesion
+    public UserRequest findUserByEmailPassword(String email, String password) {
+        return userDao.findUserByEmailPassword(email, password);
     }
 
 }

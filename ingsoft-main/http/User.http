@@ -1,19 +1,21 @@
-GET http://localhost:8080/v1/user
+###get con id del account type
+GET http://localhost:8081/v1/user
 Accept: application/json
 Content-Type: application/json
 
 {
   "userId": 1
 }
-###
+###get sin id account type, usar para frontend mockup 18 informacion del usuario
 
-GET http://localhost:8080/v1/user/userRequest
+GET http://localhost:8081/v1/user/userRequest?userId=1
 Accept: application/json
-Content-Type: application/json
 
-{
-  "userId": 16
-}
+###get usar para frontend mockup 1 inicio de sesion
+
+GET http://localhost:8081/v1/user/userRequest/login?email=jps@gmail.com&password=vdsvds44
+Accept: application/json
+
 ###
 
 

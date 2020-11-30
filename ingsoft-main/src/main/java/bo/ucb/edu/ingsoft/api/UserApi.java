@@ -9,10 +9,7 @@ import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -40,9 +37,16 @@ public class UserApi {
     // requestMethod GET con los parametros para la vista del usuario de
     // tipo cliente
     @RequestMapping(value = "/userRequest", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserRequest findAccountTypeById(@RequestBody UserRequest userRequest, HttpServletRequest request) {
+    public UserRequest findAccountTypeById(@RequestParam Integer userId, HttpServletRequest request) {
 
-        return userBl.findUserReqById(userRequest);
+        return userBl.findUserReqById(userId);
+    }
+
+    //Inicio de sesion
+    @RequestMapping(value = "/userRequest/login", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserRequest findUserByEmailPassword(@RequestParam String email, @RequestParam String password, HttpServletRequest request) {
+
+        return userBl.findUserByEmailPassword(email, password);
     }
 
     //Metodo que agrega un usuario a traves del requestMethod PUT
@@ -52,7 +56,6 @@ public class UserApi {
         Transaction transaction = transactionUtil.createTransaction(request);
         userBl.insertUser(user,transaction);
         return  user;
-
     }
 
     //Metodo que actualiza un usuario a traves del requestMethod DELETE es decir cambia el status a 0

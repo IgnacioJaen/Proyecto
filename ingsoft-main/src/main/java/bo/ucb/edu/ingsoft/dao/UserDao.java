@@ -23,5 +23,8 @@ public interface UserDao {
 
     //Metodo para encontrar un usuario y tiene un parametro de tipo userRequest
     //ya que es el request para la vista del usuario de tipo cliente
-    public UserRequest findUserReqById(UserRequest userRequest);
+    public UserRequest findUserReqById(Integer userId);
+
+    //inicio de sesion
+    public UserRequest findUserByEmailPassword(String email, String password);
 }
