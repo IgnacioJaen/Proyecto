@@ -6,6 +6,7 @@ import java.util.Date;
 public class Category {
     private Integer categoryId;
     private String name;
+    private Integer photoId;
     private Integer status;
     private Transaction transaction;
 
@@ -57,18 +58,19 @@ public class Category {
         this.transaction = transaction;
     }
 
+    public Integer getPhotoId() {return photoId;}
+    public void setPhotoId(Integer photoID) {this.photoId = photoID;}
+
     // Funcion toString generado para imprimir el objeto en una cadena String
+
     @Override
     public String toString() {
         return "Category{" +
                 "categoryId=" + categoryId +
                 ", name='" + name + '\'' +
+                ", photoID=" + photoId +
                 ", status=" + status +
-                ", txId=" + this.transaction.getTxId() +
-                ", txHost='" + this.transaction.getTxHost() + '\'' +
-                ", txUserId=" + this.transaction.getTxUserId() +
-                ", txDate=" + this.transaction.getTxDate() +
-                ", txUpdate=" + this.transaction.getTxUpdate() +
+                ", transaction=" + transaction +
                 '}';
     }
 }

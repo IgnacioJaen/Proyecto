@@ -3,7 +3,7 @@ package bo.ucb.edu.ingsoft.dto;
 public class CategoryRequest {
     private Integer categoryId;
     private String nameCategory;
-    private String photoCategory;
+    private Integer photoId;
 
     public CategoryRequest() {
     }
@@ -24,12 +24,12 @@ public class CategoryRequest {
         this.nameCategory = nameCategory;
     }
 
-    public String getPhotoCategory() {
-        return photoCategory;
+    public Integer getPhotoId() {
+        return photoId;
     }
 
-    public void setPhotoCategory(String photoCategory) {
-        this.photoCategory = photoCategory;
+    public void setPhotoId(Integer photo_id) {
+        this.photoId = photo_id;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CategoryRequest {
         return "CategoryRequest{" +
                 "categoryId=" + categoryId +
                 ", nameCategory='" + nameCategory + '\'' +
-                ", photoCategory='" + photoCategory + '\'' +
+                ", photo_id=" + photoId +
                 '}';
     }
 }

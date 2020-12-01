@@ -1,10 +1,10 @@
-GET http://192.168.31.148:8081/v1/category/categories
+GET http://localhost:8080/v1/category/categories
 Accept: application/json
 
 ###
 
 
-GET http://192.168.31.148:8080/v1/category
+GET http://localhost:8080/v1/category
 Accept: application/json
 Content-Type: application/json
 
@@ -20,7 +20,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Deportes Extremos Outside 1Md"
+  "name": "JUEGOS",
+  "photoId": 1
 }
 ###
 
@@ -42,9 +43,4 @@ Content-Type: application/json
   "categoryId": 1
 }
 ###
-
-GET http://localhost:8080/v1/category/image/categories/1
-Accept: application/json
-###
-
 

@@ -19,9 +19,9 @@
     </select>
 
     <insert id="categoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Category">
-        INSERT INTO category (`category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
+        INSERT INTO category (`category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`, `photo_id`) VALUES (
             null, #{name}, 1, #{transaction.txId}, #{transaction.txHost},
-            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
+            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}, #{photoId}
         )
     </insert>
 
@@ -42,10 +42,10 @@
         SELECT
             a.category_id as categoryId,
             a.name as nameCategory,
-            b.photo_path as photoCategory
+            b.photo_id as photoId
         FROM category a, photo b
         where a.status=1
-        and a.category_id=b.category_id
+        and a.photo_id=b.photo_id
 
     </select>
 
