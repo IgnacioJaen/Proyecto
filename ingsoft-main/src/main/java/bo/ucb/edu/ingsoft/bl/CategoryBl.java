@@ -29,9 +29,9 @@ public class CategoryBl {
 
     //Metodo que a traves del objeto categoryDao llama al metodo para encontrar una
     //categoria por medio del ID
-    public Category findCategoryById(Category category) {
-
-        return  categoryDao.findByCategoryId(category);
+    public Category findCategoryById(Integer categoryId) {
+        Category category = categoryDao.findByCategoryId(categoryId);
+        return  category;
     }
 
     //Metodo que a traves del objeto categoryDao llama al metodo para agregar una

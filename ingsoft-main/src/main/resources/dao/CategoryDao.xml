@@ -7,6 +7,7 @@
         SELECT
                category_id as categoryId,
                name as name,
+               photo_id as photoId,
                status as status,
                tx_id as txId,
                tx_host as txHost,

@@ -13,7 +13,7 @@ public interface CategoryDao {
     //carpeta resources/dao que utilicen como mapper esta clase
 
     //Metodo para encontrar una categoria y tiene un parametro de tipo category
-    public Category findByCategoryId(Category category);
+    public Category findByCategoryId(Integer categoryId);
 
     //Metodo para agregar una categoria y tiene un parametro de tipo category
     public void categoryinsert(Category category);

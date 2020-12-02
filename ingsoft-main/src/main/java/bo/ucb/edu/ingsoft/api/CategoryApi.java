@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.CategoryBl;
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Photos;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -30,9 +31,10 @@ public class CategoryApi {
     //Metodo que obtiene una categoria por el ID a traves del
     // requestMethod GET con los parametros para la vista del usuario de
     // tipo admin
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Category findById(@RequestBody Category category, HttpServletRequest request) {
-        return categoryBl.findCategoryById(category);
+    @RequestMapping(path="/categories", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Category findById(@RequestParam Integer categoryId, HttpServletRequest request) {
+        Category category= categoryBl.findCategoryById(categoryId);
+        return category;
     }
 
 
@@ -64,7 +66,7 @@ public class CategoryApi {
 
     //Metodo para sacar todas las categorias existentes
 
-    @RequestMapping(path="/categories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path="/allCategories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CategoryRequest> categories(HttpServletRequest request) {
         List<CategoryRequest> category=categoryBl.categories();
         return category;
