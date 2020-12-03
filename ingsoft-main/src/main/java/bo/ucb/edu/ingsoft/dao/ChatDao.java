@@ -27,7 +27,7 @@ public interface ChatDao {
     public void updateChat(Chat chat);
 
     //Metodo para eliminar un chat y tiene un parametro de tipo chat
-    public void deleteChat(Chat chat);
+    public void deleteChat(Integer chatId);
 
     public List<ChatRequest> chats(Integer userId);
 }

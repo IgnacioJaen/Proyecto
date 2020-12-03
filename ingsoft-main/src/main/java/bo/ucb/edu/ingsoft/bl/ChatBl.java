@@ -49,9 +49,9 @@ public class ChatBl {
 
     //Metodo que a traves del objeto chatDao llama al metodo para eliminar un
     //chat por medio del ID
-    public Chat deleteChat(Chat chat) {
-        chatDao.deleteChat(chat);
-        return chat;
+    public Integer deleteChat(Integer chatId) {
+        chatDao.deleteChat(chatId);
+        return chatId;
     }
 
     public List<ChatRequest> chats(Integer userId) {

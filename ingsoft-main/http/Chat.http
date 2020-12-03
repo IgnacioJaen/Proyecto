@@ -1,4 +1,4 @@
-GET http://192.168.31.148:8081/v1/chat/chats?userId=10
+GET http://192.168.31.148:8081/v1/chat/chats?userId=1
 Accept: application/json
 
 ###
@@ -31,11 +31,6 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:8080/v1/chat
+DELETE http://localhost:8081/v1/chat/delete?chatId=1
 Accept: application/json
-Content-Type: application/json
-
-{
-  "chatId": 12
-}
 ###

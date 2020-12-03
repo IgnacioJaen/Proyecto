@@ -37,7 +37,7 @@
         )
     </insert>
 
-    <delete id="deleteChat" parameterType="bo.ucb.edu.ingsoft.model.Chat">
+    <delete id="deleteChat" parameterType="Integer">
         UPDATE chat
         SET status = 0
         WHERE chat_id = #{chatId}
@@ -45,6 +45,7 @@
 
     <select id="chats" resultType="bo.ucb.edu.ingsoft.dto.ChatRequest">
         SELECT
+            b.chat_id as chatId,
             d.name as user2UserName,
             a.date as dateChat,
             a.content as contentChat
@@ -52,6 +53,7 @@
         WHERE a.transmitter_user_id=#{userId}
         AND a.chat_id = b.chat_id
         AND a.receiver_user_id = d.user_id
+        AND b.status = 1
         GROUP BY a.date DESC
 
     </select>

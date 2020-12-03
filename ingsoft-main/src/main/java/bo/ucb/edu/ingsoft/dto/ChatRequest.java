@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.dto;
 
 public class ChatRequest {
+    private Integer chatId;
     private String user2UserName;
     private String contentChat;
     private String dateChat;
@@ -11,6 +12,14 @@ public class ChatRequest {
 
     // Setters Y Getters generados para los demas atributos de la clase ChatRequest
 
+
+    public Integer getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(Integer chatId) {
+        this.chatId = chatId;
+    }
 
     public String getUser2UserName() {
         return user2UserName;
@@ -39,6 +48,7 @@ public class ChatRequest {
     @Override
     public String toString() {
         return "ChatRequest{" +
+                "chatId='" + chatId + '\'' +
                 "profile2UserName='" + user2UserName + '\'' +
                 ", contentChat='" + contentChat + '\'' +
                 ", dateChat='" + dateChat + '\'' +

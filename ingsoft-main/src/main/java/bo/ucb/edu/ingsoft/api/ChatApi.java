@@ -54,9 +54,9 @@ public class ChatApi {
     }
 
     //Metodo que elimina un chat a traves del requestMethod DELETE es decir cambia el status a 0
-    @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Chat deleteChat(@RequestBody Chat chat, HttpServletRequest request) {
-        return chatBl.deleteChat(chat);
+    @RequestMapping(path="/delete", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer deleteChat(@RequestParam Integer chatId, HttpServletRequest request) {
+        return chatBl.deleteChat(chatId);
     }
 
     @RequestMapping(path="/chats",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,4 +1,4 @@
-GET http://localhost:8080/v1/reportOptions/reports
+GET http://192.168.31.148:8081/v1/reportOptions/reports
 Accept: application/json
 
 ###
