@@ -19,6 +19,17 @@
             subcategory_id = #{subcategoryId} and status=1
     </select>
 
+    <select id="subcategoriesList" resultType="bo.ucb.edu.ingsoft.model.Subcategory">
+        SELECT
+               a.subcategory_id as subcategoryId,
+               a.category_id as categoryId,
+               a.name as name,
+               a.status as status
+        FROM subcategory a
+        WHERE
+            a.category_id = #{categoryId} and a.status=1
+    </select>
+
     <insert id="subcategoryinsert" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
         INSERT INTO subcategory  (`subcategory_id`, `category_id`, `name`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
             null,#{categoryId}, #{name}, 1, #{transaction.txId}, #{transaction.txHost},
@@ -33,11 +44,11 @@
 
     </update>
 
-    <delete id="subcategorydelete" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
+    <update id="subcategorydelete" parameterType="bo.ucb.edu.ingsoft.model.Subcategory">
         UPDATE subcategory
         SET status = 0
         WHERE subcategory_id = #{subcategoryId}
-    </delete>
+    </update>
 
     <select id="subcategories" resultType="bo.ucb.edu.ingsoft.dto.SubcategoryRequest">
         SELECT

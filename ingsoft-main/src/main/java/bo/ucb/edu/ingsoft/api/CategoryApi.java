@@ -37,6 +37,12 @@ public class CategoryApi {
         return category;
     }
 
+    @RequestMapping(path="/allCategories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CategoryRequest> categories(HttpServletRequest request) {
+        List<CategoryRequest> category=categoryBl.categories();
+        return category;
+    }
+
 
     //Metodo que agrega una categoria a traves del requestMethod POST
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -66,11 +72,7 @@ public class CategoryApi {
 
     //Metodo para sacar todas las categorias existentes
 
-    @RequestMapping(path="/allCategories",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CategoryRequest> categories(HttpServletRequest request) {
-        List<CategoryRequest> category=categoryBl.categories();
-        return category;
-    }
+
 
     @RequestMapping(path="/images/{categoryId}" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public void uploadImages(@RequestParam MultipartFile images, @PathVariable("categoryId") Integer categoryId, HttpServletRequest request){

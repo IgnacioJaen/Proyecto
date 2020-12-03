@@ -3,6 +3,7 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.SubcategoryDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -25,8 +26,16 @@ public class SubcategoryBl {
 
     //Metodo que a traves del objeto subcategoryDao llama al metodo para encontrar una
     //subcategoria por medio del ID
-    public Subcategory findSubcategoryById(Subcategory subcategory) {
-        return subcategoryDao.findBySubcategoryId(subcategory);
+    public Subcategory findBySubcategoryId(Integer subcategoryId) {
+        Subcategory subcategory = subcategoryDao.findBySubcategoryId(subcategoryId);
+        return  subcategory;
+    }
+
+
+    //Subcategoria por una categoria
+    public List<Subcategory> subcategoriesList(Integer categoryId) {
+        List<Subcategory> subcategory=subcategoryDao.subcategoriesList(categoryId);
+        return subcategory;
     }
 
     //Metodo que a traves del objeto subcategoryDao llama al metodo para agregar una

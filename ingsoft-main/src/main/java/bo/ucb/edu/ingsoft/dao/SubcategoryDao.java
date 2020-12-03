@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Subcategory;
 import org.apache.ibatis.annotations.Mapper;
@@ -12,7 +13,7 @@ public interface SubcategoryDao {
     //carpeta resources/dao que utilicen como mapper esta clase
 
     //Metodo para encontrar una subcategoria y tiene un parametro de tipo subcategory
-    public Subcategory findBySubcategoryId(Subcategory subcategory);
+    public Subcategory findBySubcategoryId(Integer subcategoryId);
 
     //Metodo para agregar una subcategoria y tiene un parametro de tipo subcategory
     public void subcategoryinsert(Subcategory subcategory);
@@ -24,4 +25,6 @@ public interface SubcategoryDao {
     public void subcategorydelete(Subcategory subcategory);
 
     public List<CategoryRequest> subcategories(Integer categoryId);
+
+    public List<Subcategory> subcategoriesList(Integer categoryId);
 }

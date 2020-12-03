@@ -1,12 +1,12 @@
-GET http://localhost:8080/v1/subcategory
+GET http://localhost:8080/v1/subcategory?subcategoryId=1
 Accept: application/json
-Content-Type: application/json
 
-{
-  "subcategoryId": 1
-}
 ###
 
+GET http://localhost:8080/v1/subcategory/subcategories?categoryId=2
+Accept: application/json
+
+###
 
 POST http://localhost:8080/v1/subcategory
 Accept: application/json
@@ -28,12 +28,12 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:8080/v1/subcategory
+PUT http://localhost:8080/v1/subcategory/delete
 Accept: application/json
 Content-Type: application/json
 
 {
-  "subcategoryId": 3
+  "subcategoryId": 10
 }
 ###
 
