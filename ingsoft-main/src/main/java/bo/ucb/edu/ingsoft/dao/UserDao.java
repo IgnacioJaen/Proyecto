@@ -10,7 +10,7 @@ public interface UserDao {
     //carpeta resources/dao que utilicen como mapper esta clase
 
     //Metodo para encontrar un usuario y tiene un parametro de tipo user
-    public User findByUserId(User user);
+    public User findByUserId(Integer userId);
 
     //Metodo para agregar un usuario y tiene un parametro de tipo user
     public void userInsert(User user);

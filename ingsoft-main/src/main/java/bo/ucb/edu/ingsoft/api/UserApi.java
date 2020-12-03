@@ -28,9 +28,9 @@ public class UserApi {
     // requestMethod GET con los parametros para la vista del usuario de
     // tipo admin
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public User findUserById(@RequestBody User user, HttpServletRequest request) {
+    public User findUserById(@RequestParam Integer userId, HttpServletRequest request) {
 
-        return userBl.findUserById(user);
+        return userBl.findUserById(userId);
     }
 
     //Metodo que obtiene un usuario por el ID a traves del
@@ -59,7 +59,7 @@ public class UserApi {
     }
 
     //Metodo que actualiza un usuario a traves del requestMethod DELETE es decir cambia el status a 0
-    @RequestMapping(method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public User updateUser(@RequestBody User user, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
         Transaction transaction = transactionUtil.createTransaction(request);

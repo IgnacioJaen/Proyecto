@@ -24,8 +24,8 @@ public class UserBl {
 
     //Metodo que a traves del objeto userDao llama al metodo para encontrar un
     //usuario por medio del ID
-    public User findUserById(User user) {
-        return userDao.findByUserId(user);
+    public User findUserById(Integer userId) {
+        return userDao.findByUserId(userId);
     }
 
     //Metodo que a traves del objeto userDao llama al metodo para agregar un

@@ -1,11 +1,6 @@
 ###get con id del account type
-GET http://localhost:8081/v1/user
+GET http://localhost:8081/v1/user?userId=1
 Accept: application/json
-Content-Type: application/json
-
-{
-  "userId": 1
-}
 ###get sin id account type, usar para frontend mockup 18 informacion del usuario
 
 GET http://localhost:8081/v1/user/userRequest?userId=1
@@ -36,21 +31,22 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/v1/user
+PUT http://localhost:8081/v1/user/update
 Accept: application/json
 Content-Type: application/json
 
 {
   "userId": 1,
   "accountTypeId": 1,
-  "userTypeId": 1,
-  "name": "Alex",
-  "surname": "Montaño",
-  "birthdate": "1992-10-10",
-  "gender": 0,
-  "email": "ed.Robles@gmail.com",
-  "password": "654321",
-  "userPhoto": "https://concepto.de/wp-content/uploads/2018/10/URL1-e1538664726127.jpg"
+  "userType": "Client",
+  "name": "Jose",
+  "surname": "Chura",
+  "birthdate": "1998-10-10",
+  "gender": "Masculino",
+  "email": "jc@gmail.com",
+  "password": "12345",
+  "userPhoto": "URL",
+  "status": "1"
 }
 ###
 
