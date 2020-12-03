@@ -64,4 +64,9 @@ public class UserBl {
         return userDao.findUserByEmailPassword(email, password);
     }
 
+    //obtener userType
+    public String findUserTypeByEmailPassword(String email, String password) {
+        return userDao.findUserTypeByEmailPassword(email, password);
+    }
+
 }

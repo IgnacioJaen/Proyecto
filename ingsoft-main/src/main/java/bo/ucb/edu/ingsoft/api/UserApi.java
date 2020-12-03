@@ -49,6 +49,13 @@ public class UserApi {
         return userBl.findUserByEmailPassword(email, password);
     }
 
+    //Obtener userType
+    @RequestMapping(value = "/userType", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String findUserTypeByEmailPassword(@RequestParam String email, @RequestParam String password, HttpServletRequest request) {
+
+        return userBl.findUserTypeByEmailPassword(email, password);
+    }
+
     //Metodo que agrega un usuario a traves del requestMethod PUT
     @RequestMapping(value = "/post", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public User insertUser(@RequestBody User user, HttpServletRequest request) {

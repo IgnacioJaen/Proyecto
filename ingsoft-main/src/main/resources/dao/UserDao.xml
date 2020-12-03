@@ -37,6 +37,16 @@
             and a.status=1
     </select>
 
+    <select id="findUserTypeByEmailPassword" resultType="String">
+        SELECT
+               a.user_type as userType
+        FROM user a, account_type b
+        WHERE
+            a.email = #{email} and a.password = #{password}
+            and a.account_type_id=b.account_type_id
+            and a.status=1
+    </select>
+
     <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
         SELECT
                a.user_id as userId,

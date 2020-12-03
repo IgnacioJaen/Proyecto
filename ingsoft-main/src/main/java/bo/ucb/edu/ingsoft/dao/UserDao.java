@@ -27,4 +27,8 @@ public interface UserDao {
 
     //inicio de sesion
     public Integer findUserByEmailPassword(String email, String password);
+
+    //obtener userType
+    public String findUserTypeByEmailPassword(String email, String password);
+
 }
