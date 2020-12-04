@@ -38,7 +38,7 @@
 
     <select id="reports" resultType="bo.ucb.edu.ingsoft.dto.ReportRequest">
         SELECT DISTINCT b.report_id as reportId,
-                d.name as reportedUser,
+                CONCAT(d.name,' ',d.surname) as reportedUser,
                 k.name as user,
                 b.date as dateChat,
                 ro.description as reportOp
