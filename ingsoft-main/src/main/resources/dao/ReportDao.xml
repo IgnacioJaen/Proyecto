@@ -51,5 +51,21 @@
 
     </select>
 
+    <select id="reportById" resultType="bo.ucb.edu.ingsoft.dto.ReportRequest">
+       SELECT DISTINCT b.report_id as reportId,
+                CONCAT(d.name,' ',d.surname) as reportedUser,
+                CONCAT(k.name,' ',k.surname) as user,
+                b.date as date,
+                ro.description as reportOp
+        FROM message a, report b, user d, report_options ro, user k
+        WHERE b.reported_user_id = d.user_id
+          AND b.user_id = k.user_id
+          AND ro.report_op_id = b.report_op_id
+          AND b.status = 1
+          AND b.report_id = #{reportId}
+        GROUP BY d.name ASC
+
+    </select>
+
 
 </mapper>

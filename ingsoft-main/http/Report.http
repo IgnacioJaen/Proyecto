@@ -11,6 +11,11 @@ GET http://192.168.31.148:8081/v1/report/reports
 Accept: application/json
 ###
 
+GET http://192.168.31.148:8081/v1/report/reportid?reportId=4
+Accept: application/json
+
+###
+
 POST http://192.168.31.148:8081/v1/report/post
 Accept: application/json
 Content-Type: application/json

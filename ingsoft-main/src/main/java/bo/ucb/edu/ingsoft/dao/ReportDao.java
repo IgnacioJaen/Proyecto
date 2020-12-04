@@ -26,4 +26,6 @@ public interface ReportDao {
     public void reportDelete(Report report);
 
     public List<ReportRequest> reports();
+
+    ReportRequest reportById(Integer reportId);
 }

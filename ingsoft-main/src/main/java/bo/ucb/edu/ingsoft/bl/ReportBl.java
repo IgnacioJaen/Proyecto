@@ -59,4 +59,9 @@ public class ReportBl {
         List<ReportRequest> reports=reportDao.reports();
         return reports;
     }
+
+    public ReportRequest reportById(Integer reportId) {
+        ReportRequest report=reportDao.reportById(reportId);
+        return report;
+    }
 }
