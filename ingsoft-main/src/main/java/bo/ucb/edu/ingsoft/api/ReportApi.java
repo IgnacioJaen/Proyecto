@@ -35,7 +35,7 @@ public class ReportApi {
     }
 
     //Metodo que agrega una opcion de reporte a traves del requestMethod POST
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/post", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report insertReport(@RequestBody Report report, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
         Transaction transaction = transactionUtil.createTransaction(request);

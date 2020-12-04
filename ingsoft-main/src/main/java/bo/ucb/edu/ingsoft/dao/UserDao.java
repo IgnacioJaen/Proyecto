@@ -28,6 +28,9 @@ public interface UserDao {
     //inicio de sesion
     public Integer findUserByEmailPassword(String email, String password);
 
+    //Obtener reciever usere id
+    public Integer findReceiverUser(Integer userId, Integer chatId);
+
     //obtener userType
     public String findUserTypeByEmailPassword(String email, String password);
 
