@@ -49,7 +49,7 @@
                a.date as dateChat,
                a.content as contentChat
         FROM message a, chat b, user d
-        WHERE a.transmitter_user_id=10
+        WHERE a.transmitter_user_id=#{userId}
           AND a.chat_id = b.chat_id
           AND a.receiver_user_id = d.user_id
           AND b.status = 1

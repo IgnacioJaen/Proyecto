@@ -21,7 +21,7 @@ Accept: application/json
 
 ###get para obtener el receiver user Id
 
-GET http://192.168.31.148:8081/v1/user/receiverid?userId=10&chatId=5
+GET http://192.168.31.148:8081/v1/user/receiverid?userId=4&chatId=5
 Accept: application/json
 
 ###
