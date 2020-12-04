@@ -1,9 +1,9 @@
 ###get con id del account type
-GET http://localhost:8081/v1/user?userId=1
+GET http://192.168.31.148:8081/v1/user?userId=1
 Accept: application/json
 ###get sin id account type, usar para frontend mockup 18 informacion del usuario
 
-GET http://localhost:8081/v1/user/userRequest?userId=1
+GET http://192.168.31.148:8081/v1/user/userRequest?userId=1
 Accept: application/json
 
 ###get usar para frontend mockup 1 inicio de sesion
@@ -15,6 +15,13 @@ Accept: application/json
 ###get para obtener el userType de un usuario
 
 GET http://192.168.31.148:8081/v1/user/userType?email=mollyv@gmail.com&password=mvv
+Accept: application/json
+
+###
+
+###get para obtener el receiver user Id
+
+GET http://192.168.31.148:8081/v1/user/receiverid?userId=10&chatId=2
 Accept: application/json
 
 ###
@@ -37,7 +44,7 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8081/v1/user/update
+PUT http://192.168.31.148:8081/v1/user/update
 Accept: application/json
 Content-Type: application/json
 
@@ -56,7 +63,7 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:8080/v1/user
+DELETE http://192.168.31.148:8081/v1/user
 Accept: application/json
 Content-Type: application/json
 

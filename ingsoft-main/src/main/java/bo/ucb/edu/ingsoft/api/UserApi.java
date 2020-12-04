@@ -49,6 +49,13 @@ public class UserApi {
         return userBl.findUserByEmailPassword(email, password);
     }
 
+    //Obtener ReceiverId
+    @RequestMapping(value = "/receiverid", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer findReceiverUser(@RequestParam Integer userId, Integer chatId, HttpServletRequest request) {
+
+        return userBl.findReceiverUser(userId, chatId);
+    }
+
     //Obtener userType
     @RequestMapping(value = "/userType", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String findUserTypeByEmailPassword(@RequestParam String email, @RequestParam String password, HttpServletRequest request) {

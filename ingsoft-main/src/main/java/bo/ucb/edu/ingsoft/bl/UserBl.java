@@ -64,6 +64,11 @@ public class UserBl {
         return userDao.findUserByEmailPassword(email, password);
     }
 
+    //obtener receiver user id
+    public Integer findReceiverUser(Integer userId, Integer chatId) {
+        return userDao.findReceiverUser(userId, chatId);
+    }
+
     //obtener userType
     public String findUserTypeByEmailPassword(String email, String password) {
         return userDao.findUserTypeByEmailPassword(email, password);

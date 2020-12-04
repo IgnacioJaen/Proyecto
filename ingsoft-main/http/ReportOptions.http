@@ -3,7 +3,7 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8080/v1/reportOptions
+GET http://192.168.31.148:8081/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
 
@@ -11,7 +11,7 @@ Content-Type: application/json
   "reportOpId": 3
 }
 ###
-GET http://localhost:8080/v1/reportOptions/request
+GET http://192.168.31.148:8081/v1/reportOptions/request
 Accept: application/json
 Content-Type: application/json
 
@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 
-POST http://localhost:8080/v1/reportOptions
+POST http://192.168.31.148:8081/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
 
@@ -31,7 +31,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/v1/reportOptions
+PUT http://192.168.31.148:8081/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
 
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8080/v1/reportOptions
+DELETE http://192.168.31.148:8081/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
 

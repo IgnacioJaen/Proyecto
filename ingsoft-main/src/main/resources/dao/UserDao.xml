@@ -37,6 +37,16 @@
             and a.status=1
     </select>
 
+    <select id="findReceiverUser" resultType="Integer">
+        SELECT u.user_id from
+        user u, chat c, message m
+        WHERE
+        m.transmitter_user_id = #{userId}
+        AND c.chat_id = #{chatId}
+        AND m.chat_id = c.chat_id
+        AND m.receiver_user_id = u.user_id
+    </select>
+
     <select id="findUserTypeByEmailPassword" resultType="String">
         SELECT
                a.user_type as userType
