@@ -10,4 +10,6 @@ public interface UserSubcategoryDao {
 
     public List<UserSubcategory> getUserSubcategories(Integer userId);
 
+    public void insertUserSubcategory(UserSubcategory userSubcategory);
+
 }

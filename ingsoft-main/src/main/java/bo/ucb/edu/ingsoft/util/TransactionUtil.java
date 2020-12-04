@@ -17,7 +17,7 @@ public class TransactionUtil {
         transaction.setTxHost(request.getRemoteHost()); // Direccion Ip
         //transaction.setTxUserId(request.getUserPrincipal().getName()); //TODO fix username instead of userId
         transaction.setTxId(0); // Id de la transaccion
-        transaction.setTxUserId(0); // Id del usuario que hizo la transaccion
+        transaction.setTxUserId(11); // Id del usuario que hizo la transaccion
         return transaction;
     }
 }
