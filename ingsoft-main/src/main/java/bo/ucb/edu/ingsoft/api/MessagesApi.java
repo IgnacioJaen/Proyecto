@@ -50,7 +50,7 @@ public class MessagesApi {
     }*/
 
     //Metodo que actualiza un mensaje a traves del requestMethod PUT
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/post", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Messages insertMessages(@RequestBody Messages messages, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
         Transaction transaction = transactionUtil.createTransaction(request);

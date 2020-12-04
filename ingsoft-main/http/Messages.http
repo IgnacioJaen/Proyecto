@@ -1,4 +1,4 @@
-GET http://192.168.31.148:8081/v1/messages/messagesList?chatId=5&userId=10&recUserId=4
+GET http://192.168.31.148:8081/v1/messages/messagesList?userId=10&chatId=5&recUserId=4
 Accept: application/json
 Content-Type: application/json
 
@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 
-POST http://192.168.31.148:8081/v1/messages
+POST http://192.168.31.148:8081/v1/messages/post
 Accept: application/json
 Content-Type: application/json
 

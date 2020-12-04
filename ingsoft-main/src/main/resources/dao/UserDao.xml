@@ -45,6 +45,7 @@
         AND c.chat_id = #{chatId}
         AND m.chat_id = c.chat_id
         AND m.receiver_user_id = u.user_id
+        LIMIT 1
     </select>
 
     <select id="findUserTypeByEmailPassword" resultType="String">
