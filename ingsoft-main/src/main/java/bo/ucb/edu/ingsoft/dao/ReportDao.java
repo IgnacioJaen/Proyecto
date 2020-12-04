@@ -1,7 +1,12 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
+import bo.ucb.edu.ingsoft.dto.ReportRequest;
 import bo.ucb.edu.ingsoft.model.Report;
+import bo.ucb.edu.ingsoft.model.ReportOptions;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface ReportDao {
@@ -19,4 +24,6 @@ public interface ReportDao {
 
     //Metodo para eliminar un reporte y tiene un parametro de tipo report
     public void reportDelete(Report report);
+
+    public List<ReportRequest> reports();
 }

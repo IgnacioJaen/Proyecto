@@ -2,18 +2,18 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.CategoryBl;
 import bo.ucb.edu.ingsoft.bl.ReportBl;
+import bo.ucb.edu.ingsoft.dto.ChatRequest;
+import bo.ucb.edu.ingsoft.dto.ReportRequest;
 import bo.ucb.edu.ingsoft.model.Category;
 import bo.ucb.edu.ingsoft.model.Report;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/report")
@@ -57,5 +57,11 @@ public class ReportApi {
     @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Report deleteReport(@RequestBody Report report, HttpServletRequest request) {
         return reportBl.deleteReport(report);
+    }
+
+    @RequestMapping(path="/reports",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ReportRequest> reportList(HttpServletRequest request) {
+        List<ReportRequest> report=reportBl.reports();
+        return report;
     }
 }
