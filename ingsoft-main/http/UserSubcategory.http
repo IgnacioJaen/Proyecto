@@ -1,0 +1,14 @@
+GET http://192.168.0.15:8080/v1/userSubcategory/userSubcategories?userId=1
+Accept: application/json
+
+###
+
+POST http://192.168.0.15:8080/v1/userSubcategory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "subcategoryId": 1
+}
+###
