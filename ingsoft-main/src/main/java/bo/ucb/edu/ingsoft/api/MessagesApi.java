@@ -8,10 +8,7 @@ import bo.ucb.edu.ingsoft.model.*;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -67,9 +64,9 @@ public class MessagesApi {
         return messagesBl.deleteMessages(messages);
     }
 
-    @RequestMapping(path="/messages",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MessagesRequest> messages(@RequestBody Chat chat, HttpServletRequest request) {
-        List<MessagesRequest> message=messagesBl.messages(chat);
+    @RequestMapping(path="/messagesList",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MessagesRequest> messages(@RequestParam Integer userId, Integer chatId, Integer recUserId, HttpServletRequest request) {
+        List<MessagesRequest> message=messagesBl.messages(userId, chatId, recUserId);
         return message;
     }
 

@@ -1,5 +1,5 @@
 ###get con id del account type
-GET http://192.168.31.148:8081/v1/user?userId=1
+GET http://192.168.31.148:8081/v1/user?userId=4
 Accept: application/json
 ###get sin id account type, usar para frontend mockup 18 informacion del usuario
 

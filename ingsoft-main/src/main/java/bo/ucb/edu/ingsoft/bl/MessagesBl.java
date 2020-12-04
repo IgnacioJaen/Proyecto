@@ -56,8 +56,8 @@ public class MessagesBl {
         return messagesDao.findMessagesReqById(messagesRequest);
     }
 
-    public List<MessagesRequest> messages(Chat chat) {
-        List<MessagesRequest> message=messagesDao.messages(chat);
+    public List<MessagesRequest> messages(Integer userId, Integer chatId, Integer recUserId) {
+        List<MessagesRequest> message=messagesDao.messages(userId, chatId, recUserId);
         return message;
     }
 

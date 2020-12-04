@@ -1,10 +1,6 @@
-GET http://192.168.31.148:8081/v1/messages/messages
+GET http://192.168.31.148:8081/v1/messages/messagesList?chatId=5&userId=10&recUserId=4
 Accept: application/json
 Content-Type: application/json
-
-{
-  "chatId": 1
-}
 
 ###
 GET http://192.168.31.148:8081/v1/messages
@@ -30,9 +26,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "chatId": 1,
-  "date": "2020-10-29 22:12:10",
-  "content": "Hola Mundo"
+  "chatId": 5,
+  "date": "2020-11-24 21:38:10",
+  "content": "Why tired?",
+  "receiverUserId" : 4,
+  "transmitterUserId": 10
 }
 ###
 
