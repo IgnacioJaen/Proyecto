@@ -49,7 +49,7 @@ public class ReportBl {
 
     //Metodo que a traves del objeto reportDao llama al metodo para eliminar un
     //reporte por medio del ID
-    public Report deleteReport(Report report) {
+    public Integer deleteReport(Integer report) {
         reportDao.reportDelete(report);
         return report;
     }

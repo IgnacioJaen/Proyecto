@@ -30,10 +30,10 @@
     </insert>
 
 
-    <delete id="reportDelete" parameterType="bo.ucb.edu.ingsoft.model.Report">
+    <delete id="reportDelete" parameterType="Integer">
         UPDATE report
         SET status = 0
-        WHERE report_id = #{reportId}
+        WHERE report_id = #{report}
     </delete>
 
     <select id="reports" resultType="bo.ucb.edu.ingsoft.dto.ReportRequest">

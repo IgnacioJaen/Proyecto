@@ -4,9 +4,18 @@ public class UserSubcategory {
 
     private Integer userSubId;
     private Integer userId;
+    private String subName;
     private Integer subcategoryId;
     private Integer status;
     private Transaction transaction;
+
+    public String getSubName() {
+        return subName;
+    }
+
+    public void setSubName(String subName) {
+        this.subName = subName;
+    }
 
     public UserSubcategory() {
         transaction = new Transaction();
@@ -57,6 +66,7 @@ public class UserSubcategory {
         return "UserSubcategory{" +
                 "userSubId=" + userSubId +
                 ", userId=" + userId +
+                ", subName=" + subName +
                 ", subcategoryId=" + subcategoryId +
                 ", status=" + status +
                 ", transaction=" + transaction +

@@ -23,7 +23,7 @@ public interface ReportDao {
     public void reportUpdate(Report report);
 
     //Metodo para eliminar un reporte y tiene un parametro de tipo report
-    public void reportDelete(Report report);
+    public void reportDelete(Integer report);
 
     public List<ReportRequest> reports();
 

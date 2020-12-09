@@ -29,6 +29,12 @@ public class UserSubcategoryApi {
         return userSubcategories;
     }
 
+    @RequestMapping(path="/userSubMatch",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<UserSubcategory> getUserSubMatches(@RequestParam Integer userId, HttpServletRequest request) {
+        List<UserSubcategory> userSubcategories=userSubcategoryBl.getUserSubMatches(userId);
+        return userSubcategories;
+    }
+
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserSubcategory insertUserSubcategory(@RequestBody UserSubcategory userSubcategory, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();

@@ -54,14 +54,20 @@ public class ReportApi {
     }
 
     //Metodo que elimina una opcion de reporte a traves del requestMethod DELETE es decir cambia el status a 0
-    @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Report deleteReport(@RequestBody Report report, HttpServletRequest request) {
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer deleteReport(@RequestParam Integer report, HttpServletRequest request) {
         return reportBl.deleteReport(report);
     }
 
-    @RequestMapping(path="/reports",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/reports",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ReportRequest> reportList(HttpServletRequest request) {
         List<ReportRequest> report=reportBl.reports();
+        return report;
+    }
+
+    @RequestMapping(path="/reportid",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ReportRequest chatsList(@RequestParam Integer reportId, HttpServletRequest request) {
+        ReportRequest report = reportBl.reportById(reportId);
         return report;
     }
 }

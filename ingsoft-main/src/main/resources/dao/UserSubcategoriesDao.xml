@@ -8,10 +8,29 @@
         SELECT
             a.user_sub_id as userSubId,
             a.subcategory_id as subcategoryId,
+            s.name as subName,
             a.user_id as userId
-        FROM user_subcategory a
+        FROM user_subcategory a, subcategory s
         WHERE a.user_id=#{userId}
+        AND a.subcategory_id = s.subcategory_id
         AND a.status = 1
+
+    </select>
+
+    <select id="getUserSubMatches" resultType="bo.ucb.edu.ingsoft.model.UserSubcategory">
+        SELECT
+            a.user_sub_id as userSubId,
+            u.name as userName,
+            u.user_id as userId,
+            a.subcategory_id as subcategoryId,
+            s.name as subName,
+            a.user_id as userId
+        FROM user_subcategory a, subcategory s, user u
+        WHERE a.user_id != 10
+          AND a.subcategory_id = s.subcategory_id
+          AND a.status = 1
+          AND a.user_id = u.user_id
+          AND u.status = 1
 
     </select>
 

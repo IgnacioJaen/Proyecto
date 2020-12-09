@@ -28,6 +28,11 @@ public class UserSubcategoryBl {
         return userSubcategories;
     }
 
+    public List<UserSubcategory> getUserSubMatches(Integer userId) {
+        List<UserSubcategory> userSubcategories=userSubcategoryDao.getUserSubMatches(userId);
+        return userSubcategories;
+    }
+
     public UserSubcategory insertUserSubcategory(UserSubcategory userSubcategory, Transaction transaction){
         userSubcategory.setTransaction(transaction);
         userSubcategoryDao.insertUserSubcategory(userSubcategory);

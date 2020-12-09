@@ -7,7 +7,6 @@ public class Match {
     private Integer matchId;
     private Integer profile1Id;
     private Integer profile2Id;
-    private Integer dateMatches;
     private Integer accepted;
     private Integer status;
     private Transaction transaction;
@@ -54,12 +53,6 @@ public class Match {
         this.profile2Id = profile2Id;
     }
 
-    public Integer getDateMatches() {
-        return dateMatches;
-    }
-    public void setDateMatches(Integer dateMatches) {
-        this.dateMatches = dateMatches;
-    }
 
     public Integer getAccepted() {
         return accepted;
@@ -89,7 +82,6 @@ public class Match {
                 "matchId=" + matchId +
                 ", profile1Id=" + profile1Id +
                 ", profile2Id=" + profile2Id +
-                ", dateMatches=" + dateMatches +
                 ", accepted=" + accepted +
                 ", status=" + status +
                 ", txId=" + this.transaction.getTxId() +
