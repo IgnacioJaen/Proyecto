@@ -16,15 +16,15 @@ Accept: application/json
 
 ###
 
-POST http://192.168.31.148:8081/v1/report/post
+POST http://192.168.1.10:8081/v1/report/post
 Accept: application/json
 Content-Type: application/json
 
 {
   "reportOpId": 1,
-  "chatId": 7,
-  "date": "2020-10-29 22:12:10",
-  "reportedUserId": 7,
+  "chatId": 4,
+  "date": "2020-10-29 09:12:10",
+  "reportedUserId": 1,
   "userId": 2
 }
 ###

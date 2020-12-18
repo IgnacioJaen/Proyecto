@@ -18,7 +18,7 @@
     </select>
 
     <select id="getUserSubMatches" resultType="bo.ucb.edu.ingsoft.model.UserSubcategory">
-        SELECT
+        SELECT DISTINCT
             a.user_sub_id as userSubId,
             u.name as userName,
             u.user_id as userId,
@@ -26,12 +26,55 @@
             s.name as subName,
             a.user_id as userId
         FROM user_subcategory a, subcategory s, user u
-        WHERE a.user_id != 10
+        WHERE a.user_id != 2
           AND a.subcategory_id = s.subcategory_id
           AND a.status = 1
           AND a.user_id = u.user_id
           AND u.status = 1
+          AND a.user_id NOT IN (
+            SELECT r.reported_user_id
+            FROM report r
+            WHERE a.user_id = r.reported_user_id
+                AND r.user_id = 2
+            )
+          AND a.user_id NOT IN (
+              SELECT  r.user_id
+              FROM report r
+              WHERE a.user_id = r.user_id
+              AND r.reported_user_id = 2
+            )
+        GROUP BY a.user_id
+        LIMIT 3
+    </select>
 
+    <select id="getUserSubMatchesPremium" resultType="bo.ucb.edu.ingsoft.model.UserSubcategory">
+        SELECT DISTINCT
+            a.user_sub_id as userSubId,
+            u.name as userName,
+            u.user_id as userId,
+            a.subcategory_id as subcategoryId,
+            s.name as subName,
+            a.user_id as userId
+        FROM user_subcategory a, subcategory s, user u
+        WHERE a.user_id != 2
+          AND a.subcategory_id = s.subcategory_id
+          AND a.status = 1
+          AND a.user_id = u.user_id
+          AND u.status = 1
+          AND a.user_id NOT IN (
+            SELECT r.reported_user_id
+            FROM report r
+            WHERE a.user_id = r.reported_user_id
+                AND r.user_id = 2
+            )
+          AND a.user_id NOT IN (
+              SELECT  r.user_id
+              FROM report r
+              WHERE a.user_id = r.user_id
+              AND r.reported_user_id = 2
+            )
+        GROUP BY a.user_id
+        LIMIT 5
     </select>
 
     <insert id="insertUserSubcategory" parameterType="bo.ucb.edu.ingsoft.model.UserSubcategory">

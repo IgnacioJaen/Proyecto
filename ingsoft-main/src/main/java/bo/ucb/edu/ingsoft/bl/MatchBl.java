@@ -8,9 +8,11 @@ import bo.ucb.edu.ingsoft.model.Match;
 import bo.ucb.edu.ingsoft.model.Messages;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MatchBl {
     private MatchDao matchDao;
     private TransactionDao transactionDao;
