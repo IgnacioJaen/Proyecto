@@ -1,37 +1,38 @@
-GET http://192.168.31.148:8081/v1/category/allCategories
+GET http://192.168.0.10:8080/v1/category/allCategories
 Accept: application/json
 
 ###
 
 
-GET http://192.168.31.148:8081/v1/category/categories?categoryId=1
+GET http://192.168.0.10:8080/v1/category/categories?categoryId=1
 Accept: application/json
 
 ###
 
 
 
-POST http://192.168.31.148:8081/v1/category
+POST http://192.168.0.10:8080/v1/category
 Accept: application/json
 Content-Type: application/json
 
 {
   "name": "JUEGOS",
-  "photoId": 1
+  "photoId": 1,
+  "path": "https://i.ibb.co/R0Wvtvb/ex1.jpg"
 }
 ###
 
-PUT http://192.168.31.148:8081/v1/category
+PUT http://192.168.0.10:8080/v1/category
 Accept: application/json
 Content-Type: application/json
 
 {
-  "categoryId": 5,
-  "name": "Deportes Ext"
+  "categoryId": 1,
+  "name": "Peliculas"
 }
 ###
 
-PUT http://192.168.31.148:8081/v1/category/delete
+PUT http://192.168.0.10:8080/v1/category/delete
 Accept: application/json
 Content-Type: application/json
 
