@@ -2,6 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.UserBl;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.User;
 
@@ -12,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/user")
@@ -31,6 +33,12 @@ public class UserApi {
     public User findUserById(@RequestParam Integer userId, HttpServletRequest request) {
 
         return userBl.findUserById(userId);
+    }
+
+    @RequestMapping(path="/allUsers",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<UserRequest> allusers(HttpServletRequest request) {
+        List<UserRequest> user=userBl.allusers();
+        return user;
     }
 
     //Metodo que obtiene un usuario por el ID a traves del

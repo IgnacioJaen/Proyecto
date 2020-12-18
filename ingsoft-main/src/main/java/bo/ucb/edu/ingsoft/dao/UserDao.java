@@ -1,8 +1,11 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.CategoryRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserDao {
@@ -30,6 +33,9 @@ public interface UserDao {
 
     //Obtener reciever usere id
     public Integer findReceiverUser(Integer userId, Integer chatId);
+
+    //Metodo para ver todos los usuarios
+    public List<UserRequest> allusers();
 
     //obtener userType
     public String findUserTypeByEmailPassword(String email, String password);

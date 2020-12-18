@@ -28,7 +28,8 @@ Content-Type: application/json
 
 {
   "categoryId": 1,
-  "name": "Peliculas"
+  "name": "Peliculas",
+  "path": "www.google.com"
 }
 ###
 

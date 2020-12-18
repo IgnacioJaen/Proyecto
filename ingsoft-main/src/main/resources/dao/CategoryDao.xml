@@ -29,7 +29,7 @@
 
     <update id="categoryupdate" parameterType="bo.ucb.edu.ingsoft.model.Category">
         UPDATE category
-        SET name = #{name}
+        SET name = #{name}, path = "https://i.ibb.co/R0Wvtvb/ex1.jpg"
         WHERE category_id = #{categoryId} and status=1
 
     </update>
@@ -55,7 +55,7 @@
     <insert id="createphotoCategory" parameterType="bo.ucb.edu.ingsoft.model.Photos">
         INSERT INTO photo
         VALUES (
-            null,#{categoryId},#{photoPath},1,#{transaction.txId}, "127.0.0.1",
+            null,#{categoryId},#{photoPath},1,#{transaction.txId}, #{transaction.txHost},
             #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate})
     </insert>
 
