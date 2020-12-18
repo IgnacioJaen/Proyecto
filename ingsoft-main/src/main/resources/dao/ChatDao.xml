@@ -43,6 +43,10 @@
         WHERE chat_id = #{chatId}
     </delete>
 
+    <select id="chatId" resultType="Integer">
+        select MAX(chat_id) from chat
+    </select>
+
     <select id="chats" resultType="bo.ucb.edu.ingsoft.dto.ChatRequest">
         SELECT DISTINCT b.chat_id as chatId,
                d.name as user2UserName,

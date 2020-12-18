@@ -81,5 +81,4 @@ public class UserBl {
     public String findUserTypeByEmailPassword(String email, String password) {
         return userDao.findUserTypeByEmailPassword(email, password);
     }
-
 }

@@ -94,10 +94,10 @@
     </select>
 
     <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
-        INSERT INTO user (`user_id`, `user_type`, `account_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`) VALUES (
-            null, #{userType}, #{accountTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
-            #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate}
-        )
+               INSERT INTO user (`user_id`, `user_type`, `account_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`)
+               VALUES (
+                    null, #{userType}, #{accountTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
+                    #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate})
     </insert>
 
     <update id="userUpdate" parameterType="bo.ucb.edu.ingsoft.model.User">

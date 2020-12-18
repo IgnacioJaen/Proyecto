@@ -35,6 +35,12 @@ public class ChatApi {
         return chatBl.findChatById(chat);
     }
 
+    //lastchatId
+    @RequestMapping(value="/lastChatId", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer lastChat(HttpServletRequest request) {
+        return chatBl.findChatId();
+    }
+
     //Metodo que obitene un chat por el ID a traves del
     // requestMethod GET con los parametros para la vista del usuario de
     // tipo cliente
@@ -44,7 +50,7 @@ public class ChatApi {
     }
 
     //Metodo que agrega un chat a traves del requestMethod PUT
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/post", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Chat createChat(@RequestBody Chat chat, HttpServletRequest request) {
         TransactionUtil transactionUtil= new TransactionUtil();
         Transaction transaction = transactionUtil.createTransaction(request);

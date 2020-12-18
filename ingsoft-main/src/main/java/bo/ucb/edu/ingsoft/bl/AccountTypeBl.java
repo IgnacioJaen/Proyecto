@@ -49,6 +49,10 @@ public class AccountTypeBl {
         return accountType;
     }
 
+    public String findUserTypeById(Integer userId) {
+        return accountTypeDao.findUserTypeById(userId);
+    }
+
     //Metodo que a traves del objeto accountTypeDao llama al metodo para eliminar un
     //tipo de cuenta por medio del ID
     public AccountType deleteAccountType(AccountType accountType) {

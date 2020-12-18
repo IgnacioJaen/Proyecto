@@ -1,28 +1,34 @@
-GET http://192.168.31.148:8081/v1/accountType/accounts
+GET http://192.168.1.10:8081/v1/accountType/accounts
 Accept: application/json
 
 ###
-GET http://192.168.31.148:8081/v1/accountType
-Accept: application/json
-Content-Type: application/json
-
-{
-  "accountTypeId": 1
-}
-###
-
-GET http://192.168.31.148:8081/v1/accountType/userRequest
+GET http://192.168.1.10:8081/v1/accountType
 Accept: application/json
 Content-Type: application/json
 
 {
   "accountTypeId": 1
 }
+###
+
+GET http://192.168.1.10:8081/v1/accountType/userRequest
+Accept: application/json
+Content-Type: application/json
+
+{
+  "accountTypeId": 1
+}
+
+###get para obtener el aType de un usuario
+
+GET http://192.168.1.10:8081/v1/accountType/userTypeById?userId=1
+Accept: application/json
 
 ###
 
 
-POST http://192.168.31.148:8081/v1/accountType
+
+POST http://192.168.1.10:8081/v1/accountType
 Accept: application/json
 Content-Type: application/json
 
@@ -32,7 +38,7 @@ Content-Type: application/json
 }
 ###
 
-PUT http://192.168.31.148:8081/v1/accountType
+PUT http://192.168.1.10:8081/v1/accountType
 Accept: application/json
 Content-Type: application/json
 
@@ -43,7 +49,7 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://192.168.31.148:8081/v1/accountType
+DELETE http://192.168.1.10:8081/v1/accountType
 Accept: application/json
 Content-Type: application/json
 

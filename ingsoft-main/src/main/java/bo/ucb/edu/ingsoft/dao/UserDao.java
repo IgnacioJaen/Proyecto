@@ -39,5 +39,4 @@ public interface UserDao {
 
     //obtener userType
     public String findUserTypeByEmailPassword(String email, String password);
-
 }

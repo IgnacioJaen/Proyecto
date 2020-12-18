@@ -58,4 +58,9 @@ public class ChatBl {
         List<ChatRequest> chat=chatDao.chats(userId);
         return chat;
     }
+
+    public Integer findChatId() {
+        Integer chat=chatDao.chatId();
+        return chat;
+    }
 }

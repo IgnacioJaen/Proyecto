@@ -8,10 +8,7 @@ import bo.ucb.edu.ingsoft.model.AccountType;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -20,6 +17,11 @@ import java.util.List;
 @RequestMapping(value = "/v1/accountType")
 public class AccountTypeApi {
     private AccountTypeBl accountTypeBl;
+
+    @RequestMapping(value = "/userTypeById", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String findUserTypeById(@RequestParam Integer userId, HttpServletRequest request) {
+        return accountTypeBl.findUserTypeById(userId);
+    }
 
     //Constructor de la clase AccountTypeApi recibe un parametro de tipo AccountTypeBl
     @Autowired

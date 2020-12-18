@@ -26,7 +26,7 @@
             s.name as subName,
             a.user_id as userId
         FROM user_subcategory a, subcategory s, user u
-        WHERE a.user_id != 2
+        WHERE a.user_id != #{userId}
           AND a.subcategory_id = s.subcategory_id
           AND a.status = 1
           AND a.user_id = u.user_id
@@ -35,14 +35,27 @@
             SELECT r.reported_user_id
             FROM report r
             WHERE a.user_id = r.reported_user_id
-                AND r.user_id = 2
+                AND r.user_id = #{userId}
             )
           AND a.user_id NOT IN (
               SELECT  r.user_id
               FROM report r
               WHERE a.user_id = r.user_id
-              AND r.reported_user_id = 2
+              AND r.reported_user_id = #{userId}
             )
+          AND a.user_id NOT IN(
+             SELECT c.user2_id
+             from chat c
+             WHERE a.user_id = c.user2_id
+             AND c.user1_id = #{userId}
+            )
+
+          AND a.user_id NOT IN(
+            SELECT c.user1_id
+            from chat c
+            WHERE a.user_id = c.user1_id
+              AND c.user2_id = #{userId}
+        )
         GROUP BY a.user_id
         LIMIT 3
     </select>
@@ -56,7 +69,7 @@
             s.name as subName,
             a.user_id as userId
         FROM user_subcategory a, subcategory s, user u
-        WHERE a.user_id != 2
+        WHERE a.user_id != #{userId}
           AND a.subcategory_id = s.subcategory_id
           AND a.status = 1
           AND a.user_id = u.user_id
@@ -65,14 +78,27 @@
             SELECT r.reported_user_id
             FROM report r
             WHERE a.user_id = r.reported_user_id
-                AND r.user_id = 2
+                AND r.user_id = #{userId}
             )
           AND a.user_id NOT IN (
               SELECT  r.user_id
               FROM report r
               WHERE a.user_id = r.user_id
-              AND r.reported_user_id = 2
+              AND r.reported_user_id = #{userId}
             )
+           AND a.user_id NOT IN(
+             SELECT c.user2_id
+             from chat c
+             WHERE a.user_id = c.user2_id
+             AND c.user1_id = #{userId}
+            )
+
+          AND a.user_id NOT IN(
+            SELECT c.user1_id
+            from chat c
+            WHERE a.user_id = c.user1_id
+              AND c.user2_id = #{userId}
+        )
         GROUP BY a.user_id
         LIMIT 5
     </select>
