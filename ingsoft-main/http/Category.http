@@ -16,9 +16,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "JUEGOS",
-  "photoId": 1,
-  "path": "https://i.ibb.co/R0Wvtvb/ex1.jpg"
+  "name": "Manualidades",
+  "photoId": 2,
+  "path": "www.pixar.com"
 }
 ###
 
