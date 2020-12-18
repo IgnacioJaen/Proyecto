@@ -4,6 +4,7 @@ public class CategoryRequest {
     private Integer categoryId;
     private String nameCategory;
     private Integer photoId;
+    private String path;
 
     public CategoryRequest() {
     }
@@ -18,6 +19,14 @@ public class CategoryRequest {
 
     public String getNameCategory() {
         return nameCategory;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public void setNameCategory(String nameCategory) {
@@ -38,6 +47,7 @@ public class CategoryRequest {
                 "categoryId=" + categoryId +
                 ", nameCategory='" + nameCategory + '\'' +
                 ", photo_id=" + photoId +
+                ", path='" + path + '\'' +
                 '}';
     }
 }

@@ -7,6 +7,7 @@ public class Category {
     private Integer categoryId;
     private String name;
     private Integer photoId;
+    private String path;
     private Integer status;
     private Transaction transaction;
 
@@ -39,6 +40,14 @@ public class Category {
         this.categoryId = categoryId;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     public String getName() {
         return name;
     }
@@ -63,12 +72,14 @@ public class Category {
 
     // Funcion toString generado para imprimir el objeto en una cadena String
 
+
     @Override
     public String toString() {
         return "Category{" +
                 "categoryId=" + categoryId +
                 ", name='" + name + '\'' +
-                ", photoID=" + photoId +
+                ", photoId=" + photoId +
+                ", path='" + path + '\'' +
                 ", status=" + status +
                 ", transaction=" + transaction +
                 '}';
