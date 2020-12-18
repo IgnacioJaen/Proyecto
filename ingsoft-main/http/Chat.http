@@ -1,8 +1,13 @@
-GET http://192.168.31.148:8081/v1/chat/chats?userId=4
+GET http://192.168.1.10:8081/v1/chat/chats?userId=4
 Accept: application/json
 
 ###
-GET http://192.168.31.148:8081/v1/chat
+GET http://192.168.1.10:8081/v1/chat/lastChatId
+Accept: application/json
+Content-Type: application/json
+###
+
+GET http://192.168.1.10:8081/v1/chat/request
 Accept: application/json
 Content-Type: application/json
 
@@ -11,26 +16,17 @@ Content-Type: application/json
 }
 ###
 
-GET http://192.168.31.148:8081/v1/chat/request
+
+POST http://192.168.1.10:8081/v1/chat/post
 Accept: application/json
 Content-Type: application/json
 
 {
-  "chatId": 2
+  "user1Id": 9,
+  "user2Id": 8
 }
 ###
 
-
-POST http://192.168.31.148:8081/v1/chat
-Accept: application/json
-Content-Type: application/json
-
-{
-  "profile1Id": 9,
-  "profile2Id": 8
-}
-###
-
-DELETE http://192.168.31.148:8081/v1/chat/delete?chatId=1
+DELETE http://192.168.1.10:8081/v1/chat/delete?chatId=1
 Accept: application/json
 ###

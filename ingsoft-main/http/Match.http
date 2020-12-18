@@ -1,4 +1,4 @@
-POST http://192.168.31.148:8081/v1/messages/post
+POST http://192.168.1.10:8081/v1/messages/post
 Accept: application/json
 Content-Type: application/json
 

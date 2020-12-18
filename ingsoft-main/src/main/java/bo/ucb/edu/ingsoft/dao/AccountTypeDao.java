@@ -30,4 +30,7 @@ public interface AccountTypeDao {
     public AccountTypeRequest findAccountTypeReqById(AccountTypeRequest accountTypeRequest);
 
     public List<AccountTypeRequest> accountTypes();
+
+
+    public String findUserTypeById(Integer userId);
 }

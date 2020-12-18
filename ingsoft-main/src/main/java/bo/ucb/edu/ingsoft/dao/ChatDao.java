@@ -30,4 +30,6 @@ public interface ChatDao {
     public void deleteChat(Integer chatId);
 
     public List<ChatRequest> chats(Integer userId);
+
+    public Integer chatId();
 }

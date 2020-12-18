@@ -1,9 +1,9 @@
-GET http://192.168.31.148:8081/v1/reportOptions/reports
+GET http://192.168.1.10:8081/v1/reportOptions/reports
 Accept: application/json
 
 ###
 
-GET http://192.168.31.148:8081/v1/reportOptions
+GET http://192.168.1.10:8081/v1/reportOptions
 Accept: application/json
 Content-Type: application/json
 
@@ -11,7 +11,7 @@ Content-Type: application/json
   "reportOpId": 3
 }
 ###
-GET http://192.168.31.148:8081/v1/reportOptions/request
+GET http://192.168.1.10:8081/v1/reportOptions/request
 Accept: application/json
 Content-Type: application/json
 

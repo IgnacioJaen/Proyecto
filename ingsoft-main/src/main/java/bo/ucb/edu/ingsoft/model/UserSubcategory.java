@@ -4,7 +4,17 @@ public class UserSubcategory {
 
     private Integer userSubId;
     private Integer userId;
+    private String userName;
     private String subName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     private Integer subcategoryId;
     private Integer status;
     private Transaction transaction;
@@ -66,6 +76,7 @@ public class UserSubcategory {
         return "UserSubcategory{" +
                 "userSubId=" + userSubId +
                 ", userId=" + userId +
+                ", userName=" + userName +
                 ", subName=" + subName +
                 ", subcategoryId=" + subcategoryId +
                 ", status=" + status +

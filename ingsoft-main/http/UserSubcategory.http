@@ -1,9 +1,9 @@
-GET http://192.168.31.148:8081/v1/userSubcategory/userSubcategories?userId=4
+GET http://192.168.1.10:8081/v1/userSubcategory/userSubcategories?userId=4
 Accept: application/json
 
 ###
 
-POST http://192.168.0.15:8081/v1/userSubcategory
+POST http://192.168.1.10:8081/v1/userSubcategory
 Accept: application/json
 Content-Type: application/json
 

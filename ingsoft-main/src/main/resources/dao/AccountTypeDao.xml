@@ -19,6 +19,16 @@
             account_type_id = #{accountTypeId} and status=1
     </select>
 
+    <select id="findUserTypeById" resultType="String">
+        SELECT
+               b.type as userType
+        FROM user a, account_type b
+        WHERE
+            a.user_id = #{userId}
+            and a.account_type_id=b.account_type_id
+            and a.status=1
+    </select>
+
     <select id="findAccountTypeReqById" resultType="bo.ucb.edu.ingsoft.dto.AccountTypeRequest">
         SELECT
                account_type_id as accountTypeId,
