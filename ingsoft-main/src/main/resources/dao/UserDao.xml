@@ -3,114 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.UserDao">
-    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
-        SELECT
-               a.user_id as userId,
-               a.user_type as userType,
-               a.account_type_id as accountTypeId,
-               b.type as accountType,
-               a.name as name,
-               a.surname as surname,
-               a.birthdate as birthdate,
-               a.gender as gender,
-               a.email as email,
-               a.password as password,
-               a.user_photo as userPhoto,
-               a.status as status,
-               a.tx_id as txId,
-               a.tx_host as txHost,
-               a.tx_user as txUserId,
-               a.tx_date as txDate,
-               a.tx_update as txUpdate
-        FROM user a, account_type b
-        WHERE
-            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.status=1
-    </select>
-
-    <select id="allusers" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
-        SELECT
-                a.user_id as userId,
-                b.type as accountType,
-                a.user_type as userType,
-                a.name as name,
-                a.surname as surname,
-                a.birthdate as birthdate,
-                a.gender as gender,
-                a.email as email,
-                a.password as password,
-                a.user_photo as userPhoto
-        FROM user a, account_type b
-        where a.status=1
-
-    </select>
-
-    <select id="findUserByEmailPassword" resultType="Integer">
-        SELECT
-               a.user_id as userId
-        FROM user a, account_type b
-        WHERE
-            a.email = #{email} and a.password = #{password}
-            and a.account_type_id=b.account_type_id
-            and a.status=1
-    </select>
-
-    <select id="findReceiverUser" resultType="Integer">
-        SELECT u.user_id from
-        user u, chat c, message m
-        WHERE
-        m.transmitter_user_id = #{userId}
-        AND c.chat_id = #{chatId}
-        AND m.chat_id = c.chat_id
-        AND m.receiver_user_id = u.user_id
-        LIMIT 1
-    </select>
-
-    <select id="findUserTypeByEmailPassword" resultType="String">
-        SELECT
-               a.user_type as userType
-        FROM user a, account_type b
-        WHERE
-            a.email = #{email} and a.password = #{password}
-            and a.account_type_id=b.account_type_id
-            and a.status=1
-    </select>
-
-    <select id="findUserReqById" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
-        SELECT
-               a.user_id as userId,
-               a.user_type as userType,
-               b.type as accountType,
-               a.name as name,
-               a.surname as surname,
-               a.birthdate as birthdate,
-               a.gender as gender,
-               a.email as email,
-               a.password as password,
-               a.user_photo as userPhoto,
-               a.status as status
-        FROM user a, account_type b
-        WHERE
-            a.user_id = #{userId} and a.account_type_id=b.account_type_id and a.status=1
-    </select>
-
-    <insert id="userInsert" parameterType="bo.ucb.edu.ingsoft.model.User">
-               INSERT INTO user (`user_id`, `user_type`, `account_type_id`, `name`, `surname`, `birthdate`, `gender`, `email`, `password`, `user_photo`, `status`, `tx_id`, `tx_host`, `tx_user`, `tx_date`, `tx_update`)
-               VALUES (
-                    null, #{userType}, #{accountTypeId}, #{name}, #{surname}, #{birthdate}, #{gender}, #{email}, #{password}, #{userPhoto}, 1, #{transaction.txId}, #{transaction.txHost},
-                    #{transaction.txUserId}, #{transaction.txDate}, #{transaction.txUpdate})
+    <insert id="addUser" parameterType="bo.ucb.edu.ingsoft.model.User">
+    INSERT INTO users
+        (`id_user`,`user_name`, `last_name`, `email`, `password`,
+         `status`, `tx_id`, `tx_date`, `tx_host`, `tx_update`)
+        VALUES (null,#{userName}, #{lastName}, #{email}, #{password},
+                1, #{transaction.txId}, #{transaction.txDate}, #{transaction.txHost}, #{transaction.txUpdate})
     </insert>
 
-    <update id="userUpdate" parameterType="bo.ucb.edu.ingsoft.model.User">
-        UPDATE user
-        SET name = #{name}, user_type = #{userType}, account_type_id = #{accountTypeId}, surname = #{surname}, gender = #{gender}, email = #{email}, password = #{password}, user_photo = #{userPhoto}
-        WHERE user_id = #{userId} and status=1
-    </update>
-
-    <delete id="userDelete" parameterType="bo.ucb.edu.ingsoft.model.User">
-        UPDATE user
-        SET status = 0
-        WHERE user_id = #{userId}
-    </delete>
+    <select id="getUsers" resultType="bo.ucb.edu.ingsoft.dto.UserResponse">
+    SELECT
+                a.id_user as idUser,
+                a.user_name as username,
+                a.last_name as lastname,
+                a.email as email,
+                a.password as password
+        FROM users a
+        where a.status=1
+    </select>
 
 
 </mapper>

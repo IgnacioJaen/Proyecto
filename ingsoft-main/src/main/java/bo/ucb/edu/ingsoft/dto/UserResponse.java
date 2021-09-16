@@ -1,15 +1,22 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
 
-public class User {
+public class UserResponse {
     private Integer idUser;
     private String userName;
     private String lastName;
     private String email;
     private String password;
-    private String status;
-    private Transaction transaction;
+//    private String status;
 
-    public User() {
+    public UserResponse(Integer idUser, String userName, String lastName, String email, String password) {
+        this.idUser = idUser;
+        this.userName = userName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserResponse() {
     }
 
     public Integer getIdUser() {
@@ -52,33 +59,14 @@ public class User {
         this.password = password;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
-                "idUser=" + idUser +
-                ", userName='" + userName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", status='" + status + '\'' +
-                ", transaction=" + transaction +
+        return "UserResponse{" +
+                "idNews='" + idUser + '\'' +
+                ", title=" + userName + '\'' +
+                ", content=" + lastName + '\'' +
+                ", dateNews=" + email + '\'' +
+                ", urlImage=" + password +
                 '}';
     }
 }
-

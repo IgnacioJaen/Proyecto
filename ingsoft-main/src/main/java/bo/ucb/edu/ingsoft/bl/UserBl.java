@@ -1,11 +1,10 @@
 package bo.ucb.edu.ingsoft.bl;
 
-import bo.ucb.edu.ingsoft.dao.UserDao;
-
-import bo.ucb.edu.ingsoft.dto.CategoryRequest;
-import bo.ucb.edu.ingsoft.dto.UserRequest;
-import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dao.UserDao;
+import bo.ucb.edu.ingsoft.dto.UserDataRequest;
+import bo.ucb.edu.ingsoft.dto.UserResponse;
+import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,71 +13,54 @@ import java.util.List;
 
 @Service
 public class UserBl {
-
     private UserDao userDao;
     private TransactionDao transactionDao;
 
-    //Constructor de la clase UserBl recibe dos parametros de tipo userDao y transactionDao
     @Autowired
-    public UserBl(UserDao userDao, TransactionDao transactionDao) {
+    public UserBl(UserDao userDao, TransactionDao transactionDao){
         this.userDao = userDao;
-        this.transactionDao = transactionDao;
+        this.transactionDao=transactionDao;
     }
 
-    //Metodo que a traves del objeto userDao llama al metodo para encontrar un
-    //usuario por medio del ID
-    public User findUserById(Integer userId) {
-        return userDao.findByUserId(userId);
-    }
-
-    //Metodo que a traves del objeto userDao llama al metodo para agregar un
-    //usuario
-    public User insertUser(User user, Transaction transaction) {
-        user.setTransaction(transaction);
-        userDao.userInsert(user);
+    public UserResponse addUser(UserResponse user,Transaction transaction){
+        User userAdd=new User();
+        userAdd.setUserName(user.getUserName());
+        userAdd.setLastName(user.getLastName());
+        userAdd.setEmail(user.getEmail());
+        userAdd.setPassword(user.getPassword());
+        userAdd.setTransaction(transaction);
+        userDao.addUser(userAdd);
         Integer userId = transactionDao.getLastInsertId();
-        user.setUserId(userId);
+        user.setIdUser(userId);
         return user;
     }
 
-    //Metodo que a traves del objeto userDao llama al metodo para actualizar un
-    //usuario por medio del ID
-    public User updateUser(User user, Transaction transaction) {
-        user.setTransaction(transaction);
-        userDao.userUpdate(user);
+    public UserResponse updateUser(UserResponse user,Transaction transaction){
+        User userAdd=new User();
+        userAdd.setIdUser(user.getIdUser());
+        userAdd.setUserName(user.getUserName());
+        userAdd.setLastName(user.getLastName());
+        userAdd.setEmail(user.getEmail());
+        if(user.getPassword()!=null&&user.getPassword()!=""&&user.getPassword().length()>6){
+            userAdd.setPassword(user.getPassword());
+        }
+        else{
+            userAdd.setPassword(null);
+        }
+        userAdd.setTransaction(transaction);
+        userDao.updateUser(userAdd);
+        return user;
+    }
+    public List<UserResponse> getUsers(){
+        List<UserResponse> user=userDao.getUsers();
         return user;
     }
 
-    public List<UserRequest> allusers(){
-        List<UserRequest> user=userDao.allusers();
-        return user;
+    public void userDelete(Integer idUser,Transaction transaction){
+        User userAdd=new User();
+        userAdd.setIdUser(idUser);
+        userAdd.setTransaction(transaction);
+        userDao.deleteUser(userAdd);
     }
 
-    //Metodo que a traves del objeto userDao llama al metodo para eliminar un
-    //usuario por medio del ID
-    public User deleteUser(User user) {
-        userDao.userDelete(user);
-        return user;
-    }
-
-    //Metodo que a traves del objeto userDao llama al metodo para encontrar un
-    //usuario por medio del ID para el request del usuario de tipo cliente
-    public UserRequest findUserReqById(Integer userId) {
-        return userDao.findUserReqById(userId);
-    }
-
-    //inicio de sesion
-    public Integer findUserByEmailPassword(String email, String password) {
-        return userDao.findUserByEmailPassword(email, password);
-    }
-
-    //obtener receiver user id
-    public Integer findReceiverUser(Integer userId, Integer chatId) {
-        return userDao.findReceiverUser(userId, chatId);
-    }
-
-    //obtener userType
-    public String findUserTypeByEmailPassword(String email, String password) {
-        return userDao.findUserTypeByEmailPassword(email, password);
-    }
 }
